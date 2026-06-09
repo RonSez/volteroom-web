@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "titleDefault": "Volteroom — Dizajnové vypínače a zásuvky",
+    "titleTemplate": "%s · Volteroom",
+    "description": "Volteroom — spojenie kvality a štýlu v každom produkte. Dizajnové vypínače, zásuvky a rámčeky novej generácie v 10 farbách."
+  },
+  "nav": {
+    "home": "Domov",
+    "catalog": "Katalóg",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "basket": "Košík",
+    "menu": "Menu",
+    "openMenu": "Otvoriť menu",
+    "language": "Jazyk"
+  },
+  "common": {
+    "addToBasket": "Pridať do košíka",
+    "added": "Pridané do košíka",
+    "viewProduct": "Zobraziť produkt",
+    "priceFrom": "od {price}",
+    "explore": "Preskúmať",
+    "learnMore": "Zistiť viac",
+    "viewCatalog": "Zobraziť katalóg",
+    "getDirections": "Zobraziť trasu",
+    "callUs": "Zavolajte nám",
+    "emailUs": "Napíšte nám",
+    "close": "Zavrieť",
+    "currencyNote": "Ceny sú orientačné, vrátane placeholderu obsahu."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Koncept novej generácie",
+      "title": "Spojenie kvality a štýlu v každom produkte",
+      "subtitle": "Minimalistický dizajn dovedený do dokonalosti — vypínače, zásuvky a rámčeky pre klasické aj moderné priestory.",
+      "ctaPrimary": "Preskúmať katalóg",
+      "ctaSecondary": "Navštívte nás"
+    },
+    "gallery": {
+      "title": "Prezentácia produktu",
+      "subtitle": "Pozrite si koncept, vlastnosti a technické detaily novej generácie."
+    },
+    "collections": {
+      "title": "Produktové kategórie",
+      "subtitle": "Jeden typ mechanizmu, nekonečné možnosti dizajnu."
+    },
+    "finishes": {
+      "title": "10 farieb predných panelov a rámčekov",
+      "subtitle": "Hmatová textúra povrchu a monolitická forma pre dokonalý vzhľad.",
+      "note": "Farby na obrazovke sú orientačné."
+    },
+    "features": {
+      "title": "Vlastnosti novej generácie",
+      "subtitle": "Vybrané detaily, spoľahlivé mechanizmy a päťročná záruka.",
+      "items": [
+        { "title": "Monolitická forma", "desc": "Žiadne priečky medzi krytmi a minimálne medzery medzi rámčekmi a panelmi." },
+        { "title": "Šírka rámčeka 9,5 mm", "desc": "Univerzálne 1–5 násobné rámčeky s presným zarovnaním." },
+        { "title": "Spoľahlivé mechanizmy", "desc": "Kontakty zo zliatiny striebra a niklu a skrutkovacie kontakty na všetkých zásuvkách." },
+        { "title": "Záruka 5 rokov", "desc": "Vybrané materiály a kostra z polyamidu 66 plneného sklom." }
+      ]
+    },
+    "addressCta": {
+      "title": "Navštívte náš showroom",
+      "subtitle": "Príďte si pozrieť kolekciu naživo a poradíme vám s výberom.",
+      "cta": "Zobraziť adresu"
+    },
+    "switchShowcase": {
+      "eyebrow": "Navrhnuté okolo tlačidla",
+      "title": "Stvorené pre každodenný dotyk",
+      "subtitle": "Tri dôvody, prečo naše vypínače s veľkými tlačidlami pôsobia inak — vzhľadom, ovládaním aj svojou životnosťou.",
+      "items": [
+        {
+          "title": "Štýlový, moderný dizajn",
+          "caption": "Veľké tlačidlá a absencia priečok medzi mechanizmami vo viacnásobných rámčekoch vytvárajú moderný a sofistikovaný vzhľad."
+        },
+        {
+          "title": "Pohodlie",
+          "caption": "Veľké tlačidlá sa stláčajú veľmi ľahko, aj bez toho, aby ste sa na ne sústredili, a ich inovatívny soft-touch povrch poskytuje jedinečný hmatový zážitok."
+        },
+        {
+          "title": "Odolnosť a spoľahlivosť",
+          "caption": "Vypínače s veľkými tlačidlami vyžadujú na ovládanie minimálne úsilie, čím predlžujú životnosť svojich mechanizmov."
+        }
+      ]
+    }
+  },
+  "catalog": {
+    "title": "Katalóg",
+    "subtitle": "Mechanizmy, kryty a rámčeky — vypínače, zásuvky, stmievače a dátové zásuvky v piatich farbách.",
+    "filters": {
+      "title": "Filtre",
+      "category": "Kategória",
+      "kind": "Typ",
+      "kindMechanism": "Mechanizmy",
+      "kindCover": "Kryty a klávesy",
+      "kindFrame": "Rámčeky",
+      "finish": "Farba",
+      "gang": "Počet modulov",
+      "all": "Všetko",
+      "allGangs": "Všetky",
+      "clear": "Zrušiť filtre",
+      "open": "Filtre",
+      "gangUnit": "{count, plural, one {# modul} few {# moduly} other {# modulov}}"
+    },
+    "results": "{count, plural, one {# produkt} few {# produkty} other {# produktov}}",
+    "empty": "Žiadne produkty nezodpovedajú zvoleným filtrom."
+  },
+  "product": {
+    "backToCatalog": "Späť na katalóg",
+    "finish": "Farba",
+    "gang": "Počet modulov",
+    "gangUnit": "{count, plural, one {# modul} few {# moduly} other {# modulov}}",
+    "article": "Číslo výrobku",
+    "specsTitle": "Technické parametre",
+    "specs": {
+      "componentType": "Typ komponentu",
+      "color": "Farba",
+      "connectionMethod": "Spôsob pripojenia",
+      "nominalCurrent": "Menovitý prúd",
+      "protectionDegree": "Stupeň krytia",
+      "temperatureRange": "Rozsah teplôt",
+      "marking": "Označenie",
+      "dimensions": "Rozmery (V×Š×H)",
+      "advantages": "Hlavné výhody",
+      "installationType": "Inštalácia",
+      "fireSafety": "Požiarna bezpečnosť a odolnosť"
+    },
+    "orderSeparatelyTitle": "Trojdielny systém",
+    "orderSeparatelyMechanism": "Toto je vnútorný mechanizmus — nezávislý od farby. Kryt alebo klávesu a rámček vo zvolenej farbe objednajte samostatne.",
+    "orderSeparatelyCover": "Dodáva sa vo zvolenej farbe. Pasuje na príslušný mechanizmus; rámček objednajte samostatne.",
+    "orderSeparatelyFrame": "Vyberte veľkosť a farbu. Mechanizmus a kryt sa objednávajú samostatne.",
+    "viewMechanisms": "Mechanizmy",
+    "viewCovers": "Kryty",
+    "viewFrames": "Rámčeky",
+    "kindLabel": {
+      "mechanism": "Mechanizmus",
+      "cover": "Kryt",
+      "frame": "Rámček"
+    },
+    "priceNote": "Orientačná cena. Mechanizmus, kryt a rámček sa predávajú samostatne.",
+    "relatedTitle": "Mohlo by sa vám páčiť"
+  },
+  "basket": {
+    "title": "Košík",
+    "empty": "Váš košík je prázdny.",
+    "emptyCta": "Prejsť do katalógu",
+    "product": "Produkt",
+    "finish": "Farba",
+    "configuration": "Konfigurácia",
+    "qty": "Množstvo",
+    "price": "Cena",
+    "remove": "Odstrániť",
+    "clear": "Vyprázdniť košík",
+    "summaryTitle": "Súhrn",
+    "items": "{count, plural, one {# položka} few {# položky} other {# položiek}}",
+    "subtotal": "Medzisúčet",
+    "total": "Spolu",
+    "note": "Online platba zatiaľ nie je dostupná. Pre objednávku nás kontaktujte alebo navštívte náš showroom.",
+    "enquireCta": "Kontaktovať / navštíviť showroom",
+    "continueShopping": "Pokračovať v nákupe"
+  },
+  "about": {
+    "title": "O značke Volteroom",
+    "intro": "Volteroom je koncept novej generácie — spojenie kvality a štýlu v každom produkte. Minimalistický dizajn, spoľahlivé mechanizmy a vybrané detaily pre klasické aj moderné priestory.",
+    "conceptTitle": "Koncept novej generácie",
+    "concept": [
+      "Elegancia a všestrannosť",
+      "Spoľahlivé mechanizmy a vybrané detaily",
+      "Minimalistický dizajn dovedený do dokonalosti",
+      "Štýlový interiérový doplnok pre klasické aj moderné priestory"
+    ],
+    "suitableTitle": "Inštalácia vhodná pre",
+    "suitable": [
+      "Klasické a neoklasické bytové interiéry",
+      "Moderné a dizajnové apartmány",
+      "Kancelárie a konferenčné miestnosti",
+      "Galérie a verejné priestory",
+      "Zariadenia kategórie HoReCa"
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Navštívte nás alebo nám napíšte — radi vám poradíme.",
+    "addressTitle": "Adresa",
+    "detailsTitle": "Kontaktné údaje",
+    "companyTitle": "Fakturačné údaje",
+    "phone": "Telefón",
+    "email": "E-mail",
+    "director": "Konateľ",
+    "ico": "IČO",
+    "dic": "DIČ",
+    "vat": "DPH",
+    "nonVat": "Neplatca DPH",
+    "getDirections": "Zobraziť trasu",
+    "formTitle": "Napíšte nám",
+    "form": {
+      "name": "Meno",
+      "namePlaceholder": "Vaše meno",
+      "email": "E-mail",
+      "emailPlaceholder": "vas@email.sk",
+      "message": "Správa",
+      "messagePlaceholder": "Ako vám môžeme pomôcť?",
+      "send": "Odoslať správu",
+      "sent": "Ďakujeme! Čoskoro sa vám ozveme.",
+      "note": "Toto je placeholder formulár — odosielanie bude doplnené neskôr."
+    }
+  },
+  "footer": {
+    "tagline": "Spojenie kvality a štýlu v každom produkte.",
+    "exploreTitle": "Preskúmať",
+    "companyTitle": "Spoločnosť",
+    "contactTitle": "Kontakt",
+    "rights": "Všetky práva vyhradené.",
+    "nonVat": "Neplatca DPH"
+  }
+}

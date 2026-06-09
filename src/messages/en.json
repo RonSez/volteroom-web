@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "titleDefault": "Volteroom — Designer Switches & Sockets",
+    "titleTemplate": "%s · Volteroom",
+    "description": "Volteroom — quality and style united in every product. New-generation designer switches, sockets and frames in five finishes."
+  },
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalogue",
+    "about": "About",
+    "contact": "Contact",
+    "basket": "Basket",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "language": "Language"
+  },
+  "common": {
+    "addToBasket": "Add to basket",
+    "added": "Added to basket",
+    "viewProduct": "View product",
+    "priceFrom": "from {price}",
+    "explore": "Explore",
+    "learnMore": "Learn more",
+    "viewCatalog": "View catalogue",
+    "getDirections": "Get directions",
+    "callUs": "Call us",
+    "emailUs": "Email us",
+    "close": "Close",
+    "currencyNote": "Prices are indicative; content is placeholder."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A new-generation concept",
+      "title": "Quality and style, united in every product",
+      "subtitle": "Minimalist design taken to perfection — switches, sockets and frames for both classic and modern spaces.",
+      "ctaPrimary": "Explore the catalogue",
+      "ctaSecondary": "Visit us"
+    },
+    "gallery": {
+      "title": "Product presentation",
+      "subtitle": "Discover the concept, features and technical details of the new generation."
+    },
+    "collections": {
+      "title": "Product categories",
+      "subtitle": "One mechanism type, endless design possibilities."
+    },
+    "finishes": {
+      "title": "Five finishes for covers and frames",
+      "subtitle": "A tactile surface texture and monolithic form for a flawless look.",
+      "note": "On-screen colours are indicative."
+    },
+    "features": {
+      "title": "Features of the new generation",
+      "subtitle": "Selected details, reliable mechanisms and a five-year warranty.",
+      "items": [
+        { "title": "Monolithic form", "desc": "No dividers between covers and minimal gaps between frames and panels." },
+        { "title": "9.5 mm frame width", "desc": "Universal 1–5 gang frames with precise alignment." },
+        { "title": "Reliable mechanisms", "desc": "Silver-nickel alloy contacts and screw contacts on every socket." },
+        { "title": "5-year warranty", "desc": "Selected materials and a glass-filled polyamide 66 frame." }
+      ]
+    },
+    "addressCta": {
+      "title": "Visit our showroom",
+      "subtitle": "Come and see the collection in person — we'll help you choose.",
+      "cta": "See the address"
+    },
+    "switchShowcase": {
+      "eyebrow": "Designed around the button",
+      "title": "Built for everyday touch",
+      "subtitle": "Three reasons our large-button switches feel different — in how they look, how they press, and how they last.",
+      "items": [
+        {
+          "title": "Stylish, modern design",
+          "caption": "Large buttons and the absence of partitions between the mechanisms in the multi-gang frames create a cutting-edge and sophisticated look."
+        },
+        {
+          "title": "Comfort",
+          "caption": "Large buttons are very easy to press, even without focusing on them, and their innovative soft-touch surface provides a unique tactile experience."
+        },
+        {
+          "title": "Durability and reliability",
+          "caption": "Switches with large buttons require minimal effort to operate, extending the lifespan of their mechanisms."
+        }
+      ]
+    }
+  },
+  "catalog": {
+    "title": "Catalogue",
+    "subtitle": "Mechanisms, covers and frames — switches, sockets, dimmers and data outlets in five finishes.",
+    "filters": {
+      "title": "Filters",
+      "category": "Category",
+      "kind": "Type",
+      "kindMechanism": "Mechanisms",
+      "kindCover": "Covers & buttons",
+      "kindFrame": "Frames",
+      "finish": "Colour",
+      "gang": "Modules",
+      "all": "All",
+      "allGangs": "All",
+      "clear": "Clear filters",
+      "open": "Filters",
+      "gangUnit": "{count, plural, one {# module} other {# modules}}"
+    },
+    "results": "{count, plural, one {# product} other {# products}}",
+    "empty": "No products match the selected filters."
+  },
+  "product": {
+    "backToCatalog": "Back to catalogue",
+    "finish": "Colour",
+    "gang": "Modules",
+    "gangUnit": "{count, plural, one {# module} other {# modules}}",
+    "article": "Article no.",
+    "specsTitle": "Technical characteristics",
+    "specs": {
+      "componentType": "Component type",
+      "color": "Colour",
+      "connectionMethod": "Connection method",
+      "nominalCurrent": "Nominal current",
+      "protectionDegree": "Protection degree",
+      "temperatureRange": "Temperature range",
+      "marking": "Marking",
+      "dimensions": "Dimensions (H×W×D)",
+      "advantages": "Key advantages",
+      "installationType": "Installation",
+      "fireSafety": "Fire safety & durability"
+    },
+    "orderSeparatelyTitle": "Three-part system",
+    "orderSeparatelyMechanism": "This is the internal mechanism — colour-independent. Order the matching cover or button and a frame in your chosen finish separately.",
+    "orderSeparatelyCover": "Supplied in the finish of your choice. It fits the matching mechanism; order a frame separately.",
+    "orderSeparatelyFrame": "Choose the size and finish. The mechanism and its cover are ordered separately.",
+    "viewMechanisms": "Browse mechanisms",
+    "viewCovers": "Browse covers",
+    "viewFrames": "Browse frames",
+    "kindLabel": {
+      "mechanism": "Mechanism",
+      "cover": "Cover",
+      "frame": "Frame"
+    },
+    "priceNote": "Indicative price. Mechanism, cover and frame are sold separately.",
+    "relatedTitle": "You might also like"
+  },
+  "basket": {
+    "title": "Basket",
+    "empty": "Your basket is empty.",
+    "emptyCta": "Go to catalogue",
+    "product": "Product",
+    "finish": "Colour",
+    "configuration": "Configuration",
+    "qty": "Quantity",
+    "price": "Price",
+    "remove": "Remove",
+    "clear": "Clear basket",
+    "summaryTitle": "Summary",
+    "items": "{count, plural, one {# item} other {# items}}",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "note": "Online payment is not available yet. To order, contact us or visit our showroom.",
+    "enquireCta": "Enquire / visit showroom",
+    "continueShopping": "Continue shopping"
+  },
+  "about": {
+    "title": "About Volteroom",
+    "intro": "Volteroom is a new-generation concept — quality and style united in every product. Minimalist design, reliable mechanisms and selected details for both classic and modern spaces.",
+    "conceptTitle": "A new-generation concept",
+    "concept": [
+      "Elegance and versatility",
+      "Reliable mechanisms and selected details",
+      "Minimalist design taken to perfection",
+      "A stylish interior accessory for classic and modern spaces"
+    ],
+    "suitableTitle": "Suitable for installation in",
+    "suitable": [
+      "Classic and neoclassical residential interiors",
+      "Modern and design apartments",
+      "Offices and conference rooms",
+      "Galleries and public spaces",
+      "HoReCa establishments"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Visit us or send a message — we're happy to help.",
+    "addressTitle": "Address",
+    "detailsTitle": "Contact details",
+    "companyTitle": "Company details",
+    "phone": "Phone",
+    "email": "Email",
+    "director": "Managing director",
+    "ico": "Company ID",
+    "dic": "Tax ID",
+    "vat": "VAT",
+    "nonVat": "Non-VAT payer",
+    "getDirections": "Get directions",
+    "formTitle": "Send us a message",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "send": "Send message",
+      "sent": "Thank you! We'll be in touch soon.",
+      "note": "This is a placeholder form — sending will be wired up later."
+    }
+  },
+  "footer": {
+    "tagline": "Quality and style, united in every product.",
+    "exploreTitle": "Explore",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "nonVat": "Non-VAT payer"
+  }
+}

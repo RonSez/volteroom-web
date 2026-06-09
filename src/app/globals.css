@@ -1,26 +1,377 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Brand */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-from: var(--brand-from);
+  --color-brand-to: var(--brand-to);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Sharp corners with a very slight curve */
+  --radius: 0.3125rem;
+
+  /* "Heaven" — a near-white sky the textured layer sits on */
+  --background: #fbfcfe;
+  --foreground: #0f172a;
+
+  /* Brand blue, broken out so it can tint glass, glows and clouds */
+  --brand-rgb: 3 105 161;        /* #0369A1 */
+  --brand-to-rgb: 0 160 214;     /* #00A0D6 */
+  --sky-tint: rgba(3, 105, 161, 0.06);
+
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
+
+  /* Primary = brand navy */
+  --primary: #0f172a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eef2f7;
+  --secondary-foreground: #0f172a;
+
+  --muted: #e8ecf1;
+  --muted-foreground: #64748b;
+
+  /* shadcn "accent" = subtle hover surface (light blue-tint) */
+  --accent: #e6f1f8;
+  --accent-foreground: #0f172a;
+
+  --destructive: #dc2626;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #0369a1;
+
+  /* Brand accent + gradient (from the logo) */
+  --brand: #0369a1;
+  --brand-foreground: #ffffff;
+  --brand-from: #0b1e3b;
+  --brand-to: #00a0d6;
+}
+
+.dark {
+  --background: #0a0f1c;
+  --foreground: #e8eef6;
+
+  --card: #0f1626;
+  --card-foreground: #e8eef6;
+  --popover: #0f1626;
+  --popover-foreground: #e8eef6;
+
+  --primary: #e8eef6;
+  --primary-foreground: #0f172a;
+
+  --secondary: #1b2436;
+  --secondary-foreground: #e8eef6;
+
+  --muted: #1b2436;
+  --muted-foreground: #94a3b8;
+
+  --accent: #16314a;
+  --accent-foreground: #e8eef6;
+
+  --destructive: #ef4444;
+
+  --border: #ffffff1a;
+  --input: #ffffff26;
+  --ring: #38bdf8;
+
+  --brand: #22a7e0;
+  --brand-foreground: #04121f;
+  --brand-from: #0b1e3b;
+  --brand-to: #00a0d6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground;
+    background-color: var(--background);
+    /* Static sky: faint blue light blooming from the top, fading to white.
+       The animated grain + clouds layer on top via <HeavenBackground />. */
+    background-image:
+      radial-gradient(120% 80% at 80% -10%, rgba(0, 160, 214, 0.10) 0%, rgba(0, 160, 214, 0) 45%),
+      radial-gradient(110% 70% at 10% 0%, rgba(3, 105, 161, 0.07) 0%, rgba(3, 105, 161, 0) 50%),
+      linear-gradient(180deg, #ffffff 0%, var(--background) 60%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-heading tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Brand gradient helpers */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(115deg, var(--brand), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ──────────────────────────────────────────────────────────
+   "Floating in heaven" surface system
+   ────────────────────────────────────────────────────────── */
+
+/* Frosted white panels that appear to float over the sky.
+   Slightly translucent so the textured background reads through. */
+@utility glass {
+  background-color: color-mix(in oklch, var(--card) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+  border: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+    0 18px 40px -24px rgba(15, 23, 42, 0.28),
+    0 4px 12px -8px rgba(15, 23, 42, 0.16);
+}
+
+/* A solid white floating card (more opaque, for content density). */
+@utility floats {
+  background-color: color-mix(in oklch, var(--card) 88%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in oklch, var(--foreground) 7%, transparent);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.85) inset,
+    0 24px 50px -30px rgba(15, 23, 42, 0.30),
+    0 6px 16px -10px rgba(15, 23, 42, 0.14);
+}
+
+/* Hairline blue top accent used to "outline the most important stuff". */
+@utility rule-brand {
+  background-image: linear-gradient(90deg, var(--brand), var(--brand-to));
+}
+
+/* ──────────────────────────────────────────────────────────
+   Liquid-glass buttons  (iOS-26 "Liquid Glass" style)
+   Translucent fill + backdrop blur/saturate for refraction,
+   a bright rim + inset specular highlights for the glossy
+   edge, and a specular sheen that sweeps across on hover.
+   Cross-browser (no SVG-in-backdrop, which only works in
+   Chromium). Pair on the element with `transition-all`,
+   `duration-500` + ease so the lift settles smoothly.
+   The hover lift lives in each colour variant (not here) so
+   it applies deterministically regardless of utility order.
+   ────────────────────────────────────────────────────────── */
+@utility btn-liquid {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  will-change: transform;
+
+  /* Moving specular highlight that sweeps left→right on hover. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background: linear-gradient(
+      115deg,
+      transparent 28%,
+      rgba(255, 255, 255, 0.55) 46%,
+      transparent 60%
+    );
+    transform: translateX(-130%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform: translateX(130%);
+  }
+}
+
+/* Ocean-blue liquid glass: tinted with the brand tokens
+   (#0369A1 → #00A0D6) so it reads as a lighter brand blue.
+   Translucent so the backdrop blur shows real refraction;
+   white text kept legible with a soft shadow. */
+@utility btn-liquid-blue {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04) 52%),
+    linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--brand) 80%, transparent),
+      color-mix(in oklch, var(--brand-to) 74%, transparent)
+    );
+  text-shadow: 0 1px 2px rgba(2, 40, 70, 0.5);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.7),
+    inset -8px -8px 16px -12px rgba(255, 255, 255, 0.9),
+    inset 0 -7px 12px -8px rgba(255, 255, 255, 0.65),
+    0 10px 30px -10px rgba(0, 160, 214, 0.55),
+    0 4px 12px -6px rgba(3, 105, 161, 0.5);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.85),
+      inset -8px -8px 18px -12px rgba(255, 255, 255, 1),
+      inset 0 -7px 14px -8px rgba(255, 255, 255, 0.8),
+      0 22px 44px -12px rgba(0, 160, 214, 0.7),
+      0 8px 20px -8px rgba(3, 105, 161, 0.55);
+    filter: saturate(1.1) brightness(1.05);
+  }
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+/* White liquid glass: frosted, faintly cool-tinted, dark text. */
+@utility btn-liquid-white {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3) 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(220, 236, 248, 0.34));
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset -8px -8px 16px -12px rgba(255, 255, 255, 1),
+    inset 0 -7px 12px -8px rgba(255, 255, 255, 0.9),
+    0 10px 30px -12px rgba(15, 23, 42, 0.22),
+    0 4px 12px -8px rgba(15, 23, 42, 0.16);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 1),
+      inset -8px -8px 18px -12px rgba(255, 255, 255, 1),
+      inset 0 -7px 14px -8px rgba(255, 255, 255, 1),
+      0 22px 44px -14px rgba(3, 105, 161, 0.3),
+      0 8px 20px -10px rgba(15, 23, 42, 0.2);
+    filter: brightness(1.03);
+  }
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+/* Idle vertical float, used on hero accents. */
+@utility animate-float {
+  animation: vr-float 7s ease-in-out infinite;
+}
+
+@keyframes vr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Slow cloud drift for the textured background layer. */
+@keyframes vr-drift {
+  0% { transform: translate3d(var(--px, 0), var(--py, 0), 0) scale(1); }
+  50% { transform: translate3d(calc(var(--px, 0) + 4%), calc(var(--py, 0) - 3%), 0) scale(1.06); }
+  100% { transform: translate3d(var(--px, 0), var(--py, 0), 0) scale(1); }
+}
+
+/* Gentle one-shot rise used for above-the-fold reveals (CSS-only, no JS). */
+@keyframes vr-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-rise {
+  animation: vr-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Hero media reel — cross-fade slides + slow Ken-Burns zoom.
+   The media rests at the zoom END scale, so when a slide loses
+   `.is-active` its animation is removed and the transform reverts
+   to that same end value — no visible snap as it fades out.
+   The ease-out front-loads the motion so it has all but finished
+   by the time the next slide takes over.
+   ────────────────────────────────────────────────────────── */
+.hero-slide-media {
+  transform: scale(1.14);
+}
+
+.hero-slide.is-active .hero-slide-media {
+  animation: vr-kenburns 3400ms ease-out both;
+}
+
+@keyframes vr-kenburns {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-rise {
+    animation: none !important;
+  }
+  /* Hold a calm, near-1:1 frame instead of the zoomed end-state. */
+  .hero-slide-media {
+    transform: scale(1.02);
+  }
 }
