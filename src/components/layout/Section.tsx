@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function Section({
   children,
@@ -42,28 +43,34 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p
-          className={cn(
-            "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-brand",
-            align === "center" && "justify-center",
-          )}
-        >
-          <span className="rule-brand h-px w-8 rounded-full" aria-hidden />
-          {eyebrow}
-        </p>
+        <Reveal>
+          <p
+            className={cn(
+              "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-brand",
+              align === "center" && "justify-center",
+            )}
+          >
+            <span className="rule-brand h-px w-8 rounded-full" aria-hidden />
+            {eyebrow}
+          </p>
+        </Reveal>
       )}
-      <h2 className="text-balance font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        {title}
-      </h2>
+      <Reveal delay={eyebrow ? 80 : 0}>
+        <h2 className="text-shimmer text-balance font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+          {title}
+        </h2>
+      </Reveal>
       {subtitle && (
-        <p
-          className={cn(
-            "mt-4 text-base font-light leading-relaxed text-muted-foreground",
-            align === "center" && "mx-auto max-w-xl",
-          )}
-        >
-          {subtitle}
-        </p>
+        <Reveal delay={eyebrow ? 160 : 80}>
+          <p
+            className={cn(
+              "mt-4 text-base font-light leading-relaxed text-muted-foreground",
+              align === "center" && "mx-auto max-w-xl",
+            )}
+          >
+            {subtitle}
+          </p>
+        </Reveal>
       )}
     </div>
   );

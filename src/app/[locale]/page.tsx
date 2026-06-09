@@ -13,6 +13,7 @@ import { FeatureGrid } from "@/components/home/FeatureGrid";
 import { SwitchShowcase } from "@/components/home/SwitchShowcase";
 import { AddressCta } from "@/components/home/AddressCta";
 import { ProductCard } from "@/components/catalog/ProductCard";
+import { Reveal } from "@/components/ui/Reveal";
 import { getFeaturedProducts } from "@/lib/catalog";
 import type { Product } from "@/data/catalog";
 
@@ -51,9 +52,9 @@ function HomeContent({ featured }: { featured: Product[] }) {
           title={t("home.gallery.title")}
           subtitle={t("home.gallery.subtitle")}
         />
-        <div className="mt-12">
+        <Reveal className="mt-12">
           <PresentationGallery />
-        </div>
+        </Reveal>
       </Section>
 
       <Section className="py-16 sm:py-20">
@@ -71,8 +72,10 @@ function HomeContent({ featured }: { featured: Product[] }) {
           </Link>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-          {featured.map((p) => (
-            <ProductCard key={p.slug} product={p} />
+          {featured.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 70} className="h-full">
+              <ProductCard product={p} />
+            </Reveal>
           ))}
         </div>
       </Section>

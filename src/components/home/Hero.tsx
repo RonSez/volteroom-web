@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { HeroMedia } from "./HeroMedia";
+import { HeroStarfield } from "./HeroStarfield";
 
 export function Hero() {
   const t = useTranslations("home");
@@ -13,7 +14,9 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-8 lg:py-28">
+      {/* Space-like stars + meteors over the textured heaven background. */}
+      <HeroStarfield />
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-8 lg:py-28">
         {/* ── Copy ───────────────────────────────────────────── */}
         <div className="relative animate-rise">
           <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand">
@@ -21,7 +24,7 @@ export function Hero() {
             {t("hero.eyebrow")}
           </p>
 
-          <h1 className="text-balance font-heading text-[2.6rem] font-bold leading-[1.04] tracking-tight text-foreground sm:text-5xl lg:text-[3.75rem]">
+          <h1 className="text-shimmer text-balance font-heading text-[2.6rem] font-bold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.75rem]">
             {t("hero.title")}
           </h1>
 

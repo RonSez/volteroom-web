@@ -19,7 +19,7 @@ export async function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/catalog/${product.slug}`}
-      className="floats group relative flex flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <div className="relative overflow-hidden bg-gradient-to-b from-white to-secondary/50">
         <ProductImage

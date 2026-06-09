@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig, mapsLinkUrl } from "@/lib/site";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function AddressCta() {
   const t = useTranslations("home.addressCta");
@@ -23,19 +24,25 @@ export function AddressCta() {
         />
         <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-xl">
-            <h2 className="font-heading text-3xl font-bold sm:text-4xl">
-              {t("title")}
-            </h2>
-            <p className="mt-3 text-primary-foreground/75">{t("subtitle")}</p>
-            <p className="mt-6 flex items-start gap-2 text-lg font-medium">
-              <MapPin className="mt-1 size-5 shrink-0 text-[color:var(--brand-to)]" />
-              <span>
-                {siteConfig.address.street}
-                <br />
-                {siteConfig.address.zip} {siteConfig.address.city},{" "}
-                {siteConfig.address.country}
-              </span>
-            </p>
+            <Reveal>
+              <h2 className="font-heading text-3xl font-bold sm:text-4xl">
+                {t("title")}
+              </h2>
+            </Reveal>
+            <Reveal delay={80}>
+              <p className="mt-3 text-primary-foreground/75">{t("subtitle")}</p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-6 flex items-start gap-2 text-lg font-medium">
+                <MapPin className="mt-1 size-5 shrink-0 text-[color:var(--brand-to)]" />
+                <span>
+                  {siteConfig.address.street}
+                  <br />
+                  {siteConfig.address.zip} {siteConfig.address.city},{" "}
+                  {siteConfig.address.country}
+                </span>
+              </p>
+            </Reveal>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Link

@@ -156,14 +156,15 @@ export interface Product {
 /** Neutral swatch colour for mechanisms (the moulded "Space gray" body). */
 export const NEUTRAL_FINISH_HEX = "#9AA0A6";
 
-const en = (s: string): Localized => ({ sk: s, en: s, cs: s });
+/** Build a localized string from its three translations (en = source). */
+const L = (sk: string, en: string, cs: string): Localized => ({ sk, en, cs });
 
 export const finishes: Finish[] = [
-  { id: "glossy-white", code: "GLW", hex: "#F4F5F6", light: true, name: en("Glossy White") },
-  { id: "soft-touch-white", code: "MW", hex: "#ECEBE7", light: true, name: en("Soft Touch White") },
-  { id: "soft-touch-cashmere", code: "CH", hex: "#D7CCB8", light: true, name: en("Soft Touch Cashmere") },
-  { id: "graphite", code: "GRF", hex: "#55585D", name: en("Graphite") },
-  { id: "soft-touch-carbon", code: "FBK", hex: "#2C2C2E", name: en("Soft Touch Carbon") },
+  { id: "glossy-white", code: "GLW", hex: "#F4F5F6", light: true, name: L("Lesklá biela", "Glossy White", "Lesklá bílá") },
+  { id: "soft-touch-white", code: "MW", hex: "#ECEBE7", light: true, name: L("Soft touch biela", "Soft Touch White", "Soft touch bílá") },
+  { id: "soft-touch-cashmere", code: "CH", hex: "#D7CCB8", light: true, name: L("Soft touch kašmír", "Soft Touch Cashmere", "Soft touch kašmír") },
+  { id: "graphite", code: "GRF", hex: "#55585D", name: L("Grafit", "Graphite", "Grafit") },
+  { id: "soft-touch-carbon", code: "FBK", hex: "#2C2C2E", name: L("Soft touch karbón", "Soft Touch Carbon", "Soft touch karbon") },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -173,43 +174,75 @@ export const finishes: Finish[] = [
 export const categories: Category[] = [
   {
     id: "switches",
-    name: en("Switches"),
-    tagline: en("One- to three-gang switches — one-way, two-way and intermediate."),
+    name: L("Spínače", "Switches", "Spínače"),
+    tagline: L(
+      "Jedno- až trojnásobné spínače – jednopólové, striedavé a krížové.",
+      "One- to three-gang switches — one-way, two-way and intermediate.",
+      "Jedno- až trojnásobné spínače – jednopólové, střídavé a křížové.",
+    ),
   },
   {
     id: "sockets",
-    name: en("Sockets"),
-    tagline: en("French-standard socket outlets with pin earthing and shutters."),
+    name: L("Zásuvky", "Sockets", "Zásuvky"),
+    tagline: L(
+      "Zásuvky vo francúzskom štandarde s kolíkovým uzemnením a clonkami.",
+      "French-standard socket outlets with pin earthing and shutters.",
+      "Zásuvky ve francouzském standardu s kolíkovým uzemněním a clonkami.",
+    ),
   },
   {
     id: "usb-charging",
-    name: en("USB & Charging"),
-    tagline: en("USB-A + USB-C 20 W chargers for phones, tablets and more."),
+    name: L("USB a nabíjanie", "USB & Charging", "USB a nabíjení"),
+    tagline: L(
+      "Nabíjačky USB-A + USB-C 20 W pre telefóny, tablety a ďalšie zariadenia.",
+      "USB-A + USB-C 20 W chargers for phones, tablets and more.",
+      "Nabíječky USB-A + USB-C 20 W pro telefony, tablety a další zařízení.",
+    ),
   },
   {
     id: "data-media",
-    name: en("Data & Media"),
-    tagline: en("RJ45 CAT 6, HDMI 2.0a and TV/coaxial outlets."),
+    name: L("Dáta a médiá", "Data & Media", "Data a média"),
+    tagline: L(
+      "Zásuvky RJ45 CAT 6, HDMI 2.0a a TV/koaxiálne.",
+      "RJ45 CAT 6, HDMI 2.0a and TV/coaxial outlets.",
+      "Zásuvky RJ45 CAT 6, HDMI 2.0a a TV/koaxiální.",
+    ),
   },
   {
     id: "dimmers",
-    name: en("Dimmers"),
-    tagline: en("Triac rotary LED dimmers for residential and commercial lighting."),
+    name: L("Stmievače", "Dimmers", "Stmívače"),
+    tagline: L(
+      "Triakové otočné LED stmievače pre obytné a komerčné osvetlenie.",
+      "Triac rotary LED dimmers for residential and commercial lighting.",
+      "Triakové otočné LED stmívače pro obytné a komerční osvětlení.",
+    ),
   },
   {
     id: "climate",
-    name: en("Climate"),
-    tagline: en("Electronic thermostats for underfloor heating."),
+    name: L("Klíma", "Climate", "Klima"),
+    tagline: L(
+      "Elektronické termostaty pre podlahové vykurovanie.",
+      "Electronic thermostats for underfloor heating.",
+      "Elektronické termostaty pro podlahové vytápění.",
+    ),
   },
   {
     id: "frames",
-    name: en("Frames"),
-    tagline: en("Universal 1–5 gang frames, just 9.5 mm slim."),
+    name: L("Rámiky", "Frames", "Rámečky"),
+    tagline: L(
+      "Univerzálne rámiky pre 1 – 5 prvkov, tenké iba 9,5 mm.",
+      "Universal 1–5 gang frames, just 9.5 mm slim.",
+      "Univerzální rámečky pro 1–5 prvků, tenké jen 9,5 mm.",
+    ),
   },
   {
     id: "accessories",
-    name: en("Accessories"),
-    tagline: en("Blank plates and cable outlets to complete the set."),
+    name: L("Príslušenstvo", "Accessories", "Příslušenství"),
+    tagline: L(
+      "Záslepky a káblové vývody na dokončenie zostavy.",
+      "Blank plates and cable outlets to complete the set.",
+      "Záslepky a kabelové vývody pro dokončení sestavy.",
+    ),
   },
 ];
 

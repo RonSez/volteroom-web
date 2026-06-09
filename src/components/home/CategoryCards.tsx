@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getCategories } from "@/lib/catalog";
 import { ProductVisual } from "@/components/catalog/ProductVisual";
+import { Reveal } from "@/components/ui/Reveal";
 
 const REPRESENTATIVE_HEX = "#3B3E43"; // matte titanium
 
@@ -13,11 +14,11 @@ export async function CategoryCards() {
 
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {categories.map((cat) => (
+      {categories.map((cat, i) => (
+        <Reveal key={cat.id} delay={i * 70} className="h-full">
         <Link
-          key={cat.id}
           href={`/catalog?category=${cat.id}`}
-          className="floats group flex flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="floats group flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <div className="relative overflow-hidden bg-gradient-to-b from-white to-secondary/60">
             <ProductVisual
@@ -39,6 +40,7 @@ export async function CategoryCards() {
             </span>
           </div>
         </Link>
+        </Reveal>
       ))}
     </div>
   );

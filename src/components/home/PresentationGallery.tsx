@@ -5,6 +5,10 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+  InteractivePhotoStack,
+  type PhotoStackItem,
+} from "@/components/ui/photo-stack";
 import { presentationSlides } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +16,10 @@ export function PresentationGallery() {
   const t = useTranslations("home.gallery");
   const [active, setActive] = useState<number | null>(null);
   const slides = presentationSlides;
+
+  // Same brand-deck slides as before — now presented as an interactive,
+  // hover-to-spread photo stack. Clicking a card opens the full-size lightbox.
+  const items: PhotoStackItem[] = slides.map((slide) => ({ src: slide.src }));
 
   const open = active !== null;
   const go = (dir: number) =>
@@ -21,25 +29,7 @@ export function PresentationGallery() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-        {slides.map((slide, i) => (
-          <button
-            key={slide.id}
-            type="button"
-            onClick={() => setActive(i)}
-            className="floats group relative aspect-video overflow-hidden rounded-xl ring-offset-background transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-            aria-label={`${t("title")} ${slide.id}`}
-          >
-            <Image
-              src={slide.src}
-              alt=""
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-            />
-          </button>
-        ))}
-      </div>
+      <InteractivePhotoStack items={items} onItemClick={(i) => setActive(i)} />
 
       <Dialog open={open} onOpenChange={(o) => !o && setActive(null)}>
         <DialogContent

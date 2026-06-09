@@ -62,6 +62,14 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col">
+        {/* Set the reveal flag before paint so <Reveal> elements start hidden
+            without flashing, and stay visible if JS is disabled. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.setAttribute('data-reveal-ready','');",
+          }}
+        />
         <NextIntlClientProvider>
           <HeavenBackground />
           <Header />

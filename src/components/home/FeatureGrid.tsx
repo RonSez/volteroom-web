@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Boxes, Ruler, ShieldCheck, BadgeCheck, type LucideIcon } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
 const ICONS: LucideIcon[] = [Boxes, Ruler, ShieldCheck, BadgeCheck];
 
@@ -12,9 +13,9 @@ export function FeatureGrid() {
       {items.map((item, i) => {
         const Icon = ICONS[i % ICONS.length];
         return (
+          <Reveal key={i} delay={i * 70} className="h-full">
           <div
-            key={i}
-            className="floats group rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
+            className="floats group h-full rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
           >
             <span className="grid size-11 place-items-center rounded-xl bg-brand-gradient text-white shadow-[0_10px_24px_-12px_rgba(3,105,161,0.8)] transition-transform duration-300 group-hover:scale-105">
               <Icon className="size-5" />
@@ -26,6 +27,7 @@ export function FeatureGrid() {
               {item.desc}
             </p>
           </div>
+          </Reveal>
         );
       })}
     </div>
