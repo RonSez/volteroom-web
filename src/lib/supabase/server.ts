@@ -7,8 +7,8 @@ import { SUPABASE_ANON_KEY, SUPABASE_URL } from "./env";
  * Handlers, and Server Actions. `cookies()` is async in Next 16.
  *
  * During an RSC render, cookies cannot be written — the `setAll` try/catch
- * swallows that. Session refresh happens in `src/proxy.ts` instead, so the
- * thrown-and-ignored write here is harmless.
+ * swallows that. Session refresh happens in `src/middleware.ts` instead, so
+ * the thrown-and-ignored write here is harmless.
  */
 export async function createClient() {
   const cookieStore = await cookies();
@@ -24,7 +24,7 @@ export async function createClient() {
             cookieStore.set(name, value, options);
           }
         } catch {
-          // Called from a Server Component render — ignore; proxy refreshes.
+          // Called from a Server Component render — ignore; middleware refreshes.
         }
       },
     },
