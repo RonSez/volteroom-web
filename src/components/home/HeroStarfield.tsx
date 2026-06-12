@@ -61,13 +61,14 @@ const STARS: Star[] = Array.from({ length: 60 }, () => ({
 }));
 
 // A handful of meteors, mostly in the upper area so the streak is long.
-const METEORS: Meteor[] = Array.from({ length: 12 }, () => ({
+// Kept sparse and slow so streaks arrive occasionally rather than constantly.
+const METEORS: Meteor[] = Array.from({ length: 5 }, () => ({
   top: `${(-5 + rand() * 55).toFixed(2)}%`,
   left: `${(20 + rand() * 80).toFixed(2)}%`,
   angle: +(210 + rand() * 14).toFixed(2),
   length: Math.round(70 + rand() * 90),
-  dur: +(3 + rand() * 2.5).toFixed(2),
-  delay: +(rand() * 4).toFixed(2),
+  dur: +(4.5 + rand() * 3).toFixed(2),
+  delay: +(rand() * 8).toFixed(2),
 }));
 
 export function HeroStarfield() {
