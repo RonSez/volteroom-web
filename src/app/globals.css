@@ -353,14 +353,32 @@
   transform: translateY(16px);
   transition:
     opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
+}
+
+/* Directional / scale / blur variants — same opacity fade, different start
+   offset (see <Reveal variant>). Default (no attribute) stays a fade-up. */
+[data-reveal-ready] .reveal[data-variant="fade-left"] {
+  transform: translateX(-26px);
+}
+[data-reveal-ready] .reveal[data-variant="fade-right"] {
+  transform: translateX(26px);
+}
+[data-reveal-ready] .reveal[data-variant="scale"] {
+  transform: scale(0.94);
+}
+[data-reveal-ready] .reveal[data-variant="blur"] {
+  transform: translateY(16px);
+  filter: blur(10px);
 }
 
 [data-reveal-ready] .reveal.is-visible {
   opacity: 1;
   transform: none;
+  filter: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -368,6 +386,32 @@
   [data-reveal-ready] .reveal.is-visible {
     opacity: 1;
     transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+/* Brand hairline beneath a section heading that "draws" in (scaleX 0 → 1) the
+   first time the heading reveals. Origin follows the heading's alignment.
+   Without JS the start state is never applied, so the rule sits full-width. */
+[data-reveal-ready] .reveal .rule-draw {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--reveal-delay, 0ms) + 140ms);
+  will-change: transform;
+}
+[data-reveal-ready] .reveal .rule-draw.is-centered {
+  transform-origin: center;
+}
+[data-reveal-ready] .reveal.is-visible .rule-draw {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-ready] .reveal .rule-draw,
+  [data-reveal-ready] .reveal.is-visible .rule-draw {
+    transform: scaleX(1);
     transition: none;
   }
 }

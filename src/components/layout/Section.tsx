@@ -59,6 +59,14 @@ export function SectionHeading({
         <h2 className="text-shimmer text-balance font-heading text-3xl font-bold tracking-tight sm:text-4xl">
           {title}
         </h2>
+        {/* Brand hairline that draws in (scaleX) once the title reveals. */}
+        <span
+          aria-hidden
+          className={cn(
+            "rule-brand rule-draw mt-5 block h-0.5 w-16 rounded-full",
+            align === "center" && "is-centered mx-auto",
+          )}
+        />
       </Reveal>
       {subtitle && (
         <Reveal delay={eyebrow ? 160 : 80}>

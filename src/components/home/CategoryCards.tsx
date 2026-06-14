@@ -15,7 +15,12 @@ export async function CategoryCards() {
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map((cat, i) => (
-        <Reveal key={cat.id} delay={i * 70} className="h-full">
+        <Reveal
+          key={cat.id}
+          delay={i * 70}
+          variant={i % 2 === 0 ? "fade-left" : "fade-right"}
+          className="h-full"
+        >
         <Link
           href={`/catalog?category=${cat.id}`}
           className="floats group flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Space-like backdrop for the hero.
@@ -10,6 +10,10 @@ import { useEffect, useState } from "react";
  * it. We paint two things in the brand blues:
  *   • a field of faint, light-blue stars that slowly twinkle, and
  *   • a few meteors that streak diagonally down-right with a fading tail.
+ *
+ * As the hero scrolls away the whole field drifts up at ~0.3× scroll speed and
+ * fades out — a gentle parallax exit that gives the section depth. The handler
+ * is rAF-throttled and only attached when motion is allowed.
  *
  * Data is generated from a fixed seed so the server and first client render
  * produce identical markup (no hydration mismatch). Motion follows the same
@@ -72,6 +76,7 @@ const METEORS: Meteor[] = Array.from({ length: 5 }, () => ({
 }));
 
 export function HeroStarfield() {
+  const ref = useRef<HTMLDivElement>(null);
   // Start reduced so SSR/first paint is static; the effect relaxes it.
   const [reduced, setReduced] = useState(true);
 
@@ -83,10 +88,42 @@ export function HeroStarfield() {
     return () => mq.removeEventListener("change", sync);
   }, []);
 
+  // Scroll parallax + fade: lag the field behind the page and dissolve it as
+  // the hero leaves the viewport. Off entirely under reduced motion.
+  useEffect(() => {
+    if (reduced) return;
+    const el = ref.current;
+    if (!el) return;
+    const hero = el.parentElement;
+
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const h = hero?.offsetHeight || window.innerHeight;
+      const y = window.scrollY;
+      const p = Math.min(Math.max(y / h, 0), 1);
+      el.style.transform = `translate3d(0, ${(y * 0.3).toFixed(1)}px, 0)`;
+      el.style.opacity = (1 - p).toFixed(3);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+      el.style.transform = "";
+      el.style.opacity = "";
+    };
+  }, [reduced]);
+
   return (
     <div
+      ref={ref}
       aria-hidden
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden will-change-transform"
     >
       {STARS.map((s, i) => (
         <span

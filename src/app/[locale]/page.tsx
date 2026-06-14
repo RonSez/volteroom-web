@@ -52,7 +52,7 @@ function HomeContent({ featured }: { featured: Product[] }) {
           title={t("home.gallery.title")}
           subtitle={t("home.gallery.subtitle")}
         />
-        <Reveal className="mt-12">
+        <Reveal variant="scale" className="mt-12">
           <PresentationGallery />
         </Reveal>
       </Section>
