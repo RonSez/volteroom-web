@@ -79,6 +79,7 @@ const InteractivePhotoStack = React.forwardRef<
   const [topCardIndex, setTopCardIndex] = React.useState(0);
   const [isGroupHovered, setIsGroupHovered] = React.useState(false);
   const [clickedIndex, setClickedIndex] = React.useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
   const [spreadTransforms, setSpreadTransforms] = React.useState<string[]>([]);
 
   const numItems = items.length;
@@ -118,7 +119,10 @@ const InteractivePhotoStack = React.forwardRef<
       <div
         className="relative h-[26rem] w-full overflow-hidden [perspective:1200px]"
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={() => clickedIndex === null && setIsGroupHovered(false)}
+        onMouseLeave={() => {
+          setHoveredIndex(null);
+          if (clickedIndex === null) setIsGroupHovered(false);
+        }}
       >
         <div className="relative left-1/2 top-1/2 h-48 w-80 -translate-x-1/2 -translate-y-1/2">
           {items.map((item, index) => {
@@ -137,8 +141,16 @@ const InteractivePhotoStack = React.forwardRef<
               <div
                 key={item.src}
                 onClick={() => handleCardClick(index)}
+                onMouseEnter={() => isGroupHovered && setHoveredIndex(index)}
                 className={cn(
-                  "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-lg transition-all duration-500 ease-in-out",
+                  // Transition only transform-related props — NOT `all`.
+                  // `transition-all` also animates `z-index` (an integer-
+                  // interpolated property), so on every hover/spread the
+                  // stacking order would slide through intermediate values and
+                  // cards would cross each other mid-animation — the "blink".
+                  // Scoping to transform keeps movement smooth while z-index
+                  // switches instantly.
+                  "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-lg transition-transform duration-500 ease-in-out",
                   {
                     "rotate-0": isGroupHovered,
                     [baseRotations[stackPosition % baseRotations.length]]:
@@ -152,7 +164,12 @@ const InteractivePhotoStack = React.forwardRef<
                   zIndex: isClicked
                     ? 200
                     : isGroupHovered
-                      ? 100
+                      ? // Lift the hovered card above the flat spread plane so
+                        // the scaled-up card never dips behind an overlapping
+                        // neighbour (the source of the stacking "blink").
+                        index === hoveredIndex
+                        ? 150
+                        : 100
                       : isTopCard
                         ? numItems
                         : numItems - stackPosition,
