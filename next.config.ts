@@ -5,8 +5,12 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 // Makes Cloudflare bindings (env, R2, Images, etc.) available during
-// `next dev`. No-op in production builds.
-initOpenNextCloudflareForDev();
+// `next dev`. Guarded to dev only: during `next build` its internal check
+// still fires and tries to spawn wrangler, which breaks non-Cloudflare
+// builders (e.g. Vercel) with an EPIPE crash.
+if (process.env.NODE_ENV === "development") {
+  initOpenNextCloudflareForDev();
+}
 
 // Allow next/image to load product photos from the Supabase Storage host.
 const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
