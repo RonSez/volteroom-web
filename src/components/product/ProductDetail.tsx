@@ -3,13 +3,14 @@
 import { useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
-import { ShoppingBag, Layers, ArrowRight } from "lucide-react";
+import { ShoppingBag, Layers, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
   type Product,
   type Finish,
   type ProductView,
+  type ProductImageInfo,
   SPEC_ORDER,
   resolveSku,
   NEUTRAL_FINISH_HEX,
@@ -49,17 +50,22 @@ export function ProductDetail({
   const swatchHex = finish?.hex ?? NEUTRAL_FINISH_HEX;
   const sku = resolveSku(product, finishId, gang);
 
-  // Gallery images for the current finish (front photos can be per-finish).
+  // Gallery images for the current selection: front photos can be per-finish,
+  // frame diagrams are per-gang. Images with neither set apply to all.
   const images = useMemo(() => {
     if (!product.images?.length) return [];
     return product.images
-      .filter((im) => !im.finishId || im.finishId === finishId)
+      .filter(
+        (im) =>
+          (!im.finishId || im.finishId === finishId) &&
+          (!im.gang || im.gang === gang),
+      )
       .sort(
         (a, b) =>
           (VIEW_ORDER[a.view ?? "front"] ?? 9) -
           (VIEW_ORDER[b.view ?? "front"] ?? 9),
       );
-  }, [product.images, finishId]);
+  }, [product.images, finishId, gang]);
 
   function add() {
     addItem({ slug: product.slug, finishId, gang });
@@ -87,8 +93,8 @@ export function ProductDetail({
       {/* Gallery */}
       <div className="lg:sticky lg:top-24 lg:self-start">
         <Gallery
-          key={finishId ?? "none"}
-          images={images.map((im) => im.url)}
+          key={`${finishId ?? "none"}-${gang ?? 0}`}
+          images={images}
           alt={product.name[locale]}
           category={product.category}
           hex={swatchHex}
@@ -212,33 +218,67 @@ function Gallery({
   hex,
   gang,
 }: {
-  images: string[];
+  images: ProductImageInfo[];
   alt: string;
   category: Product["category"];
   hex: string;
   gang: number;
 }) {
-  const [active, setActive] = useState(0);
+  // Slide 0 is the main photo. Until a real (non-diagram) photo is uploaded it
+  // stays the placeholder, with the line diagrams following it. A `null` url
+  // renders the SVG placeholder; diagrams are letterboxed (not cropped).
+  const hasMain = images.some((im) => (im.view ?? "front") !== "diagram");
+  const photoSlides = images.map((im) => ({
+    url: im.url,
+    diagram: (im.view ?? "front") === "diagram",
+  }));
+  const slides: { url: string | null; diagram: boolean }[] = hasMain
+    ? photoSlides
+    : [{ url: null, diagram: false }, ...photoSlides];
 
-  if (images.length === 0) {
-    return <ProductImage alt={alt} category={category} hex={hex} gang={gang} sizes="(min-width: 1024px) 50vw, 100vw" />;
-  }
+  const [active, setActive] = useState(0);
+  const count = slides.length;
+  const current = slides[Math.min(active, count - 1)];
+  const go = (dir: number) => setActive((cur) => (cur + dir + count) % count);
 
   return (
     <div>
-      <ProductImage
-        imageUrl={images[Math.min(active, images.length - 1)]}
-        alt={alt}
-        category={category}
-        hex={hex}
-        gang={gang}
-        sizes="(min-width: 1024px) 50vw, 100vw"
-      />
-      {images.length > 1 && (
-        <div className="mt-3 flex gap-3">
-          {images.map((url, i) => (
+      <div className="relative">
+        <ProductImage
+          imageUrl={current?.url ?? undefined}
+          alt={alt}
+          category={category}
+          hex={hex}
+          gang={gang}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          contain={current?.diagram}
+        />
+        {count > 1 && (
+          <>
             <button
-              key={url}
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous image"
+              className="absolute left-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-border bg-background/80 text-foreground shadow-sm backdrop-blur transition-colors hover:bg-background"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next image"
+              className="absolute right-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-border bg-background/80 text-foreground shadow-sm backdrop-blur transition-colors hover:bg-background"
+            >
+              <ChevronRight className="size-5" />
+            </button>
+          </>
+        )}
+      </div>
+      {count > 1 && (
+        <div className="mt-3 flex gap-3">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.url ?? `placeholder-${i}`}
               type="button"
               onClick={() => setActive(i)}
               className={cn(
@@ -247,13 +287,14 @@ function Gallery({
               )}
             >
               <ProductImage
-                imageUrl={url}
+                imageUrl={slide.url ?? undefined}
                 alt={`${alt} ${i + 1}`}
                 category={category}
                 hex={hex}
                 gang={gang}
                 className="rounded-md"
                 sizes="80px"
+                contain={slide.diagram}
               />
             </button>
           ))}

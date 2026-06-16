@@ -13,7 +13,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:catalog": "tsx scripts/build-catalog.ts",
     "db:migrate": "tsx scripts/db-migrate.ts",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed.ts",
+    "upload:diagrams": "tsx scripts/upload-diagrams.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

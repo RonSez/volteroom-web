@@ -100,6 +100,8 @@ export interface ProductImageInfo {
   view?: ProductView;
   /** For covers/frames: the finish this front photo depicts (so it swaps with selection). */
   finishId?: FinishId;
+  /** For frames: the gang this diagram depicts (so it swaps with the gang selector). */
+  gang?: number;
   isPrimary?: boolean;
 }
 

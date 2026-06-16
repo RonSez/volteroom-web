@@ -72,6 +72,7 @@ interface ProductImageRow {
   storage_path: string;
   view: ProductView | null;
   finish_id: FinishId | null;
+  gang: number | null;
   is_primary: boolean;
   sort_order: number;
 }
@@ -94,7 +95,7 @@ const loadCatalog = unstable_cache(
       sb.from("product_finishes").select("*"),
       sb
         .from("product_images")
-        .select("product_id, storage_path, view, finish_id, is_primary, sort_order")
+        .select("product_id, storage_path, view, finish_id, gang, is_primary, sort_order")
         .order("is_primary", { ascending: false })
         .order("sort_order"),
     ]);
@@ -115,6 +116,7 @@ const loadCatalog = unstable_cache(
         url: data.publicUrl,
         view: row.view ?? undefined,
         finishId: row.finish_id ?? undefined,
+        gang: row.gang ?? undefined,
         isPrimary: row.is_primary || undefined,
       });
       imagesByProduct.set(row.product_id, list);
@@ -165,7 +167,9 @@ const loadCatalog = unstable_cache(
             )
           : undefined,
         featured: p.featured || undefined,
-        imageUrl: images?.[0]?.url,
+        // Catalog-card thumbnail: the first real photo, never a line diagram, so
+        // products with only diagrams keep their placeholder until a photo lands.
+        imageUrl: images?.find((im) => (im.view ?? "front") !== "diagram")?.url,
         images: images && images.length ? images : undefined,
       };
     });
