@@ -123,6 +123,14 @@ export function ProductDetail({
           {product.description[locale]}
         </p>
 
+        {/* Covers/buttons ship without a frame — except the double socket cover
+            E08ZB203, which is designed to mount without one. */}
+        {product.kind === "cover" && product.slug !== "e08zb203" && (
+          <p className="mt-3 max-w-prose text-sm font-medium text-foreground/90">
+            {t("frameNotIncluded")}
+          </p>
+        )}
+
         {/* Finish */}
         {hasFinish && (
           <div className="mt-8">

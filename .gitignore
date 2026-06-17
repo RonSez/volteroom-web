@@ -48,3 +48,5 @@ next-env.d.ts
 
 # local product-image assets staged for upload (scripts/upload-diagrams.ts)
 /scripts/diagrams/
+# carbon (FBK) front photos staged for upload (scripts/upload-carbon.ts)
+/scripts/carbon/
