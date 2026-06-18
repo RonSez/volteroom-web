@@ -72,6 +72,8 @@ const MAP: Record<string, Placement> = {
   "E08KB215-FBK": { slug: "e08kb215", primary: true, sort: 0 },
   "E08ZB103-FBK": { slug: "e08zb103", primary: true, sort: 0 },
   "E08ZB203-FBK": { slug: "e08zb203", primary: true, sort: 0 },
+  "E08ZB104-FBK": { slug: "e08zb104", primary: true, sort: 0 },
+  "E08ZB104-FBK-2": { slug: "e08zb104", primary: false, sort: 1 },
   "E08TB227-FBK": { slug: "e08tb227", primary: true, sort: 0 },
   "E08TB102-FBK": { slug: "e08tb102", primary: true, sort: 0 },
   "E08TB222-FBK": { slug: "e08tb222", primary: true, sort: 0 },
