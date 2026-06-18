@@ -16,7 +16,6 @@ export function ProductImage({
   gang = 1,
   className,
   sizes = "(min-width: 1024px) 25vw, 50vw",
-  contain = false,
 }: {
   imageUrl?: string;
   alt: string;
@@ -25,8 +24,6 @@ export function ProductImage({
   gang?: number;
   className?: string;
   sizes?: string;
-  /** Fit the whole image without cropping (e.g. line diagrams). Default: cover. */
-  contain?: boolean;
 }) {
   if (!imageUrl) {
     return (
@@ -37,8 +34,7 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        "relative aspect-square w-full overflow-hidden rounded-xl",
-        contain ? "bg-white" : "bg-muted",
+        "relative aspect-square w-full overflow-hidden rounded-xl bg-white",
         className,
       )}
     >
@@ -47,7 +43,7 @@ export function ProductImage({
         alt={alt}
         fill
         sizes={sizes}
-        className={contain ? "object-contain" : "object-cover"}
+        className="object-contain"
       />
     </div>
   );
