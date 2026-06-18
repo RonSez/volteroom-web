@@ -88,6 +88,7 @@ export function SwitchSlideshow({ images }: { images: string[] }) {
                 alt={slide.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-cover"
                 priority={active === 0}
               />

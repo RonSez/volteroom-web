@@ -43,6 +43,7 @@ export function ProductImage({
         alt={alt}
         fill
         sizes={sizes}
+        quality={90}
         className="object-contain"
       />
     </div>

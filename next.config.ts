@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    // Next 16 defaults images.qualities to [75]; whitelist 90 so the
+    // `quality={90}` props on our <Image>s aren't coerced back down to 75.
+    qualities: [75, 90],
     remotePatterns: supabaseHost
       ? [
           {

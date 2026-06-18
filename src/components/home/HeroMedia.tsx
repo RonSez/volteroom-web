@@ -86,6 +86,7 @@ export function HeroMedia() {
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={90}
               className="hero-slide-media object-cover"
               style={{ transformOrigin: slide.origin }}
               priority={i === 1}

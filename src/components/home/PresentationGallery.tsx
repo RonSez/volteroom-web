@@ -45,6 +45,7 @@ export function PresentationGallery() {
                   alt=""
                   width={1440}
                   height={810}
+                  quality={90}
                   className="h-auto w-full"
                 />
               </div>
