@@ -12,14 +12,13 @@ export function AddressCta() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-12 text-primary-foreground shadow-[0_50px_90px_-50px_rgba(15,23,42,0.6)] sm:px-12 sm:py-16">
-        <span aria-hidden className="rule-brand absolute inset-x-0 top-0 h-px opacity-60" />
+      <div className="floats relative overflow-hidden rounded-3xl px-6 py-12 text-foreground sm:px-12 sm:py-16">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-80"
+          className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(70% 120% at 100% 0%, rgba(0,160,214,0.4) 0%, rgba(15,23,42,0) 60%)",
+              "radial-gradient(70% 120% at 100% 0%, rgba(43, 164, 214,0.32) 0%, rgba(12, 14, 18,0) 60%), radial-gradient(60% 100% at 0% 100%, rgba(46, 120, 180,0.22) 0%, rgba(12, 14, 18,0) 60%)",
           }}
         />
         <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
@@ -30,7 +29,7 @@ export function AddressCta() {
               </h2>
             </Reveal>
             <Reveal delay={80}>
-              <p className="mt-3 text-primary-foreground/75">{t("subtitle")}</p>
+              <p className="mt-3 text-foreground/75">{t("subtitle")}</p>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 flex items-start gap-2 text-lg font-medium">
@@ -49,11 +48,13 @@ export function AddressCta() {
               href="/contact"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-11 px-6 text-sm bg-brand text-brand-foreground hover:bg-brand/90",
+                "btn-liquid btn-liquid-blue h-11 rounded-full px-6 text-sm font-semibold transition-all duration-500",
               )}
             >
-              {t("cta")}
-              <ArrowRight className="size-4" />
+              <span className="relative z-[2] inline-flex items-center gap-2">
+                {t("cta")}
+                <ArrowRight className="size-4" />
+              </span>
             </Link>
             <a
               href={mapsLinkUrl}
@@ -61,11 +62,13 @@ export function AddressCta() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-11 px-6 text-sm border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground",
+                "btn-liquid btn-liquid-white h-11 rounded-full px-6 text-sm font-semibold transition-all duration-500 hover:bg-transparent hover:text-foreground",
               )}
             >
-              <MapPin className="size-4" />
-              {tc("getDirections")}
+              <span className="relative z-[2] inline-flex items-center gap-2">
+                <MapPin className="size-4 text-brand" />
+                {tc("getDirections")}
+              </span>
             </a>
           </div>
         </div>

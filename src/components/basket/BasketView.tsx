@@ -6,7 +6,7 @@ import { Minus, Plus, Trash2, ShoppingBag, MapPin } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { type Product, type Finish, NEUTRAL_FINISH_HEX, resolveSku } from "@/data/catalog";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { useBasket, useHydrated, type BasketItem } from "@/lib/store/basket";
 import { ProductVisual } from "@/components/catalog/ProductVisual";
 import { buttonVariants } from "@/components/ui/button";
@@ -22,6 +22,7 @@ export function BasketView({
 }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("basket");
+  const tc = useTranslations("common");
   const hydrated = useHydrated();
   const items = useBasket((s) => s.items);
   const clear = useBasket((s) => s.clear);
@@ -96,6 +97,11 @@ export function BasketView({
               <dt>{t("total")}</dt>
               <dd className="tabular-nums">{formatPrice(subtotal, locale)}</dd>
             </div>
+            <div className="flex justify-end text-xs text-muted-foreground">
+              <dd className="tabular-nums">
+                {formatPriceExclVat(subtotal, locale)} {tc("exclVat")}
+              </dd>
+            </div>
           </dl>
 
           <p className="mt-4 rounded-lg bg-muted/60 p-3 text-xs leading-relaxed text-muted-foreground">
@@ -128,6 +134,7 @@ function BasketLine({
 }) {
   const t = useTranslations("basket");
   const tp = useTranslations("product");
+  const tc = useTranslations("common");
   const setQty = useBasket((s) => s.setQty);
   const removeItem = useBasket((s) => s.removeItem);
 
@@ -193,9 +200,14 @@ function BasketLine({
               <Plus className="size-4" />
             </button>
           </div>
-          <p className="font-semibold tabular-nums">
-            {formatPrice(product.basePrice * item.qty, locale)}
-          </p>
+          <div className="text-right">
+            <p className="font-semibold tabular-nums">
+              {formatPrice(product.basePrice * item.qty, locale)}
+            </p>
+            <p className="text-xs text-muted-foreground tabular-nums">
+              {formatPriceExclVat(product.basePrice * item.qty, locale)} {tc("exclVat")}
+            </p>
+          </div>
         </div>
       </div>
     </div>

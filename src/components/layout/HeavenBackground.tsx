@@ -3,18 +3,24 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * The "floating in heaven" backdrop.
+ * The glowing-mesh backdrop.
  *
- * A fixed, full-viewport layer that sits behind all content. It paints a few
- * large, blurred blue/cyan "clouds" over the static white sky from globals.css,
- * plus a faint film grain so the white never looks flat. The clouds drift on
- * their own (idle) and parallax with the pointer and scroll position.
+ * A fixed, full-viewport layer that sits behind all content on the flat
+ * near-black canvas. It is the SOLE source of the page's futuristic SAAS depth:
+ * soft brand-blue aurora glows that bleed in from the edges and corners,
+ * anchored by one larger glow spilling down from the top (the "hero light"
+ * behind the fold), plus film grain so the blue never reads flat. The base
+ * colour itself is a single solid token on <body> (globals.css) with no
+ * vertical gradient — so there is nothing to band and the canvas stays perfectly
+ * continuous; all variation lives here in these radial, low-alpha pools. The
+ * glows drift on their own (idle) and parallax with the pointer and scroll
+ * position, so the mesh breathes as you move through it.
  *
- * Motion is fully gated on `prefers-reduced-motion`: when reduced, the clouds
- * are rendered statically with no listeners and no animation.
+ * Motion is fully gated on `prefers-reduced-motion`: when reduced, every layer
+ * is rendered statically with no listeners and no animation.
  */
 
-type Cloud = {
+type Glow = {
   top: string;
   left: string;
   size: string;
@@ -30,12 +36,16 @@ type Cloud = {
   delay: number;
 };
 
-const CLOUDS: Cloud[] = [
-  { top: "-12%", left: "58%", size: "52vw", color: "rgba(0,160,214,0.20)", opacity: 0.9, dx: 38, dy: 26, ds: 0.06, dur: 26, delay: 0 },
-  { top: "18%", left: "-14%", size: "46vw", color: "rgba(3,105,161,0.16)", opacity: 0.85, dx: 30, dy: 20, ds: 0.04, dur: 32, delay: -6 },
-  { top: "48%", left: "70%", size: "40vw", color: "rgba(0,160,214,0.14)", opacity: 0.8, dx: 26, dy: 18, ds: 0.05, dur: 29, delay: -12 },
-  { top: "62%", left: "8%", size: "44vw", color: "rgba(255,255,255,0.85)", opacity: 0.7, dx: 18, dy: 14, ds: 0.03, dur: 36, delay: -3 },
-  { top: "85%", left: "44%", size: "50vw", color: "rgba(3,105,161,0.10)", opacity: 0.75, dx: 22, dy: 16, ds: 0.045, dur: 30, delay: -18 },
+// The gradient mesh: soft pools of brand blue bleeding in from the edges of the
+// near-black canvas. Light-only and low-alpha on purpose — no dark pools (those
+// punched shadow patches read as bands) and no hard edges, so they add the
+// glowing SAAS depth without ever dividing the page. The first, larger glow is
+// the "hero light" spilling down from the top.
+const GLOWS: Glow[] = [
+  { top: "-30%", left: "50%", size: "94vw", color: "rgba(43,164,214,0.13)", opacity: 0.95, dx: 26, dy: 14, ds: 0.05, dur: 34, delay: 0 },
+  { top: "6%", left: "90%", size: "60vw", color: "rgba(92,200,234,0.08)", opacity: 0.8, dx: 24, dy: 16, ds: 0.045, dur: 38, delay: -8 },
+  { top: "48%", left: "-16%", size: "66vw", color: "rgba(43,130,190,0.075)", opacity: 0.8, dx: 20, dy: 13, ds: 0.035, dur: 42, delay: -4 },
+  { top: "82%", left: "72%", size: "72vw", color: "rgba(43,164,214,0.06)", opacity: 0.75, dx: 18, dy: 12, ds: 0.03, dur: 46, delay: -12 },
 ];
 
 const GRAIN =
@@ -100,7 +110,14 @@ export function HeavenBackground() {
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       style={{ "--mx": 0, "--my": 0, "--sc": "0px" } as React.CSSProperties}
     >
-      {CLOUDS.map((c, i) => (
+      {/* No vertical depth gradient anywhere on purpose — not here and not on
+          <body>. A near-black top→bottom ramp quantises into visible 8-bit
+          horizontal bands over a tall page, and a viewport-fixed ramp also beats
+          against the scrolling document into blocks. So the base stays a single
+          flat solid (globals.css) and this layer carries only the glowing blue
+          mesh + grain: radial pools that add depth without ever banding. */}
+
+      {GLOWS.map((c, i) => (
         <div
           key={i}
           className="absolute will-change-transform"
@@ -119,7 +136,7 @@ export function HeavenBackground() {
             className="h-full w-full rounded-full"
             style={{
               background: `radial-gradient(circle at 50% 45%, ${c.color} 0%, transparent 70%)`,
-              filter: "blur(44px)",
+              filter: "blur(70px)",
               opacity: c.opacity,
               animation: reduced ? undefined : `vr-drift ${c.dur}s ease-in-out ${c.delay}s infinite`,
             }}
@@ -127,25 +144,23 @@ export function HeavenBackground() {
         </div>
       ))}
 
-      {/* Film grain so the white never reads as flat. */}
+      {/* Film grain so the blue glows never read as flat. Rendered as a plain,
+          slightly brighter overlay (no blend mode, which would force a full
+          re-blend of the animating layers every frame) and left to composite as
+          a static, cached layer. */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url("${GRAIN}")`,
           backgroundSize: "180px 180px",
-          opacity: 0.04,
-          mixBlendMode: "multiply",
+          opacity: 0.05,
         }}
       />
 
-      {/* Faint floor shadow to keep the very top airy and ground the bottom. */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(120% 90% at 50% -5%, transparent 55%, rgba(15,23,42,0.05) 100%)",
-        }}
-      />
+      {/* No edge vignette: a viewport-fixed darkening of the lower edge re-darkens
+          the bottom of every screen as you scroll, which is exactly what reads as
+          a repeating block seam. The page's depth comes entirely from the soft
+          blue glows above, over the flat solid base. */}
     </div>
   );
 }

@@ -73,7 +73,7 @@ export function SwitchSlideshow({ images }: { images: string[] }) {
           {/* Image — slides in from the matching side. */}
           <div
             className={cn(
-              "relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-muted shadow-sm",
+              "relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand/15 bg-muted shadow-[0_30px_90px_-45px_rgba(0,0,0,0.9),0_0_50px_-20px_rgba(43, 164, 214,0.5)]",
               imageRight ? "md:order-2" : "md:order-1",
               !reduced &&
                 "animate-in fade-in duration-700 fill-mode-both " +
@@ -104,7 +104,7 @@ export function SwitchSlideshow({ images }: { images: string[] }) {
                 "animate-in fade-in slide-in-from-bottom-12 duration-700 delay-150 fill-mode-both",
             )}
           >
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+            <p className="font-tech mb-3 text-xs uppercase tracking-[0.2em] text-brand">
               {String(active + 1).padStart(2, "0")} /{" "}
               {String(count).padStart(2, "0")}
             </p>

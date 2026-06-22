@@ -15,7 +15,7 @@ import {
   resolveSku,
   NEUTRAL_FINISH_HEX,
 } from "@/data/catalog";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "@/components/catalog/ProductImage";
 import { FinishSwatch } from "@/components/catalog/FinishSwatch";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -119,6 +119,9 @@ export function ProductDetail({
         </div>
 
         <p className="mt-3 text-2xl font-semibold tabular-nums">{priceLabel}</p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {formatPriceExclVat(product.basePrice, locale)} {tc("exclVat")}
+        </p>
         <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
           {product.description[locale]}
         </p>

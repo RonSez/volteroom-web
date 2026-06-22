@@ -4,9 +4,10 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { type Product, NEUTRAL_FINISH_HEX, resolveSku } from "@/data/catalog";
 import { getProductFinishes } from "@/lib/catalog";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "./ProductImage";
 import { FinishSwatch } from "./FinishSwatch";
+import { TiltCard } from "@/components/ui/Motion";
 
 export async function ProductCard({ product }: { product: Product }) {
   const locale = (await getLocale()) as Locale;
@@ -17,11 +18,12 @@ export async function ProductCard({ product }: { product: Product }) {
   const sku = resolveSku(product, primary?.id, minGang);
 
   return (
+    <TiltCard className="h-full">
     <Link
       href={`/catalog/${product.slug}`}
-      className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-[box-shadow] duration-300 hover:shadow-[0_0_50px_-12px_rgba(43, 164, 214,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <div className="relative overflow-hidden bg-gradient-to-b from-white to-secondary/50">
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#101a2e] to-[#070d1b]">
         <ProductImage
           imageUrl={product.imageUrl}
           alt={product.name[locale]}
@@ -30,7 +32,7 @@ export async function ProductCard({ product }: { product: Product }) {
           gang={minGang}
           className="rounded-none transition-transform duration-500 group-hover:scale-[1.04]"
         />
-        <span className="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-white/85 text-brand opacity-0 shadow-sm backdrop-blur transition-opacity group-hover:opacity-100">
+        <span className="glass absolute right-3 top-3 grid size-8 place-items-center rounded-full text-brand opacity-0 transition-opacity group-hover:opacity-100">
           <ArrowUpRight className="size-4" />
         </span>
       </div>
@@ -42,6 +44,9 @@ export async function ProductCard({ product }: { product: Product }) {
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">
             {t("priceFrom", { price: formatPrice(product.basePrice, locale) })}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {formatPriceExclVat(product.basePrice, locale)} {t("exclVat")}
           </p>
         </div>
         {finishes.length > 0 ? (
@@ -62,5 +67,6 @@ export async function ProductCard({ product }: { product: Product }) {
         )}
       </div>
     </Link>
+    </TiltCard>
   );
 }

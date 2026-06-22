@@ -13,3 +13,11 @@ export function formatPrice(amount: number, locale: Locale): string {
     currency: "EUR",
   }).format(amount);
 }
+
+/** Slovak standard VAT rate. Displayed prices are treated as VAT-inclusive. */
+export const SK_VAT_RATE = 0.23;
+
+/** Format the net (VAT-excluded) part of a VAT-inclusive amount (e.g. "10,49 €"). */
+export function formatPriceExclVat(amount: number, locale: Locale): string {
+  return formatPrice(amount / (1 + SK_VAT_RATE), locale);
+}

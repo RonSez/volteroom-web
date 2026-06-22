@@ -34,7 +34,7 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        "relative aspect-square w-full overflow-hidden rounded-xl bg-white",
+        "relative aspect-square w-full overflow-hidden rounded-xl bg-gradient-to-b from-[#101a2e] to-[#070d1b]",
         className,
       )}
     >

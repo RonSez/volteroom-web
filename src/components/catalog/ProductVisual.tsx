@@ -50,12 +50,12 @@ export function ProductVisual({
       )}
       style={{
         background:
-          "radial-gradient(120% 100% at 50% 0%, #f1f5f9 0%, #e2e8f0 60%, #cbd5e1 100%)",
+          "radial-gradient(120% 100% at 50% 0%, #16233d 0%, #0c1626 55%, #060b18 100%)",
       }}
     >
       <svg
         viewBox={`0 0 ${viewW} ${viewH}`}
-        className="h-[78%] w-[88%] drop-shadow-[0_18px_28px_rgba(15,23,42,0.22)]"
+        className="h-[78%] w-[88%] drop-shadow-[0_18px_34px_rgba(0,0,0,0.55)]"
         role="img"
       >
         {Array.from({ length: modules }).map((_, i) => {

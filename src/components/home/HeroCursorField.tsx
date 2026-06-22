@@ -18,9 +18,9 @@ import { useEffect, useRef } from "react";
  * skip the animation loop and all pointer reactivity.
  */
 
-// Brand palette (matches .vr-star in globals.css).
-const CORE = "3, 105, 161"; // #0369A1
-const HALO = "0, 160, 214"; // #00A0D6
+// Brand palette (matches .vr-star in globals.css) — bright on the black void.
+const CORE = "220, 238, 250"; // light cyan
+const HALO = "43, 164, 214"; // #38BDF8
 
 const LINK_DIST = 132; // px: max distance a link is drawn
 const CURSOR_RADIUS = 150; // px: pointer repulsion / glow reach
@@ -65,8 +65,11 @@ export function HeroCursorField() {
     const pointer = { x: 0, y: 0, tx: 0, ty: 0, strength: 0, inside: false };
 
     // Seed particles for the current size; density scales with area.
+    // Capped fairly low: the link pass is O(n²), so each extra particle costs
+    // quadratically. 64 keeps the constellation lush while halving the work of
+    // the previous 96 cap.
     const seed = () => {
-      const count = Math.min(96, Math.round((width * height) / 13000));
+      const count = Math.min(64, Math.round((width * height) / 20000));
       particles = Array.from({ length: count }, () => {
         const hx = Math.random() * width;
         const hy = Math.random() * height;
@@ -296,15 +299,33 @@ export function HeroCursorField() {
     });
     ro.observe(parent);
 
-    // Pause the loop when the tab is hidden to save CPU.
-    const onVisibility = () => {
-      if (document.hidden) {
+    // Run the loop only when it can actually be seen: the tab is visible AND
+    // the hero is in (or near) the viewport. Scrolling the hero away — or
+    // hiding the tab — stops the per-frame O(n²) work entirely.
+    let onScreen = true;
+    const running = () => !reduced && !document.hidden && onScreen;
+    const start = () => {
+      if (running() && !raf) raf = window.requestAnimationFrame(frame);
+    };
+    const stop = () => {
+      if (raf) {
         window.cancelAnimationFrame(raf);
         raf = 0;
-      } else if (!reduced && !raf) {
-        raf = window.requestAnimationFrame(frame);
       }
     };
+    const sync = () => (running() ? start() : stop());
+
+    const onVisibility = () => sync();
+
+    // Pause once the hero is comfortably out of view (200px margin so it's
+    // already running again just before it scrolls back in).
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+        sync();
+      },
+      { rootMargin: "200px" },
+    );
 
     if (reduced) {
       drawStatic();
@@ -312,12 +333,14 @@ export function HeroCursorField() {
       window.addEventListener("pointermove", onMove, { passive: true });
       window.addEventListener("pointerdown", onDown, { passive: true });
       document.addEventListener("visibilitychange", onVisibility);
+      io.observe(parent);
       raf = window.requestAnimationFrame(frame);
     }
 
     return () => {
       window.cancelAnimationFrame(raf);
       ro.disconnect();
+      io.disconnect();
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
       document.removeEventListener("visibilitychange", onVisibility);

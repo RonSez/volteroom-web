@@ -7,7 +7,7 @@ import logoLight from "../../../public/brand/logo-light.png";
 /**
  * Volteroom wordmark — the real brand logo (transparent background).
  * Use `tone="light"` on dark surfaces (e.g. the navy footer) to render the
- * white variant; the default dark wordmark suits light surfaces.
+ * white variant; the default dark (black & blue) wordmark suits light surfaces.
  */
 export function Logo({
   className,

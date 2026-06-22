@@ -150,7 +150,7 @@ const InteractivePhotoStack = React.forwardRef<
                   // cards would cross each other mid-animation — the "blink".
                   // Scoping to transform keeps movement smooth while z-index
                   // switches instantly.
-                  "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-lg transition-transform duration-500 ease-in-out",
+                  "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition-transform duration-500 ease-in-out",
                   {
                     "rotate-0": isGroupHovered,
                     [baseRotations[stackPosition % baseRotations.length]]:

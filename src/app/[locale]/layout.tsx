@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeavenBackground } from "@/components/layout/HeavenBackground";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 import { Toaster } from "@/components/ui/sonner";
 import "../globals.css";
 
@@ -16,8 +17,18 @@ const inter = Inter({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+// Display: a geometric, monolithic grotesque — echoes the product's own
+// "monolithic form / precise alignment" design language.
+const sora = Sora({
   variable: "--font-heading",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+// Technical voice: article numbers, currents, IP ratings, eyebrows — the
+// catalogue is full of real engineering data, so it gets a spec-sheet mono.
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
@@ -58,10 +69,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full`}
+      className={`dark ${inter.variable} ${sora.variable} ${jetbrainsMono.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-dvh flex-col">
+      <body className="flex min-h-dvh flex-col overflow-x-clip">
         {/* Set the reveal flag before paint so <Reveal> elements start hidden
             without flashing, and stay visible if JS is disabled. */}
         <script
@@ -72,6 +83,7 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider>
           <HeavenBackground />
+          <CursorGlow />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

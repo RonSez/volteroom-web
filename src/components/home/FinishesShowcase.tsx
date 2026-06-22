@@ -9,12 +9,12 @@ export async function FinishesShowcase() {
   const finishes = await getFinishes();
 
   return (
-    <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-5">
+    <div className="flex flex-wrap justify-center gap-x-4 gap-y-6">
       {finishes.map((f, i) => (
         <Reveal
           key={f.id}
           delay={i * 50}
-          className="group flex flex-col items-center gap-3 text-center"
+          className="group flex w-[calc(50%-0.5rem)] flex-col items-center gap-3 text-center sm:w-40 md:w-44"
         >
           <span
             className="h-24 w-full rounded-xl shadow-[0_14px_30px_-18px_rgba(15,23,42,0.6)] ring-1 ring-foreground/10 transition-transform duration-300 group-hover:-translate-y-1"

@@ -9,13 +9,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Brand */
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-from: var(--brand-from);
   --color-brand-to: var(--brand-to);
+  --color-cashmere: var(--cashmere);
 
   --color-ring: var(--ring);
   --color-input: var(--input);
@@ -42,82 +43,61 @@
   --radius-3xl: calc(var(--radius) * 2.2);
 }
 
-:root {
-  /* Sharp corners with a very slight curve */
+:root,
+.dark {
+  /* Switches are precision hardware: sharp corners, the faintest easing. */
   --radius: 0.3125rem;
 
-  /* "Heaven" — a near-white sky the textured layer sits on */
-  --background: #fbfcfe;
-  --foreground: #0f172a;
+  /* A deep, futuristic near-black — the base of the SAAS-grade dark canvas.
+     Almost true black with the faintest cool blue cast (never warm, never pure
+     #000, so the brand-blue glows that bleed across it read premium rather than
+     as flat halos). The whole site runs dark-only; these tokens are the single
+     source of truth. */
+  --background: #08090d;
+  --foreground: #edf1f6; /* cool white — the lit windowsill, used for text only */
 
-  /* Brand blue, broken out so it can tint glass, glows and clouds */
-  --brand-rgb: 3 105 161;        /* #0369A1 */
-  --brand-to-rgb: 0 160 214;     /* #00A0D6 */
-  --sky-tint: rgba(3, 105, 161, 0.06);
+  /* The one accent: the brand blue, lifted straight from the logo's frame
+     gradient (deep navy → azure). Broken out as RGB so it can tint glass,
+     glows and the raking light. Used sparingly; charcoal + white carry the page. */
+  --brand-rgb: 43 164 214;     /* #2BA4D6 azure */
+  --brand-to-rgb: 92 200 234;  /* #5CC8EA bright azure */
+  --warm-tint: rgba(43, 164, 214, 0.08);
 
-  --card: #ffffff;
-  --card-foreground: #0b1220;
-  --popover: #ffffff;
-  --popover-foreground: #0b1220;
+  /* Charcoal/graphite surfaces that float in the dark room. */
+  --card: #14171c;
+  --card-foreground: #edf1f6;
+  --popover: #14171c;
+  --popover-foreground: #edf1f6;
 
-  /* Primary = brand navy */
-  --primary: #0f172a;
-  --primary-foreground: #ffffff;
+  /* Primary = cool white for solid fills on dark. */
+  --primary: #edf1f6;
+  --primary-foreground: #0c0e12;
 
-  --secondary: #eef2f7;
-  --secondary-foreground: #0f172a;
+  --secondary: #1c2027;
+  --secondary-foreground: #edf1f6;
 
-  --muted: #e8ecf1;
-  --muted-foreground: #64748b;
+  --muted: #1c2027;
+  --muted-foreground: #8a93a3; /* cool slate grey */
 
-  /* shadcn "accent" = subtle hover surface (light blue-tint) */
-  --accent: #e6f1f8;
-  --accent-foreground: #0f172a;
+  /* Hover/active surface — a faint charcoal lift. */
+  --accent: #222732;
+  --accent-foreground: #edf1f6;
 
-  --destructive: #dc2626;
+  --destructive: #f4523f;
 
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #0369a1;
+  /* Hairlines carry the faintest azure cast so edges read as cool-lit. */
+  --border: #2ba4d61f;
+  --input: #2ba4d62e;
+  --ring: #2ba4d6;
 
-  /* Brand accent + gradient (from the logo) */
-  --brand: #0369a1;
-  --brand-foreground: #ffffff;
-  --brand-from: #0b1e3b;
-  --brand-to: #00a0d6;
-}
+  /* Brand blue accent + gradient (deep navy → bright azure, from the logo). */
+  --brand: #2ba4d6;
+  --brand-foreground: #04141f;
+  --brand-from: #0e2a4e; /* deep navy */
+  --brand-to: #5cc8ea;   /* bright azure */
 
-.dark {
-  --background: #0a0f1c;
-  --foreground: #e8eef6;
-
-  --card: #0f1626;
-  --card-foreground: #e8eef6;
-  --popover: #0f1626;
-  --popover-foreground: #e8eef6;
-
-  --primary: #e8eef6;
-  --primary-foreground: #0f172a;
-
-  --secondary: #1b2436;
-  --secondary-foreground: #e8eef6;
-
-  --muted: #1b2436;
-  --muted-foreground: #94a3b8;
-
-  --accent: #16314a;
-  --accent-foreground: #e8eef6;
-
-  --destructive: #ef4444;
-
-  --border: #ffffff1a;
-  --input: #ffffff26;
-  --ring: #38bdf8;
-
-  --brand: #22a7e0;
-  --brand-foreground: #04121f;
-  --brand-from: #0b1e3b;
-  --brand-to: #00a0d6;
+  /* The brushed-steel switch finish — a cool secondary for swatches / dust. */
+  --cashmere: #9fb2c4;
 }
 
 @layer base {
@@ -127,21 +107,44 @@
   html {
     @apply font-sans antialiased;
     scroll-behavior: smooth;
+    /* Stop reveal/parallax transforms and full-bleed glows from ever creating
+       a horizontal scrollbar. `clip` (not `hidden`) keeps `position: sticky`
+       on the header working. */
+    overflow-x: clip;
   }
   body {
     @apply text-foreground;
+    /* ONE flat, document-spanning near-black — and nothing else. A solid colour
+       is perfectly monotone and physically cannot 8-bit band, so the page reads
+       as a single continuous canvas from the very top to the very bottom with no
+       horizontal seams or per-section blocks.
+
+       Why not a vertical gradient: across a tall page each 8-bit step of a
+       near-black ramp spans hundreds of px, so the ramp quantises into visible
+       horizontal bands — and the grain meant to dither them lives on the
+       viewport-`fixed` <HeavenBackground />, which only covers the first screen
+       (and is captured only once in a full-page screenshot), so below the fold
+       the bands showed raw. All page depth now comes from the soft brand-blue
+       glows in <HeavenBackground /> instead — radial, low-alpha pools that add
+       atmosphere without ever dividing the canvas. */
     background-color: var(--background);
-    /* Static sky: faint blue light blooming from the top, fading to white.
-       The animated grain + clouds layer on top via <HeavenBackground />. */
-    background-image:
-      radial-gradient(120% 80% at 80% -10%, rgba(0, 160, 214, 0.10) 0%, rgba(0, 160, 214, 0) 45%),
-      radial-gradient(110% 70% at 10% 0%, rgba(3, 105, 161, 0.07) 0%, rgba(3, 105, 161, 0) 50%),
-      linear-gradient(180deg, #ffffff 0%, var(--background) 60%);
-    background-attachment: fixed;
     text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4, h5 {
     @apply font-heading tracking-tight;
+  }
+  /* The technical voice: article numbers, currents, IP ratings, eyebrows.
+     A spec-sheet monospace that says "precision hardware". */
+  .font-tech {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+  /* When the JS custom cursor is active (fine pointer, motion allowed) hide the
+     native one across the document. Keyboard/touch/reduced-motion users never
+     get this class, so their native cursor is preserved. */
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
   }
 }
 
@@ -171,37 +174,42 @@
 }
 
 /* ──────────────────────────────────────────────────────────
-   "Floating in heaven" surface system
+   Floating dark-room surface system
    ────────────────────────────────────────────────────────── */
 
-/* Frosted white panels that appear to float over the sky.
-   Slightly translucent so the textured background reads through. */
+/* Frosted graphite panels that appear to float in the dark. Translucent so the cool
+   room light reads through; a soft top rim-light and a faint azure edge bloom
+   give the panel a cool-lit refraction on black. */
 @utility glass {
-  background-color: color-mix(in oklch, var(--card) 72%, transparent);
-  backdrop-filter: blur(14px) saturate(1.05);
-  -webkit-backdrop-filter: blur(14px) saturate(1.05);
-  border: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+  background-color: color-mix(in oklch, var(--card) 58%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid color-mix(in oklch, white 10%, transparent);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
-    0 18px 40px -24px rgba(15, 23, 42, 0.28),
-    0 4px 12px -8px rgba(15, 23, 42, 0.16);
+    0 1px 0 0 rgba(255, 255, 255, 0.10) inset,
+    0 0 0 1px rgba(43, 164, 214, 0.05) inset,
+    0 24px 60px -28px rgba(0, 0, 0, 0.85),
+    0 0 40px -18px rgba(43, 164, 214, 0.28);
 }
 
-/* A solid white floating card (more opaque, for content density). */
+/* A denser graphite floating card (more opaque, for content density).
+   Instantiated en masse (every product card), so it deliberately avoids
+   `backdrop-filter`: a backdrop blur is one of the most expensive paint
+   operations, and ~140 stacked over the animated background tanked scroll
+   performance. The surface is near-opaque so it still reads as solid floating
+   graphite without sampling everything behind it. */
 @utility floats {
-  background-color: color-mix(in oklch, var(--card) 88%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid color-mix(in oklch, var(--foreground) 7%, transparent);
+  background-color: color-mix(in oklch, var(--card) 94%, transparent);
+  border: 1px solid color-mix(in oklch, white 8%, transparent);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.85) inset,
-    0 24px 50px -30px rgba(15, 23, 42, 0.30),
-    0 6px 16px -10px rgba(15, 23, 42, 0.14);
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 28px 70px -34px rgba(0, 0, 0, 0.88),
+    0 0 30px -16px rgba(43, 164, 214, 0.20);
 }
 
-/* Hairline blue top accent used to "outline the most important stuff". */
+/* Hairline tungsten top accent used to "outline the most important stuff". */
 @utility rule-brand {
-  background-image: linear-gradient(90deg, var(--brand), var(--brand-to));
+  background-image: linear-gradient(90deg, var(--brand-from), var(--brand-to));
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -209,18 +217,17 @@
    Translucent fill + backdrop blur/saturate for refraction,
    a bright rim + inset specular highlights for the glossy
    edge, and a specular sheen that sweeps across on hover.
-   Cross-browser (no SVG-in-backdrop, which only works in
-   Chromium). Pair on the element with `transition-all`,
-   `duration-500` + ease so the lift settles smoothly.
-   The hover lift lives in each colour variant (not here) so
-   it applies deterministically regardless of utility order.
+   Cross-browser (no SVG-in-backdrop). Pair on the element
+   with `transition-all`, `duration-500` + ease so the lift
+   settles smoothly. The hover lift lives in each colour
+   variant (not here) so it applies regardless of utility order.
    ────────────────────────────────────────────────────────── */
 @utility btn-liquid {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
   will-change: transform;
 
   /* Moving specular highlight that sweeps left→right on hover. */
@@ -233,7 +240,7 @@
     background: linear-gradient(
       115deg,
       transparent 28%,
-      rgba(255, 255, 255, 0.55) 46%,
+      rgba(235, 245, 252, 0.5) 46%,
       transparent 60%
     );
     transform: translateX(-130%);
@@ -245,68 +252,68 @@
   }
 }
 
-/* Ocean-blue liquid glass: tinted with the brand tokens
-   (#0369A1 → #00A0D6) so it reads as a lighter brand blue.
-   Translucent so the backdrop blur shows real refraction;
-   white text kept legible with a soft shadow. */
+/* Brand-blue liquid glass: the primary CTA. Navy → azure fill from the logo
+   gradient; cool-white text kept legible with a deep-navy shadow. */
 @utility btn-liquid-blue {
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #f3f9ff;
+  border: 1px solid rgba(180, 224, 245, 0.5);
   background-color: transparent;
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04) 52%),
+    linear-gradient(180deg, rgba(235, 245, 252, 0.30), rgba(235, 245, 252, 0.04) 52%),
     linear-gradient(
       135deg,
-      color-mix(in oklch, var(--brand) 80%, transparent),
-      color-mix(in oklch, var(--brand-to) 74%, transparent)
+      color-mix(in oklch, var(--brand-from) 94%, transparent),
+      color-mix(in oklch, var(--brand-to) 88%, transparent)
     );
-  text-shadow: 0 1px 2px rgba(2, 40, 70, 0.5);
+  text-shadow: 0 1px 2px rgba(4, 20, 40, 0.55);
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.7),
-    inset -8px -8px 16px -12px rgba(255, 255, 255, 0.9),
-    inset 0 -7px 12px -8px rgba(255, 255, 255, 0.65),
-    0 10px 30px -10px rgba(0, 160, 214, 0.55),
-    0 4px 12px -6px rgba(3, 105, 161, 0.5);
+    inset 0 1px 1px rgba(235, 245, 252, 0.8),
+    inset -8px -8px 16px -12px rgba(235, 245, 252, 0.9),
+    inset 0 -7px 12px -8px rgba(16, 42, 78, 0.5),
+    0 12px 36px -8px rgba(43, 164, 214, 0.7),
+    0 0 30px -6px rgba(92, 200, 234, 0.7);
 
   &:hover {
     transform: translateY(-5px);
     box-shadow:
-      inset 0 1px 1px rgba(255, 255, 255, 0.85),
-      inset -8px -8px 18px -12px rgba(255, 255, 255, 1),
-      inset 0 -7px 14px -8px rgba(255, 255, 255, 0.8),
-      0 22px 44px -12px rgba(0, 160, 214, 0.7),
-      0 8px 20px -8px rgba(3, 105, 161, 0.55);
-    filter: saturate(1.1) brightness(1.05);
+      inset 0 1px 1px rgba(235, 245, 252, 0.95),
+      inset -8px -8px 18px -12px rgba(235, 245, 252, 1),
+      inset 0 -7px 14px -8px rgba(16, 42, 78, 0.55),
+      0 24px 52px -10px rgba(43, 164, 214, 0.85),
+      0 0 56px -6px rgba(92, 200, 234, 0.85);
+    filter: saturate(1.08) brightness(1.06);
   }
   &:active {
     transform: translateY(-2px);
   }
 }
 
-/* White liquid glass: frosted, faintly cool-tinted, dark text. */
+/* Frosted graphite liquid glass: translucent near-black, azure rim, light text.
+   The secondary CTA on the dark theme. */
 @utility btn-liquid-white {
   color: var(--foreground);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(43, 164, 214, 0.30);
   background-color: transparent;
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3) 60%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(220, 236, 248, 0.34));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 60%),
+    linear-gradient(135deg, rgba(43, 164, 214, 0.1), rgba(20, 20, 24, 0.5));
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.95),
-    inset -8px -8px 16px -12px rgba(255, 255, 255, 1),
-    inset 0 -7px 12px -8px rgba(255, 255, 255, 0.9),
-    0 10px 30px -12px rgba(15, 23, 42, 0.22),
-    0 4px 12px -8px rgba(15, 23, 42, 0.16);
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    inset -8px -8px 16px -12px rgba(43, 164, 214, 0.3),
+    inset 0 -7px 12px -8px rgba(0, 0, 0, 0.5),
+    0 10px 30px -12px rgba(0, 0, 0, 0.7),
+    0 0 26px -14px rgba(43, 164, 214, 0.3);
 
   &:hover {
     transform: translateY(-5px);
+    border-color: rgba(43, 164, 214, 0.5);
     box-shadow:
-      inset 0 1px 1px rgba(255, 255, 255, 1),
-      inset -8px -8px 18px -12px rgba(255, 255, 255, 1),
-      inset 0 -7px 14px -8px rgba(255, 255, 255, 1),
-      0 22px 44px -14px rgba(3, 105, 161, 0.3),
-      0 8px 20px -10px rgba(15, 23, 42, 0.2);
-    filter: brightness(1.03);
+      inset 0 1px 1px rgba(255, 255, 255, 0.26),
+      inset -8px -8px 18px -12px rgba(43, 164, 214, 0.45),
+      inset 0 -7px 14px -8px rgba(0, 0, 0, 0.5),
+      0 22px 44px -14px rgba(0, 0, 0, 0.7),
+      0 0 40px -12px rgba(43, 164, 214, 0.55);
+    filter: brightness(1.06);
   }
   &:active {
     transform: translateY(-2px);
@@ -323,11 +330,14 @@
   50% { transform: translateY(-10px); }
 }
 
-/* Slow cloud drift for the textured background layer. */
+/* Slow drift for the textured background layer. Translate-only on purpose:
+   these elements carry a large `filter: blur()`, and animating `scale` would
+   force a re-rasterize of that blur every frame. A pure translate lets the
+   blurred raster be cached and merely re-composited. */
 @keyframes vr-drift {
-  0% { transform: translate3d(var(--px, 0), var(--py, 0), 0) scale(1); }
-  50% { transform: translate3d(calc(var(--px, 0) + 4%), calc(var(--py, 0) - 3%), 0) scale(1.06); }
-  100% { transform: translate3d(var(--px, 0), var(--py, 0), 0) scale(1); }
+  0% { transform: translate3d(var(--px, 0), var(--py, 0), 0); }
+  50% { transform: translate3d(calc(var(--px, 0) + 4%), calc(var(--py, 0) - 3%), 0); }
+  100% { transform: translate3d(var(--px, 0), var(--py, 0), 0); }
 }
 
 /* Gentle one-shot rise used for above-the-fold reveals (CSS-only, no JS). */
@@ -391,9 +401,9 @@
   }
 }
 
-/* Brand hairline beneath a section heading that "draws" in (scaleX 0 → 1) the
-   first time the heading reveals. Origin follows the heading's alignment.
-   Without JS the start state is never applied, so the rule sits full-width. */
+/* Tungsten hairline beneath a section heading that "draws" in (scaleX 0 → 1)
+   the first time the heading reveals — like a filament warming up. Origin
+   follows the heading's alignment. */
 [data-reveal-ready] .reveal .rule-draw {
   transform: scaleX(0);
   transform-origin: left center;
@@ -416,14 +426,11 @@
   }
 }
 
-/* Premium gradient "glint" that sweeps across key headings.
-   The text stays its normal foreground colour most of the time;
-   a soft brand-blue band passes through every few seconds, then
-   rests off-screen. Clipped to the text; reduced-motion holds it
-   static (and readable) by neutralising the animation globally. */
+/* Warm "glint" that sweeps across key headings — like a light passing over
+   a soft-touch surface. The text rests at its normal foreground colour; a soft
+   tungsten band passes through every few seconds, then rests off-screen.
+   Clipped to the text; reduced-motion holds it static and readable. */
 @utility text-shimmer {
-  /* Endpoints are foreground so the pattern tiles seamlessly (default repeat)
-     and every glyph is filled; only the narrow brand-blue band moves. */
   background-image: linear-gradient(
     110deg,
     var(--foreground) 0%,
@@ -456,82 +463,10 @@
 }
 
 /* ──────────────────────────────────────────────────────────
-   Hero starfield — twinkling light-blue stars + meteors that
-   streak diagonally across the space-like sky. Painted by
-   <HeroStarfield /> over the textured "heaven" background (it
-   does not replace it). Colours are the brand blues
-   (#0369A1 → #00A0D6); motion is gated on prefers-reduced-motion.
-   ────────────────────────────────────────────────────────── */
-.vr-star {
-  position: absolute;
-  border-radius: 9999px;
-  /* Saturated brand-blue core so the dot reads against the near-white sky,
-     with a soft cyan halo. */
-  background: radial-gradient(
-    circle,
-    rgba(3, 105, 161, 0.95) 0%,
-    rgba(0, 160, 214, 0.7) 45%,
-    rgba(0, 160, 214, 0) 100%
-  );
-  box-shadow:
-    0 0 6px 1px rgba(0, 160, 214, 0.6),
-    0 0 2px 0 rgba(3, 105, 161, 0.55);
-  opacity: var(--star-min, 0.45);
-  will-change: opacity, transform;
-  animation: vr-twinkle var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
-}
-
-@keyframes vr-twinkle {
-  0%, 100% { opacity: var(--star-min, 0.25); transform: scale(0.7); }
-  50% { opacity: var(--star-max, 1); transform: scale(1); }
-}
-
-/* The meteor head; ::before draws the trailing gradient tail.
-   Rotated by --angle so translating along the local X axis sends
-   it down-and-right, with the tail fading out behind it. */
-.vr-meteor {
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  border-radius: 9999px;
-  background: #cfeefb;
-  box-shadow: 0 0 8px 2px rgba(0, 160, 214, 0.6);
-  opacity: 0;
-  will-change: transform, opacity;
-  transform: rotate(var(--angle, 215deg)) translateX(0);
-  animation: vr-meteor var(--dur, 6s) linear var(--delay, 0s) infinite;
-}
-
-.vr-meteor::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 1px;
-  width: var(--len, 80px);
-  height: 2px;
-  transform: translateY(-50%);
-  background: linear-gradient(
-    90deg,
-    rgba(3, 105, 161, 0.95) 0%,
-    rgba(0, 160, 214, 0.6) 35%,
-    rgba(0, 160, 214, 0) 100%
-  );
-}
-
-@keyframes vr-meteor {
-  0% { transform: rotate(var(--angle, 215deg)) translateX(0); opacity: 0; }
-  8% { opacity: 1; }
-  70% { opacity: 1; }
-  100% { transform: rotate(var(--angle, 215deg)) translateX(-760px); opacity: 0; }
-}
-
-/* ──────────────────────────────────────────────────────────
    Hero media reel — cross-fade slides + slow Ken-Burns zoom.
    The media rests at the zoom END scale, so when a slide loses
    `.is-active` its animation is removed and the transform reverts
    to that same end value — no visible snap as it fades out.
-   The ease-out front-loads the motion so it has all but finished
-   by the time the next slide takes over.
    ────────────────────────────────────────────────────────── */
 .hero-slide-media {
   transform: scale(1.14);
@@ -559,4 +494,22 @@
   .hero-slide-media {
     transform: scale(1.02);
   }
+}
+
+/* ──────────────────────────────────────────────────────────
+   The hero switch — a CSS-built Volteroom large-button switch
+   in Soft-Touch Carbon. The page's signature: press the button
+   and cool light floods the room. Tactile depress + a soft
+   filament glow that ramps with the "on" state.
+   ────────────────────────────────────────────────────────── */
+@keyframes vr-lights-on {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* A satisfying press settle for the large button. */
+@keyframes vr-press-settle {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(3.5%); }
+  100% { transform: translateY(0); }
 }

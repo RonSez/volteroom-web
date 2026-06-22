@@ -82,7 +82,6 @@ function HomeContent({ featured }: { featured: Product[] }) {
 
       <Section className="py-16 sm:py-20">
         <div className="floats relative overflow-hidden rounded-3xl px-6 py-12 sm:px-12 sm:py-16">
-          <span aria-hidden className="rule-brand absolute inset-x-0 top-0 h-px opacity-50" />
           <SectionHeading
             align="center"
             title={t("home.finishes.title")}

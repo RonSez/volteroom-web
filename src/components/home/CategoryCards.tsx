@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/routing";
 import { getCategories } from "@/lib/catalog";
 import { ProductVisual } from "@/components/catalog/ProductVisual";
 import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/ui/Motion";
 
 const REPRESENTATIVE_HEX = "#3B3E43"; // matte titanium
 
@@ -18,14 +19,15 @@ export async function CategoryCards() {
         <Reveal
           key={cat.id}
           delay={i * 70}
-          variant={i % 2 === 0 ? "fade-left" : "fade-right"}
+          variant="blur"
           className="h-full"
         >
+        <TiltCard className="h-full">
         <Link
           href={`/catalog?category=${cat.id}`}
-          className="floats group flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-[box-shadow,transform] duration-300 hover:shadow-[0_0_50px_-12px_rgba(43, 164, 214,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <div className="relative overflow-hidden bg-gradient-to-b from-white to-secondary/60">
+          <div className="relative overflow-hidden bg-gradient-to-b from-[#101a2e] to-[#070d1b]">
             <ProductVisual
               category={cat.id}
               hex={REPRESENTATIVE_HEX}
@@ -45,6 +47,7 @@ export async function CategoryCards() {
             </span>
           </div>
         </Link>
+        </TiltCard>
         </Reveal>
       ))}
     </div>
