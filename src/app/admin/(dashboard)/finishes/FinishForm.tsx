@@ -47,11 +47,11 @@ export function FinishForm({ finish }: { finish?: FinishRow }) {
           id="code"
           name="code"
           defaultValue={finish?.code ?? ""}
-          placeholder="GLW"
+          placeholder="MW"
           className="w-28"
         />
         <p className="text-xs text-muted-foreground">
-          Used to build article numbers, e.g. <code>E08KB111-GLW</code>.
+          Used to build article numbers, e.g. <code>E08KB111-MW</code>.
         </p>
       </div>
 

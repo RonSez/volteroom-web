@@ -12,7 +12,9 @@
     "basket": "Košík",
     "menu": "Menu",
     "openMenu": "Otvoriť menu",
-    "language": "Jazyk"
+    "language": "Jazyk",
+    "privacy": "Ochrana osobných údajov",
+    "cooperation": "Spolupráca"
   },
   "common": {
     "addToBasket": "Pridať do košíka",
@@ -163,22 +165,29 @@
   },
   "about": {
     "title": "O značke Volteroom",
-    "intro": "Volteroom je koncept novej generácie — spojenie kvality a štýlu v každom produkte. Minimalistický dizajn, spoľahlivé mechanizmy a vybrané detaily pre klasické aj moderné priestory.",
-    "conceptTitle": "Koncept novej generácie",
-    "concept": [
-      "Elegancia a všestrannosť",
-      "Spoľahlivé mechanizmy a vybrané detaily",
-      "Minimalistický dizajn dovedený do dokonalosti",
-      "Štýlový interiérový doplnok pre klasické aj moderné priestory"
+    "intro": "VOLTEROOM je európska značka vysokokvalitných produktov pre elektroinštalácie. Naši špecialisti majú dlhoročné skúsenosti s inžinierskymi dodávkami pre občiansku a bytovú výstavbu.",
+    "missionTitle": "Naše poslanie",
+    "mission": "Pomáhame vytvárať moderné technické riešenia pre priestory, ktoré formujú imidž, zdôrazňujú status, zvyšujú trhovú hodnotu nehnuteľnosti a vytvárajú atmosféru a vrúcne emocionálne vnímanie.",
+    "productTitle": "Náš produkt",
+    "product": "Široký výber mechanizmov, módne farby, komplexná no praktická textúra s povrchom soft-touch naprieč všetkými sériami, vysokokvalitné materiály a geometrické tvary nám umožňujú priviesť k životu akýkoľvek dizajnový nápad.",
+    "productLeadIn": "Náš sortiment zahŕňa všetky potrebné mechanizmy na úplné vybavenie akéhokoľvek priestoru bez ohľadu na jeho zložitosť:",
+    "productItems": [
+      "Zásuvky",
+      "Vypínače",
+      "Stmievače",
+      "Termostaty",
+      "USB porty",
+      "TV zásuvky",
+      "Zásuvky satelitnej TV",
+      "Zásuvky RJ45"
     ],
-    "suitableTitle": "Inštalácia vhodná pre",
-    "suitable": [
-      "Klasické a neoklasické bytové interiéry",
-      "Moderné a dizajnové apartmány",
-      "Kancelárie a konferenčné miestnosti",
-      "Galérie a verejné priestory",
-      "Zariadenia kategórie HoReCa"
-    ]
+    "productBalance": "Usilujeme sa o dokonalú rovnováhu medzi krásou, dostupnosťou a funkčnosťou.",
+    "qualityTitle": "Kvalita",
+    "quality": "Poskytujeme 5-ročnú záruku a komplexný servis počas celej životnosti našich produktov. Vysokokvalitné komponenty a moderné technológie umožňujú našim produktom vydržať desaťročia bez straty kvality.",
+    "warrantyValue": "5",
+    "warrantyUnit": "rokov",
+    "warrantyLabel": "Záruka a servis počas celej životnosti",
+    "closing": "VOLTEROOM je investícia do estetiky, funkčnosti a reputácie nehnuteľnosti."
   },
   "contact": {
     "title": "Kontakt",
@@ -206,6 +215,10 @@
       "sent": "Ďakujeme! Čoskoro sa vám ozveme.",
       "note": "Toto je placeholder formulár — odosielanie bude doplnené neskôr."
     }
+  },
+  "cooperation": {
+    "title": "Všeobecné obchodné podmienky",
+    "intro": "Všeobecné obchodné podmienky upravujúce nákup a obchodnú spoluprácu so spoločnosťou VOLTEROOM, s.r.o."
   },
   "footer": {
     "tagline": "Spojenie kvality a štýlu v každom produkte.",

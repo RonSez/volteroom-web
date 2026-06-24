@@ -58,7 +58,7 @@ export function jsonRecordFromForm(value: FormDataEntryValue | null): Record<str
       return out;
     }
   } catch {
-    throw new Error("Variant SKUs must be valid JSON, e.g. {\"glossy-white\":\"E08…-GLW\"}.");
+    throw new Error("Variant SKUs must be valid JSON, e.g. {\"soft-touch-white\":\"E08…-MW\"}.");
   }
   return {};
 }

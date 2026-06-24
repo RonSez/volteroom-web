@@ -111,6 +111,18 @@
        a horizontal scrollbar. `clip` (not `hidden`) keeps `position: sticky`
        on the header working. */
     overflow-x: clip;
+    /* Uniform "same design, just bigger" scaling for large displays.
+       The whole layout is rem-based (the max-w-7xl shell, every Section's
+       padding/gaps, all type sizes), so scaling the root font-size scales the
+       entire page in lockstep — proportions stay identical, the content just
+       fills a wider monitor instead of stranding empty margins on the sides.
+
+       Baseline is 1920px (Full HD): 16px / 1920px = 0.8333vw, so at exactly
+       1920px the root is 16px and nothing changes. Below that the 16px floor
+       keeps laptops untouched; above it the page scales up to a 32px ceiling
+       (≈2× at 4K). Viewport-px breakpoints (sm/lg/…) are unaffected, so the
+       layout never reflows — it only grows. */
+    font-size: clamp(16px, 0.8333vw, 32px);
   }
   body {
     @apply text-foreground;

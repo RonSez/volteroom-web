@@ -38,6 +38,8 @@ export function Footer() {
             <li><Link href="/about" className="text-foreground/80 hover:text-foreground">{t("nav.about")}</Link></li>
             <li><Link href="/contact" className="text-foreground/80 hover:text-foreground">{t("nav.contact")}</Link></li>
             <li><Link href="/basket" className="text-foreground/80 hover:text-foreground">{t("nav.basket")}</Link></li>
+            <li><Link href="/privacy" className="text-foreground/80 hover:text-foreground">{t("nav.privacy")}</Link></li>
+            <li><Link href="/cooperation" className="text-foreground/80 hover:text-foreground">{t("nav.cooperation")}</Link></li>
           </ul>
         </div>
 

@@ -12,7 +12,9 @@
     "basket": "Basket",
     "menu": "Menu",
     "openMenu": "Open menu",
-    "language": "Language"
+    "language": "Language",
+    "privacy": "Privacy Policy",
+    "cooperation": "Cooperation"
   },
   "common": {
     "addToBasket": "Add to basket",
@@ -163,22 +165,29 @@
   },
   "about": {
     "title": "About Volteroom",
-    "intro": "Volteroom is a new-generation concept — quality and style united in every product. Minimalist design, reliable mechanisms and selected details for both classic and modern spaces.",
-    "conceptTitle": "A new-generation concept",
-    "concept": [
-      "Elegance and versatility",
-      "Reliable mechanisms and selected details",
-      "Minimalist design taken to perfection",
-      "A stylish interior accessory for classic and modern spaces"
+    "intro": "VOLTEROOM is a European brand of high-quality electrical installation products. Our specialists have many years of experience in engineering supplies for civil and residential construction.",
+    "missionTitle": "Our mission",
+    "mission": "We help create modern technical solutions for spaces that shape image, emphasise status, increase the market value of real estate, and create an atmosphere and warm emotional perception.",
+    "productTitle": "Our product",
+    "product": "A wide selection of mechanisms, fashionable colours, a complex yet practical texture with a soft-touch finish across all series, high-quality materials and geometric shapes allow us to bring any design idea to life.",
+    "productLeadIn": "Our range includes all the necessary mechanisms to fully equip any space, regardless of its complexity:",
+    "productItems": [
+      "Sockets",
+      "Switches",
+      "Dimmers",
+      "Thermostats",
+      "USB ports",
+      "TV sockets",
+      "Satellite TV sockets",
+      "RJ45 sockets"
     ],
-    "suitableTitle": "Suitable for installation in",
-    "suitable": [
-      "Classic and neoclassical residential interiors",
-      "Modern and design apartments",
-      "Offices and conference rooms",
-      "Galleries and public spaces",
-      "HoReCa establishments"
-    ]
+    "productBalance": "We strive for the perfect balance of beauty, affordability and functionality.",
+    "qualityTitle": "Quality",
+    "quality": "We provide a 5-year warranty and comprehensive service throughout the entire lifespan of our products. High-quality components and modern technologies allow our products to last for decades without loss of quality.",
+    "warrantyValue": "5",
+    "warrantyUnit": "years",
+    "warrantyLabel": "Warranty & full-lifecycle service",
+    "closing": "VOLTEROOM is an investment in the aesthetics, functionality and reputation of a property."
   },
   "contact": {
     "title": "Contact",
@@ -206,6 +215,10 @@
       "sent": "Thank you! We'll be in touch soon.",
       "note": "This is a placeholder form — sending will be wired up later."
     }
+  },
+  "cooperation": {
+    "title": "General Terms & Conditions",
+    "intro": "The general terms and conditions governing purchases and business cooperation with VOLTEROOM, s.r.o."
   },
   "footer": {
     "tagline": "Quality and style, united in every product.",

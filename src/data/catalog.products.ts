@@ -879,7 +879,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB111-GLW",
       "soft-touch-white": "E08KB111-MW",
       "soft-touch-carbon": "E08KB111-FBK",
       "soft-touch-cashmere": "E08KB111-CH",
@@ -909,7 +908,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB113-GLW",
       "soft-touch-white": "E08KB113-MW",
       "soft-touch-carbon": "E08KB113-FBK",
       "soft-touch-cashmere": "E08KB113-CH",
@@ -939,7 +937,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB211-GLW",
       "soft-touch-white": "E08KB211-MW",
       "soft-touch-carbon": "E08KB211-FBK",
       "soft-touch-cashmere": "E08KB211-CH",
@@ -969,7 +966,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB213-GLW",
       "soft-touch-white": "E08KB213-MW",
       "soft-touch-carbon": "E08KB213-FBK",
       "soft-touch-cashmere": "E08KB213-CH",
@@ -999,7 +995,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB311-GLW",
       "soft-touch-white": "E08KB311-MW",
       "soft-touch-carbon": "E08KB311-FBK",
       "soft-touch-cashmere": "E08KB311-CH",
@@ -1029,7 +1024,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08ZB103-GLW",
       "soft-touch-white": "E08ZB103-MW",
       "soft-touch-carbon": "E08ZB103-FBK",
       "soft-touch-cashmere": "E08ZB103-CH",
@@ -1059,7 +1053,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08TB227-GLW",
       "soft-touch-white": "E08TB227-MW",
       "soft-touch-carbon": "E08TB227-FBK",
       "soft-touch-cashmere": "E08TB227-CH",
@@ -1089,7 +1082,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08TB102-GLW",
       "soft-touch-white": "E08TB102-MW",
       "soft-touch-carbon": "E08TB102-FBK",
       "soft-touch-cashmere": "E08TB102-CH",
@@ -1119,7 +1111,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08TB222-GLW",
       "soft-touch-white": "E08TB222-MW",
       "soft-touch-carbon": "E08TB222-FBK",
       "soft-touch-cashmere": "E08TB222-CH",
@@ -1149,7 +1140,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08BB101-GLW",
       "soft-touch-white": "E08BB101-MW",
       "soft-touch-carbon": "E08BB101-FBK",
       "soft-touch-cashmere": "E08BB101-CH",
@@ -1179,7 +1169,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08DB102-GLW",
       "soft-touch-white": "E08DB102-MW",
       "soft-touch-carbon": "E08DB102-FBK",
       "soft-touch-cashmere": "E08DB102-CH",
@@ -1209,7 +1198,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08DB104-GLW",
       "soft-touch-white": "E08DB104-MW",
       "soft-touch-carbon": "E08DB104-FBK",
       "soft-touch-cashmere": "E08DB104-CH",
@@ -1239,7 +1227,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08KB215-GLW",
       "soft-touch-white": "E08KB215-MW",
       "soft-touch-carbon": "E08KB215-FBK",
       "soft-touch-cashmere": "E08KB215-CH",
@@ -1269,7 +1256,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08ZB203-GLW",
       "soft-touch-white": "E08ZB203-MW",
       "soft-touch-carbon": "E08ZB203-FBK",
       "soft-touch-cashmere": "E08ZB203-CH",
@@ -1299,7 +1285,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08BB102-GLW",
       "soft-touch-white": "E08BB102-MW",
       "soft-touch-carbon": "E08BB102-FBK",
       "soft-touch-cashmere": "E08BB102-CH",
@@ -1329,7 +1314,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08TB236-GLW",
       "soft-touch-white": "E08TB236-MW",
       "soft-touch-carbon": "E08TB236-FBK",
       "soft-touch-cashmere": "E08TB236-CH",
@@ -1359,7 +1343,6 @@ export const products: Product[] = [
     },
     "basePrice": 8.9,
     "variantSkus": {
-      "glossy-white": "E08ZB104-GLW",
       "soft-touch-white": "E08ZB104-MW",
       "soft-touch-carbon": "E08ZB104-FBK",
       "soft-touch-cashmere": "E08ZB104-CH",
@@ -1389,11 +1372,6 @@ export const products: Product[] = [
     },
     "basePrice": 9.9,
     "variantSkus": {
-      "1-glossy-white": "E08B186-GLW",
-      "2-glossy-white": "E08B286-GLW",
-      "3-glossy-white": "E08B386-GLW",
-      "4-glossy-white": "E08B486-GLW",
-      "5-glossy-white": "E08B586-GLW",
       "1-soft-touch-white": "E08B186-MW",
       "2-soft-touch-white": "E08B286-MW",
       "3-soft-touch-white": "E08B386-MW",
