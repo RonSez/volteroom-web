@@ -2,33 +2,62 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { type Product, NEUTRAL_FINISH_HEX, resolveSku } from "@/data/catalog";
+import {
+  type Product,
+  type FinishId,
+  NEUTRAL_FINISH_HEX,
+  resolveSku,
+} from "@/data/catalog";
 import { getProductFinishes } from "@/lib/catalog";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "./ProductImage";
 import { FinishSwatch } from "./FinishSwatch";
 import { TiltCard } from "@/components/ui/Motion";
 
-export async function ProductCard({ product }: { product: Product }) {
+export async function ProductCard({
+  product,
+  selectedFinish,
+}: {
+  product: Product;
+  /** When the catalog is filtered by finish, show that finish's photo/swatch. */
+  selectedFinish?: FinishId;
+}) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("common");
   const finishes = await getProductFinishes(product);
-  const primary = finishes[0];
+  // Show the selected finish when it applies to this product, else the first.
+  const active =
+    (selectedFinish && finishes.find((f) => f.id === selectedFinish)) ||
+    finishes[0];
   const minGang = product.gangs ? Math.min(...product.gangs) : 1;
-  const sku = resolveSku(product, primary?.id, minGang);
+  const sku = resolveSku(product, active?.id, minGang);
+
+  // With a finish selected, show that finish's front photo (its tinted
+  // placeholder if none exists); otherwise the default catalogue thumbnail.
+  const imageUrl =
+    selectedFinish && active
+      ? product.images?.find(
+          (im) =>
+            im.finishId === active.id && (im.view ?? "front") !== "diagram",
+        )?.url
+      : product.imageUrl;
 
   return (
     <TiltCard className="h-full">
     <Link
-      href={`/catalog/${product.slug}`}
+      href={
+        selectedFinish
+          ? `/catalog/${product.slug}?finish=${selectedFinish}`
+          : `/catalog/${product.slug}`
+      }
       className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-[box-shadow] duration-300 hover:shadow-[0_0_50px_-12px_rgba(43, 164, 214,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <div className="relative overflow-hidden bg-gradient-to-b from-[#101a2e] to-[#070d1b]">
         <ProductImage
-          imageUrl={product.imageUrl}
+          imageUrl={imageUrl}
           alt={product.name[locale]}
           category={product.category}
-          hex={primary?.hex ?? NEUTRAL_FINISH_HEX}
+          hex={active?.hex ?? NEUTRAL_FINISH_HEX}
           gang={minGang}
           className="rounded-none transition-transform duration-500 group-hover:scale-[1.04]"
         />
@@ -52,7 +81,13 @@ export async function ProductCard({ product }: { product: Product }) {
         {finishes.length > 0 ? (
           <div className="flex flex-wrap items-center gap-1.5">
             {finishes.slice(0, 7).map((f) => (
-              <FinishSwatch key={f.id} finish={f} size="sm" title={f.name[locale]} />
+              <FinishSwatch
+                key={f.id}
+                finish={f}
+                size="sm"
+                selected={f.id === selectedFinish}
+                title={f.name[locale]}
+              />
             ))}
             {finishes.length > 7 && (
               <span className="text-xs text-muted-foreground">

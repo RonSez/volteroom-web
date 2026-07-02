@@ -35,6 +35,7 @@ const translations: { names: Record<string, Tr>; descriptions: Record<string, Tr
 const missingTranslations: string[] = [];
 
 const SUFFIX_TO_FINISH: Record<string, string> = {
+  GLW: "glossy-white",
   MW: "soft-touch-white",
   FBK: "soft-touch-carbon",
   CH: "soft-touch-cashmere",
@@ -62,7 +63,7 @@ function stripColor(b: string): string {
   return b
     .trim()
     .replace(
-      /,\s*(soft touch white|soft touch carbon|soft touch cashmere|graphite)\s*$/i,
+      /,\s*(glossy white|soft touch white|soft touch carbon|soft touch cashmere|graphite)\s*$/i,
       "",
     )
     .trim();
@@ -190,7 +191,7 @@ for (const r of rows) {
   }
 
   const finishId = SUFFIX_TO_FINISH[colorMatch[1]];
-  // Skip rows for a finish we no longer carry (e.g. the discontinued GLW).
+  // Skip rows for any suffix we don't map to a carried finish.
   if (!finishId) continue;
   let base = code.slice(0, colorMatch.index);
   base = BASE_FIXUPS[base] ?? base;

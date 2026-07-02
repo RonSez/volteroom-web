@@ -26,6 +26,7 @@ export type Localized = Record<Locale, string>;
 /* ------------------------------------------------------------------ */
 
 export type FinishId =
+  | "glossy-white"
   | "soft-touch-white"
   | "soft-touch-carbon"
   | "soft-touch-cashmere"
@@ -161,6 +162,7 @@ export const NEUTRAL_FINISH_HEX = "#9AA0A6";
 const L = (sk: string, en: string, cs: string): Localized => ({ sk, en, cs });
 
 export const finishes: Finish[] = [
+  { id: "glossy-white", code: "GLW", hex: "#FAFAF8", light: true, name: L("Lesklá biela", "Glossy White", "Lesklá bílá") },
   { id: "soft-touch-white", code: "MW", hex: "#ECEBE7", light: true, name: L("Soft touch biela", "Soft Touch White", "Soft touch bílá") },
   { id: "soft-touch-cashmere", code: "CH", hex: "#D7CCB8", light: true, name: L("Soft touch kašmír", "Soft Touch Cashmere", "Soft touch kašmír") },
   { id: "graphite", code: "GRF", hex: "#55585D", name: L("Grafit", "Graphite", "Grafit") },

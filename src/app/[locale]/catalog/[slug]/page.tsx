@@ -35,8 +35,10 @@ export async function generateMetadata({
 
 export default async function ProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
@@ -53,6 +55,11 @@ export default async function ProductPage({
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
 
+  // Preselect the finish carried over from the catalog colour filter, if valid.
+  const sp = await searchParams;
+  const finishRaw = Array.isArray(sp.finish) ? sp.finish[0] : sp.finish;
+  const initialFinishId = finishes.find((f) => f.id === finishRaw)?.id;
+
   return (
     <>
       <Section className="py-8 sm:py-10">
@@ -63,7 +70,11 @@ export default async function ProductPage({
           <ChevronLeft className="size-4" />
           {t("backToCatalog")}
         </Link>
-        <ProductDetail product={product} finishes={finishes} />
+        <ProductDetail
+          product={product}
+          finishes={finishes}
+          initialFinishId={initialFinishId}
+        />
       </Section>
 
       {related.length > 0 && <Related products={related} />}

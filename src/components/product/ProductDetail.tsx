@@ -9,6 +9,7 @@ import type { Locale } from "@/i18n/routing";
 import {
   type Product,
   type Finish,
+  type FinishId,
   type ProductView,
   type ProductImageInfo,
   SPEC_ORDER,
@@ -33,16 +34,21 @@ function formatSpec(key: string, value: string): string {
 export function ProductDetail({
   product,
   finishes,
+  initialFinishId,
 }: {
   product: Product;
   finishes: Finish[];
+  /** Finish to preselect (e.g. carried over from the catalog colour filter). */
+  initialFinishId?: FinishId;
 }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("product");
   const tc = useTranslations("common");
 
   const hasFinish = finishes.length > 0;
-  const [finishId, setFinishId] = useState(hasFinish ? finishes[0].id : undefined);
+  const [finishId, setFinishId] = useState(
+    hasFinish ? initialFinishId ?? finishes[0].id : undefined,
+  );
   const [gang, setGang] = useState(product.gangs ? product.gangs[0] : undefined);
   const addItem = useBasket((s) => s.addItem);
 

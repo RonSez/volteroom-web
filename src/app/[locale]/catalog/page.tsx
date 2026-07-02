@@ -66,6 +66,7 @@ export default async function CatalogPage({
       categories={categories}
       finishes={finishes}
       gangs={allGangs}
+      selectedFinish={finish}
     />
   );
 }
@@ -76,12 +77,14 @@ function CatalogContent({
   categories,
   finishes,
   gangs,
+  selectedFinish,
 }: {
   count: number;
   products: Product[];
   categories: Category[];
   finishes: Finish[];
   gangs: number[];
+  selectedFinish?: FinishId;
 }) {
   const t = useTranslations("catalog");
 
@@ -113,7 +116,11 @@ function CatalogContent({
           ) : (
             <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3">
               {products.map((p) => (
-                <ProductCard key={p.slug} product={p} />
+                <ProductCard
+                  key={p.slug}
+                  product={p}
+                  selectedFinish={selectedFinish}
+                />
               ))}
             </div>
           )}

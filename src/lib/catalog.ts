@@ -167,9 +167,17 @@ const loadCatalog = unstable_cache(
             )
           : undefined,
         featured: p.featured || undefined,
-        // Catalog-card thumbnail: the first real photo, never a line diagram, so
-        // products with only diagrams keep their placeholder until a photo lands.
-        imageUrl: images?.find((im) => (im.view ?? "front") !== "diagram")?.url,
+        // Catalog-card thumbnail: prefer the glossy-white front photo so every
+        // product defaults to the same finish (the client's chosen default),
+        // falling back to any real photo, and never a line diagram — products
+        // with only diagrams keep their placeholder until a photo lands.
+        imageUrl:
+          images?.find(
+            (im) =>
+              im.finishId === "glossy-white" &&
+              (im.view ?? "front") !== "diagram",
+          )?.url ??
+          images?.find((im) => (im.view ?? "front") !== "diagram")?.url,
         images: images && images.length ? images : undefined,
       };
     });
