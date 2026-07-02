@@ -62,15 +62,24 @@ const generateSpreadTransforms = (count: number) => {
   );
 };
 
-// Resting-stack tilts, cycled by depth so any number of cards stays varied.
-const baseRotations = [
-  "rotate-2",
-  "-rotate-2",
-  "rotate-4",
-  "-rotate-4",
-  "rotate-6",
-  "-rotate-6",
-];
+// Resting deck: a big, slightly-fanned stack so the section reads as a deck of
+// photos worth exploring (rather than a lone card in a sea of whitespace). The
+// top card sits at ~1.8x; deeper cards scale down and peek out left/right by
+// parity, then tuck behind once they're past the visible front of the deck.
+const REST_TOP_SCALE = 1.8;
+
+const restTransform = (stackPosition: number) => {
+  if (stackPosition === 0) return `scale(${REST_TOP_SCALE})`;
+  // Cap visual depth so a tall stack doesn't drift off-frame — cards past the
+  // front few collapse into a tight deck behind the hero card.
+  const depth = Math.min(stackPosition, 5);
+  const dir = stackPosition % 2 === 0 ? 1 : -1;
+  const scale = Math.max(REST_TOP_SCALE - depth * 0.12, 1.05);
+  const x = dir * Math.min(depth * 0.7, 3.2); // rem, alternating peek
+  const y = depth * 0.45; // rem, gentle downward cascade
+  const r = dir * Math.min(2.5 + depth * 1.2, 9); // deg, fan tilt
+  return `translate(${x}rem, ${y}rem) rotate(${r}deg) scale(${scale})`;
+};
 
 const InteractivePhotoStack = React.forwardRef<
   HTMLDivElement,
@@ -132,10 +141,7 @@ const InteractivePhotoStack = React.forwardRef<
             const isClicked = index === clickedIndex;
             const transform = isGroupHovered
               ? spreadTransforms[index]
-              : `translateY(${stackPosition * 0.4}rem) scale(${Math.max(
-                  1 - stackPosition * 0.04,
-                  0.55,
-                )})`;
+              : restTransform(stackPosition);
 
             return (
               <div
@@ -152,9 +158,6 @@ const InteractivePhotoStack = React.forwardRef<
                   // switches instantly.
                   "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition-transform duration-500 ease-in-out",
                   {
-                    "rotate-0": isGroupHovered,
-                    [baseRotations[stackPosition % baseRotations.length]]:
-                      !isGroupHovered && !isTopCard,
                     "hover:scale-110": isGroupHovered && !isClicked,
                     "animate-spin-y": isClicked,
                   },
