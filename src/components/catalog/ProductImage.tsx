@@ -34,18 +34,26 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        "relative aspect-square w-full overflow-hidden rounded-xl bg-white",
+        // Uniform inner white margin (`p-[10%]`) so the photo sits slightly
+        // smaller inside an unchanged square box. This normalises the varying
+        // amount of whitespace baked into individual source photos, giving
+        // every product consistent breathing room. `fill` is absolutely
+        // positioned (padding wouldn't inset it), so the padded box wraps an
+        // inner relative container that the image fills.
+        "relative aspect-square w-full overflow-hidden rounded-xl bg-white p-[10%]",
         className,
       )}
     >
-      <Image
-        src={imageUrl}
-        alt={alt}
-        fill
-        sizes={sizes}
-        quality={90}
-        className="object-contain"
-      />
+      <div className="relative h-full w-full">
+        <Image
+          src={imageUrl}
+          alt={alt}
+          fill
+          sizes={sizes}
+          quality={90}
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 }
