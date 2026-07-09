@@ -474,37 +474,10 @@
   to { transform: rotateY(360deg); }
 }
 
-/* ──────────────────────────────────────────────────────────
-   Hero media reel — cross-fade slides + slow Ken-Burns zoom.
-   The media rests at the zoom END scale, so when a slide loses
-   `.is-active` its animation is removed and the transform reverts
-   to that same end value — no visible snap as it fades out.
-   ────────────────────────────────────────────────────────── */
-.hero-slide-media {
-  transform: scale(1.14);
-}
-
-.hero-slide.is-active .hero-slide-media {
-  animation: vr-kenburns 3400ms ease-out both;
-}
-
-@keyframes vr-kenburns {
-  from {
-    transform: scale(1.04);
-  }
-  to {
-    transform: scale(1.14);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
   .animate-rise {
     animation: none !important;
-  }
-  /* Hold a calm, near-1:1 frame instead of the zoomed end-state. */
-  .hero-slide-media {
-    transform: scale(1.02);
   }
 }
 

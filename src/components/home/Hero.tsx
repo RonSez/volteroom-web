@@ -46,11 +46,7 @@ export function Hero() {
         preload="auto"
         tabIndex={-1}
         aria-hidden
-        // Scale up slightly so the thin letterbox bars baked into the source
-        // clip are pushed past the section's overflow-hidden edge (the bars
-        // would otherwise show on 16:9-or-taller viewports, where object-cover
-        // doesn't crop them away).
-        className="absolute inset-0 -z-10 h-full w-full scale-[1.04] object-cover"
+        className="absolute inset-0 -z-10 h-full w-full object-cover"
       >
         <source src="/brand/hero-scroll.mp4" type="video/mp4" />
       </video>
