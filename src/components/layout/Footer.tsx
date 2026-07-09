@@ -22,7 +22,7 @@ export function Footer() {
         <div className="relative grid gap-10 px-8 py-14 sm:px-10 md:grid-cols-2 lg:grid-cols-4 lg:px-12">
         <div className="space-y-4">
           <Link href="/" aria-label="Volteroom" className="mb-2 inline-block text-foreground">
-            <Logo tone="light" />
+            <Logo />
           </Link>
           <p className="max-w-xs text-sm text-foreground/70">
             {t("footer.tagline")}

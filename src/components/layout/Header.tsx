@@ -76,12 +76,8 @@ export function Header() {
         )}
       >
         <Link href="/" aria-label="Volteroom" className="shrink-0">
-          {/* The logo is the dark (black & blue) wordmark; a soft white aura
-              lifts it off the dark bar for contrast. */}
-          <Logo
-            tone="dark"
-            className="h-8 [filter:drop-shadow(0_0_2px_rgba(255,255,255,0.95))_drop-shadow(0_0_6px_rgba(255,255,255,0.65))_drop-shadow(0_0_12px_rgba(255,255,255,0.45))]"
-          />
+          {/* Slate-blue wordmark reads cleanly on the dark bar — no aura needed. */}
+          <Logo className="h-10 sm:h-11" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

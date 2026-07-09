@@ -1,25 +1,17 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-import logoDark from "../../../public/brand/logo.png";
-import logoLight from "../../../public/brand/logo-light.png";
+import logo from "../../../public/brand/logo.png";
 
 /**
- * Volteroom wordmark — the real brand logo (transparent background).
- * Use `tone="light"` on dark surfaces (e.g. the navy footer) to render the
- * white variant; the default dark (black & blue) wordmark suits light surfaces.
+ * Volteroom wordmark — the slate-blue brand logo (transparent background).
+ * A single tone reads cleanly across the site's dark surfaces, so the same
+ * mark is used in both the header and the footer.
  */
-export function Logo({
-  className,
-  tone = "dark",
-}: {
-  className?: string;
-  tone?: "dark" | "light";
-}) {
-  const src = tone === "light" ? logoLight : logoDark;
+export function Logo({ className }: { className?: string }) {
   return (
     <Image
-      src={src}
+      src={logo}
       alt="Volteroom"
       priority
       className={cn("h-7 w-auto", className)}
