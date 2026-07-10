@@ -12,7 +12,7 @@ const REPRESENTATIVE_HEX = "#3B3E43"; // matte titanium (placeholder tint fallba
 
 /**
  * A photographed product per category, used as the category card's hero image.
- * All are covers/frame carrying a glossy-white photo (mechanisms have none), so
+ * All are covers/frame carrying the default-finish photo (mechanisms have none), so
  * the card shows a real image; anything without a photo falls back to the SVG
  * placeholder.
  */

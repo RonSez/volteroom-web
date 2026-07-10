@@ -15,6 +15,7 @@ import {
   SPEC_ORDER,
   resolveSku,
   NEUTRAL_FINISH_HEX,
+  DEFAULT_FINISH_ID,
 } from "@/data/catalog";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "@/components/catalog/ProductImage";
@@ -47,7 +48,11 @@ export function ProductDetail({
 
   const hasFinish = finishes.length > 0;
   const [finishId, setFinishId] = useState(
-    hasFinish ? initialFinishId ?? finishes[0].id : undefined,
+    hasFinish
+      ? initialFinishId ??
+          finishes.find((f) => f.id === DEFAULT_FINISH_ID)?.id ??
+          finishes[0].id
+      : undefined,
   );
   const [gang, setGang] = useState(product.gangs ? product.gangs[0] : undefined);
   const addItem = useBasket((s) => s.addItem);

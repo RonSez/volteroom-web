@@ -158,6 +158,14 @@ export interface Product {
 /** Neutral swatch colour for mechanisms (the moulded "Space gray" body). */
 export const NEUTRAL_FINISH_HEX = "#9AA0A6";
 
+/**
+ * The finish shown by default wherever no finish is selected — catalogue
+ * thumbnails, category cards, and the product page's initial gallery/swatch.
+ * The client's chosen standard catalogue look. Surfaces fall back to the first
+ * available finish for the rare product that doesn't offer this one.
+ */
+export const DEFAULT_FINISH_ID: FinishId = "soft-touch-cashmere";
+
 /** Build a localized string from its three translations (en = source). */
 const L = (sk: string, en: string, cs: string): Localized => ({ sk, en, cs });
 

@@ -6,6 +6,7 @@ import {
   type Product,
   type FinishId,
   NEUTRAL_FINISH_HEX,
+  DEFAULT_FINISH_ID,
   resolveSku,
 } from "@/data/catalog";
 import { getProductFinishes } from "@/lib/catalog";
@@ -25,9 +26,11 @@ export async function ProductCard({
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("common");
   const finishes = await getProductFinishes(product);
-  // Show the selected finish when it applies to this product, else the first.
+  // Show the selected finish when it applies to this product, else the default
+  // finish (falling back to the first when a product doesn't offer it).
   const active =
     (selectedFinish && finishes.find((f) => f.id === selectedFinish)) ||
+    finishes.find((f) => f.id === DEFAULT_FINISH_ID) ||
     finishes[0];
   const minGang = product.gangs ? Math.min(...product.gangs) : 1;
   const sku = resolveSku(product, active?.id, minGang);

@@ -12,6 +12,7 @@ import type {
   ProductSpecs,
   ProductView,
 } from "@/data/catalog";
+import { DEFAULT_FINISH_ID } from "@/data/catalog";
 
 /**
  * Catalog accessors — the ONLY place the UI reads catalog data from.
@@ -167,14 +168,14 @@ const loadCatalog = unstable_cache(
             )
           : undefined,
         featured: p.featured || undefined,
-        // Catalog-card thumbnail: prefer the glossy-white front photo so every
+        // Catalog-card thumbnail: prefer the default-finish front photo so every
         // product defaults to the same finish (the client's chosen default),
         // falling back to any real photo, and never a line diagram — products
         // with only diagrams keep their placeholder until a photo lands.
         imageUrl:
           images?.find(
             (im) =>
-              im.finishId === "glossy-white" &&
+              im.finishId === DEFAULT_FINISH_ID &&
               (im.view ?? "front") !== "diagram",
           )?.url ??
           images?.find((im) => (im.view ?? "front") !== "diagram")?.url,
