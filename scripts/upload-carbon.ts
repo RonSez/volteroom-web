@@ -29,13 +29,17 @@
  * products and re-uploads to deterministic storage paths (upsert), so it never
  * accumulates duplicates. Requires SUPABASE_SERVICE_ROLE_KEY in .env.local.
  *
- * Note: the public catalog is cached under the `"catalog"` tag; a script can't
- * call revalidateTag from outside a request. After running, trigger a catalog
- * revalidation (re-save any product in the admin panel, or redeploy) so the
- * change goes live. A fresh `next dev` process also picks it up immediately.
+ * Note: the public catalog is cached under the `"catalog"` tag. When it
+ * finishes this script pings the deployed `/api/revalidate` route to push the
+ * change live — set REVALIDATE_URL + REVALIDATE_SECRET in .env.local (see
+ * scripts/revalidate.ts). Without them it warns; re-save any product in the
+ * admin panel to push it live. A redeploy does NOT suffice — Vercel's Data
+ * Cache survives deployments, so the stale snapshot would linger.
  */
 import { config } from "dotenv";
 config({ path: ".env.local" });
+
+import { revalidate } from "./revalidate";
 
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -207,6 +211,8 @@ async function main() {
     console.log(`Skipped ${skipped.length}:`);
     for (const s of skipped) console.log(`  • ${s}`);
   }
+
+  if (uploaded) await revalidate();
 }
 
 main().catch((err) => {
