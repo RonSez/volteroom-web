@@ -50,3 +50,5 @@ next-env.d.ts
 /scripts/diagrams/
 # carbon (FBK) front photos staged for upload (scripts/upload-carbon.ts)
 /scripts/carbon/
+# mechanism front/back photos staged for upload (scripts/upload-mechanisms.ts)
+/scripts/mechanism-photos/
