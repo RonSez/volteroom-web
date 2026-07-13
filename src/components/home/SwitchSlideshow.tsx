@@ -108,7 +108,7 @@ export function SwitchSlideshow({ images }: { images: string[] }) {
               {String(active + 1).padStart(2, "0")} /{" "}
               {String(count).padStart(2, "0")}
             </p>
-            <h3 className="font-heading text-2xl font-bold sm:text-3xl">
+            <h3 className="text-shimmer font-heading text-2xl font-bold sm:text-3xl">
               {slide.title}
             </h3>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">

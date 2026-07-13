@@ -54,7 +54,7 @@
      as flat halos). The whole site runs dark-only; these tokens are the single
      source of truth. */
   --background: #08090d;
-  --foreground: #edf1f6; /* cool white — the lit windowsill, used for text only */
+  --foreground: #f4f7fb; /* cool white — the lit windowsill, used for text only */
 
   /* The one accent: the brand blue, lifted straight from the logo's frame
      gradient (deep navy → azure). Broken out as RGB so it can tint glass,
@@ -77,7 +77,7 @@
   --secondary-foreground: #edf1f6;
 
   --muted: #1c2027;
-  --muted-foreground: #8a93a3; /* cool slate grey */
+  --muted-foreground: #b3bccb; /* cool slate grey — lifted for legibility (~10.4:1 on bg) */
 
   /* Hover/active surface — a faint charcoal lift. */
   --accent: #222732;
@@ -105,7 +105,11 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply font-sans antialiased;
+    /* NOTE: deliberately not `antialiased`. `-webkit-font-smoothing: antialiased`
+       thins stroke weight, which on this dark canvas made even pure-white headings
+       read as faint/pale. Letting it default to `auto` renders fuller, more legible
+       strokes across the whole site. */
+    @apply font-sans;
     scroll-behavior: smooth;
     /* Stop reveal/parallax transforms and full-bleed glows from ever creating
        a horizontal scrollbar. `clip` (not `hidden`) keeps `position: sticky`
@@ -179,10 +183,13 @@
 }
 
 @utility text-brand-gradient {
-  background-image: linear-gradient(115deg, var(--brand), var(--brand-to));
+  /* Brighter azure→near-white ramp (was brand→brand-to, which read dim as clipped
+     text). Solid fallback keeps it legible if background-clip:text isn't honoured. */
+  color: var(--brand-to);
+  background-image: linear-gradient(115deg, var(--brand-to), #d3eefb);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -443,18 +450,23 @@
    tungsten band passes through every few seconds, then rests off-screen.
    Clipped to the text; reduced-motion holds it static and readable. */
 @utility text-shimmer {
+  /* Solid fallback so the glyphs stay fully legible before paint and anywhere
+     background-clip:text isn't honoured. Pure white base keeps the resting text
+     at maximum contrast; the brand-to band still sweeps across for the
+     "colour-change" effect the client likes. */
+  color: var(--foreground);
   background-image: linear-gradient(
     110deg,
-    var(--foreground) 0%,
-    var(--foreground) 44%,
+    #ffffff 0%,
+    #ffffff 44%,
     var(--brand-to) 50%,
-    var(--foreground) 56%,
-    var(--foreground) 100%
+    #ffffff 56%,
+    #ffffff 100%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
   animation: vr-text-shimmer 6.5s ease-in-out 1s infinite;
 }
 

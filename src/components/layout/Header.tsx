@@ -18,6 +18,11 @@ import {
 import { useBasketCount, useHydrated } from "@/lib/store/basket";
 import { cn } from "@/lib/utils";
 
+// Faint always-on chip + icon drop-shadow so the white header icons never blend
+// into bright frames of the hero film (the bar itself stays transparent).
+const ICON_CHIP =
+  "bg-background/40 backdrop-blur-sm ring-1 ring-white/10 [&_svg]:drop-shadow-[0_1px_5px_rgba(8,9,13,0.9)]";
+
 const NAV = [
   { href: "/", key: "home" },
   { href: "/catalog", key: "catalog" },
@@ -32,7 +37,7 @@ function BasketButton({ label }: { label: string }) {
     <Link
       href="/basket"
       aria-label={label}
-      className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "relative")}
+      className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "relative", ICON_CHIP)}
     >
       <ShoppingBag className="size-5" />
       {hydrated && count > 0 && (
@@ -86,7 +91,9 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "relative rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
+                // Legibility shadow so both active (white) and inactive links stay
+                // readable over bright frames of the hero film behind the bar.
+                "relative rounded-md px-3 py-2 text-sm font-medium transition-colors [text-shadow:0_1px_10px_rgba(8,9,13,0.85)] hover:text-foreground",
                 isActive(item.href) ? "text-foreground" : "text-muted-foreground",
               )}
             >
@@ -127,6 +134,7 @@ export function Header() {
               className={cn(
                 buttonVariants({ variant: "ghost", size: "icon" }),
                 "md:hidden",
+                ICON_CHIP,
               )}
             >
               <Menu className="size-5" />

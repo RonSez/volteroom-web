@@ -69,7 +69,7 @@ function FilterBody({
     <div className="space-y-8">
       {/* Category */}
       <div>
-        <h3 className="mb-3 text-sm font-semibold">{t("category")}</h3>
+        <h3 className="mb-3 text-sm font-bold">{t("category")}</h3>
         <div className="flex flex-wrap gap-2">
           <Link href={hrefFor(current, { category: undefined })} onClick={onNavigate} className={chip(!current.category)}>
             {t("all")}
@@ -89,7 +89,7 @@ function FilterBody({
 
       {/* Type (kind) */}
       <div>
-        <h3 className="mb-3 text-sm font-semibold">{t("kind")}</h3>
+        <h3 className="mb-3 text-sm font-bold">{t("kind")}</h3>
         <div className="flex flex-wrap gap-2">
           <Link href={hrefFor(current, { kind: undefined })} onClick={onNavigate} className={chip(!current.kind)}>
             {t("all")}
@@ -109,7 +109,7 @@ function FilterBody({
 
       {/* Finish */}
       <div>
-        <h3 className="mb-3 text-sm font-semibold">{t("finish")}</h3>
+        <h3 className="mb-3 text-sm font-bold">{t("finish")}</h3>
         <div className="flex flex-wrap gap-2.5">
           {finishes.map((f) => {
             const active = current.finish === f.id;
@@ -130,7 +130,7 @@ function FilterBody({
 
       {/* Gang */}
       <div>
-        <h3 className="mb-3 text-sm font-semibold">{t("gang")}</h3>
+        <h3 className="mb-3 text-sm font-bold">{t("gang")}</h3>
         <div className="flex flex-wrap gap-2">
           {gangs.map((g) => {
             const active = current.gang === String(g);
@@ -170,7 +170,7 @@ export function CatalogFilters({ categories, finishes, gangs }: FilterData) {
     <>
       {/* Desktop sidebar */}
       <aside className="hidden lg:block">
-        <h2 className="mb-6 font-heading text-lg font-semibold">{t("title")}</h2>
+        <h2 className="mb-6 font-heading text-lg font-bold">{t("title")}</h2>
         <FilterBody categories={categories} finishes={finishes} gangs={gangs} />
       </aside>
 

@@ -48,7 +48,7 @@ function AboutContent() {
         index="01"
         icon={Target}
         title={t("missionTitle")}
-        image="/brand/presentation/slide-04.png"
+        image="/brand/about/mission.png"
         imageSide="right"
         className="bg-muted/40"
       >
@@ -62,7 +62,7 @@ function AboutContent() {
         index="02"
         icon={LayoutGrid}
         title={t("productTitle")}
-        image="/brand/presentation/slide-03.png"
+        image="/brand/about/product-lineup.png"
         imageSide="left"
       >
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">
