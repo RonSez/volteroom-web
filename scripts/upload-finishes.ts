@@ -259,13 +259,14 @@ async function main() {
 
   let uploaded = 0;
   for (const job of jobs) {
-    // Only the glossy-white photo becomes the product's primary/catalogue
-    // thumbnail, so the default (no finish selected) card always shows glossy
-    // white. Other finishes' photos are non-primary and surface only when that
-    // finish is selected. A duplicate file for the same finish+article (e.g. a
-    // second angle) is also demoted so it never fights the primary.
+    // Only the default-finish photo becomes the product's primary/catalogue
+    // thumbnail, so the default (no finish selected) card shows that finish.
+    // Keep this in sync with DEFAULT_FINISH_ID in src/data/catalog.ts. Other
+    // finishes' photos are non-primary and surface only when that finish is
+    // selected. A duplicate file for the same finish+article (e.g. a second
+    // angle) is also demoted so it never fights the primary.
     const primary =
-      job.place.primary && job.dup === 0 && job.finishId === "glossy-white";
+      job.place.primary && job.dup === 0 && job.finishId === "soft-touch-cashmere";
     const sort = job.dup === 0 ? job.place.sort : 90 + job.dup;
     const suffix = job.dup === 0 ? "" : `-${job.dup + 1}`;
     const path = `${job.productId}/front-${job.finishId}-${job.article}${suffix}${job.ext}`;

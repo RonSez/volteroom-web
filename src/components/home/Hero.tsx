@@ -107,7 +107,7 @@ export function Hero() {
               href="/catalog"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "btn-liquid btn-liquid-blue group/button h-12 rounded-full px-8 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                "btn-liquid btn-liquid-blue group/button h-12 rounded-full px-8 text-[0.95rem] font-semibold tracking-[0.03em] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
               )}
             >
               <span className="relative z-[2] inline-flex items-center gap-2">
@@ -119,7 +119,7 @@ export function Hero() {
               href="/contact"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "btn-liquid btn-liquid-white h-12 rounded-full px-8 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-transparent hover:text-foreground",
+                "btn-liquid btn-liquid-white h-12 rounded-full px-8 text-[0.95rem] font-semibold tracking-[0.03em] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-transparent hover:text-foreground",
               )}
             >
               <span className="relative z-[2] inline-flex items-center gap-2">

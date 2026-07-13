@@ -33,7 +33,12 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger
         disabled={isPending}
         aria-label={localeNames[locale]}
-        className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-1.5 uppercase")}
+        className={cn(
+          buttonVariants({ variant: "ghost", size: "sm" }),
+          // Match the header icon chip so the white globe/label stays visible over
+          // the hero film (kept in sync with ICON_CHIP in Header.tsx).
+          "gap-1.5 uppercase bg-background/40 backdrop-blur-sm ring-1 ring-white/10 [&_svg]:drop-shadow-[0_1px_5px_rgba(8,9,13,0.9)]",
+        )}
       >
         <Globe className="size-4" />
         <span className="text-xs font-semibold tracking-wide">{locale}</span>

@@ -8,7 +8,13 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // `next dev`. Guarded to dev only: during `next build` its internal check
 // still fires and tries to spawn wrangler, which breaks non-Cloudflare
 // builders (e.g. Vercel) with an EPIPE crash.
-if (process.env.NODE_ENV === "development") {
+//
+// Also skipped in Next's static-generation jest-worker children (which set
+// JEST_WORKER_ID and re-import this config): the main dev process already
+// owns wrangler, so re-initializing it in a worker crashes it with `write
+// EPIPE`, surfacing as "Jest worker encountered N child process exceptions"
+// and failing generateStaticParams for every route.
+if (process.env.NODE_ENV === "development" && !process.env.JEST_WORKER_ID) {
   initOpenNextCloudflareForDev();
 }
 
