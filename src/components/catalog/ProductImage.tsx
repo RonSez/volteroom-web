@@ -34,20 +34,15 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        // Uniform inner margin (`p-[10%]`) normalises the varying whitespace
-        // baked into individual source photos, giving every product consistent
-        // breathing room. The container paints the dark "lit niche" — the same
-        // ground as the ProductVisual placeholder, plus a faint azure top-glow —
-        // so cut-out photos float on the site's dark surface instead of a white
-        // tile. `fill` is absolutely positioned (padding wouldn't inset it), so
-        // the padded box wraps an inner relative container that the image fills.
-        "relative aspect-square w-full overflow-hidden rounded-xl p-[10%]",
+        // Uniform inner white margin (`p-[10%]`) so the photo sits slightly
+        // smaller inside an unchanged square box. This normalises the varying
+        // amount of whitespace baked into individual source photos, giving
+        // every product consistent breathing room. `fill` is absolutely
+        // positioned (padding wouldn't inset it), so the padded box wraps an
+        // inner relative container that the image fills.
+        "relative aspect-square w-full overflow-hidden rounded-xl bg-white p-[10%]",
         className,
       )}
-      style={{
-        background:
-          "radial-gradient(115% 80% at 50% -8%, rgba(43,164,214,0.10) 0%, transparent 55%), radial-gradient(120% 100% at 50% 0%, #16233d 0%, #0c1626 55%, #060b18 100%)",
-      }}
     >
       <div className="relative h-full w-full">
         <Image
@@ -56,9 +51,7 @@ export function ProductImage({
           fill
           sizes={sizes}
           quality={90}
-          // Contact shadow hugs the cut-out silhouette so the product reads as
-          // sitting in the niche rather than pasted onto it.
-          className="object-contain drop-shadow-[0_16px_28px_rgba(0,0,0,0.5)]"
+          className="object-contain"
         />
       </div>
     </div>
