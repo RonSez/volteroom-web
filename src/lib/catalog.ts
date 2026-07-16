@@ -69,6 +69,7 @@ interface ProductFinishRow {
 }
 
 interface ProductImageRow {
+  id: string;
   product_id: string;
   storage_path: string;
   view: ProductView | null;
@@ -96,7 +97,7 @@ const loadCatalog = unstable_cache(
       sb.from("product_finishes").select("*"),
       sb
         .from("product_images")
-        .select("product_id, storage_path, view, finish_id, gang, is_primary, sort_order")
+        .select("id, product_id, storage_path, view, finish_id, gang, is_primary, sort_order")
         .order("is_primary", { ascending: false })
         .order("sort_order"),
     ]);
@@ -112,9 +113,15 @@ const loadCatalog = unstable_cache(
     const imagesByProduct = new Map<string, Product["images"]>();
     for (const row of imgRes.data as ProductImageRow[]) {
       const { data } = sb.storage.from(IMAGE_BUCKET).getPublicUrl(row.storage_path);
+      // Cache-bust: the image pipeline upserts new bytes to the SAME storage
+      // path, so the public URL alone never changes and URL-keyed caches
+      // (browser, per-edge Next image optimizer) keep serving the old image.
+      // The row id is regenerated on every delete+reinsert (how the upload
+      // scripts refresh an image), so appending it as `?v=` gives a fresh URL
+      // whenever the bytes change — and stays stable on a plain primary toggle.
       const list = imagesByProduct.get(row.product_id) ?? [];
       list!.push({
-        url: data.publicUrl,
+        url: `${data.publicUrl}?v=${row.id}`,
         view: row.view ?? undefined,
         finishId: row.finish_id ?? undefined,
         gang: row.gang ?? undefined,
