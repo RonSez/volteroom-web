@@ -16,6 +16,7 @@ export function ProductImage({
   gang = 1,
   className,
   sizes = "(min-width: 1024px) 25vw, 50vw",
+  light = false,
 }: {
   imageUrl?: string;
   alt: string;
@@ -24,6 +25,11 @@ export function ProductImage({
   gang?: number;
   className?: string;
   sizes?: string;
+  /**
+   * Render on a white tile instead of the navy one. Used for line diagrams,
+   * whose thin dark strokes disappear against the dark background.
+   */
+  light?: boolean;
 }) {
   if (!imageUrl) {
     return (
@@ -34,13 +40,14 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        // Uniform inner white margin (`p-[10%]`) so the photo sits slightly
-        // smaller inside an unchanged square box. This normalises the varying
-        // amount of whitespace baked into individual source photos, giving
-        // every product consistent breathing room. `fill` is absolutely
+        // Navy tile (matches the site's card gradient) with a uniform 10% inset
+        // so the photo sits slightly smaller inside an unchanged square box.
+        // Cut-out (transparent) photos blend into the navy; photos with a baked
+        // studio background show that background as a tile. `fill` is absolutely
         // positioned (padding wouldn't inset it), so the padded box wraps an
         // inner relative container that the image fills.
-        "relative aspect-square w-full overflow-hidden rounded-xl bg-white p-[10%]",
+        "relative aspect-square w-full overflow-hidden rounded-xl p-[10%]",
+        light ? "bg-white" : "bg-gradient-to-b from-[#101a2e] to-[#070d1b]",
         className,
       )}
     >

@@ -273,6 +273,7 @@ function Gallery({
           hex={hex}
           gang={gang}
           sizes="(min-width: 1024px) 50vw, 100vw"
+          light={current?.diagram}
         />
         {count > 1 && (
           <>
@@ -315,6 +316,7 @@ function Gallery({
                 gang={gang}
                 className="rounded-md"
                 sizes="80px"
+                light={slide.diagram}
               />
             </button>
           ))}
