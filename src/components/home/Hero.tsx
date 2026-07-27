@@ -46,7 +46,7 @@ export function Hero() {
         preload="auto"
         tabIndex={-1}
         aria-hidden
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        className="absolute inset-0 -z-10 h-full w-full object-contain sm:object-cover"
       >
         <source src="/brand/hero-scroll.mp4" type="video/mp4" />
       </video>
