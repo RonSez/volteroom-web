@@ -126,14 +126,14 @@ const InteractivePhotoStack = React.forwardRef<
       {...props}
     >
       <div
-        className="relative h-[26rem] w-full overflow-hidden [perspective:1200px]"
+        className="relative h-[20rem] w-full overflow-hidden [perspective:1200px] sm:h-[26rem]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => {
           setHoveredIndex(null);
           if (clickedIndex === null) setIsGroupHovered(false);
         }}
       >
-        <div className="relative left-1/2 top-1/2 h-48 w-80 -translate-x-1/2 -translate-y-1/2">
+        <div className="relative left-1/2 top-1/2 h-24 w-40 -translate-x-1/2 -translate-y-1/2 sm:h-48 sm:w-80">
           {items.map((item, index) => {
             const isTopCard = index === topCardIndex;
             let stackPosition = index - topCardIndex;
@@ -156,7 +156,7 @@ const InteractivePhotoStack = React.forwardRef<
                   // cards would cross each other mid-animation — the "blink".
                   // Scoping to transform keeps movement smooth while z-index
                   // switches instantly.
-                  "absolute inset-0 h-48 w-80 cursor-pointer rounded-xl bg-card p-2 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition-transform duration-500 ease-in-out",
+                  "absolute inset-0 h-24 w-40 cursor-pointer rounded-xl bg-card p-2 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/10 transition-transform duration-500 ease-in-out sm:h-48 sm:w-80",
                   {
                     "hover:scale-110": isGroupHovered && !isClicked,
                     "animate-spin-y": isClicked,
