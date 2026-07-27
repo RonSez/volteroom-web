@@ -36,7 +36,7 @@ export async function CategoryCards() {
   const imageBySlug = new Map(products.map((p) => [p.slug, p.imageUrl]));
 
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-2 gap-5 lg:grid-cols-3">
       {categories.map((cat, i) => (
         <Reveal
           key={cat.id}
