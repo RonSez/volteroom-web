@@ -81,8 +81,9 @@ export function Header() {
         )}
       >
         <Link href="/" aria-label="Volteroom" className="shrink-0">
-          {/* Slate-blue wordmark reads cleanly on the dark bar — no aura needed. */}
-          <Logo className="h-10 sm:h-11" />
+          {/* The outlined wordmark is hairline-thin, so it needs the same
+              legibility shadow as the nav links to survive bright hero frames. */}
+          <Logo className="h-10 drop-shadow-[0_1px_10px_rgba(8,9,13,0.9)] sm:h-11" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

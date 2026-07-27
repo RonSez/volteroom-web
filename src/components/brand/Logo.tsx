@@ -4,9 +4,11 @@ import { cn } from "@/lib/utils";
 import logo from "../../../public/brand/logo.png";
 
 /**
- * Volteroom wordmark — the slate-blue brand logo (transparent background).
- * A single tone reads cleanly across the site's dark surfaces, so the same
- * mark is used in both the header and the footer.
+ * Volteroom wordmark — outlined letterforms with the azure bracket, on a
+ * transparent background. The letters are hairline outlines rather than solid
+ * fills, so the mark is drawn for dark surfaces only: the counters and the
+ * bracket's deep-navy end read as whatever sits behind them. Header and footer
+ * share it; the header adds a shadow because the hero film runs behind it.
  */
 export function Logo({ className }: { className?: string }) {
   return (
