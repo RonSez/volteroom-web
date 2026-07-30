@@ -14,7 +14,8 @@
     "openMenu": "Open menu",
     "language": "Language",
     "privacy": "Privacy Policy",
-    "cooperation": "Cooperation"
+    "cooperation": "Cooperation",
+    "certificates": "Certificates"
   },
   "common": {
     "addToBasket": "Add to basket",
@@ -227,5 +228,29 @@
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
     "nonVat": "Non-VAT payer"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "intro": "Every Volteroom product family is independently tested for compliance with EU restrictions on hazardous substances. The full SGS reports are published below.",
+    "standardLabel": "Standard",
+    "standard": "EU RoHS — Directive (EU) 2015/863 amending Annex II to Directive 2011/65/EU",
+    "issuerLabel": "Issued by",
+    "issuer": "SGS-CSTC Standards Technical Services (Ningbo) Co., Ltd.",
+    "issuedLabel": "Issued",
+    "reportNo": "Report no.",
+    "pages": "{count, plural, one {# page} other {# pages}}",
+    "pass": "Pass",
+    "openPdf": "Open PDF",
+    "note": "Reports are published exactly as issued by SGS (job no. NBP26-003558); each one lists the model numbers it covers. Need a certificate for a product not shown here? Get in touch.",
+    "samples": {
+      "NGBEC26003487302": "Switches",
+      "NGBEC26003492502": "Flush-type switches",
+      "NGBEC26003488202": "Socket outlets",
+      "NGBEC26003490702": "Socket outlets with USB charging",
+      "NGBEC26003492002": "USB power supplies",
+      "NGBEC26003493702": "Telecommunications outlets",
+      "NGBEC26003492702": "Thermostats",
+      "NGBEC26003498902": "Panels, frames and covers"
+    }
   }
 }

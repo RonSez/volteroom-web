@@ -14,7 +14,8 @@
     "openMenu": "Otvoriť menu",
     "language": "Jazyk",
     "privacy": "Ochrana osobných údajov",
-    "cooperation": "Spolupráca"
+    "cooperation": "Spolupráca",
+    "certificates": "Certifikáty"
   },
   "common": {
     "addToBasket": "Pridať do košíka",
@@ -227,5 +228,29 @@
     "contactTitle": "Kontakt",
     "rights": "Všetky práva vyhradené.",
     "nonVat": "Neplatca DPH"
+  },
+  "certificates": {
+    "title": "Certifikáty",
+    "intro": "Každý produktový rad Volteroom je nezávisle testovaný na súlad s obmedzeniami EÚ týkajúcimi sa nebezpečných látok. Kompletné správy SGS nájdete nižšie.",
+    "standardLabel": "Norma",
+    "standard": "EU RoHS — smernica (EÚ) 2015/863, ktorou sa mení príloha II smernice 2011/65/EÚ",
+    "issuerLabel": "Vydal",
+    "issuer": "SGS-CSTC Standards Technical Services (Ningbo) Co., Ltd.",
+    "issuedLabel": "Dátum vydania",
+    "reportNo": "Správa č.",
+    "pages": "{count, plural, one {# strana} few {# strany} other {# strán}}",
+    "pass": "Vyhovel",
+    "openPdf": "Otvoriť PDF",
+    "note": "Správy zverejňujeme presne v podobe, v akej ich vydala spoločnosť SGS (zákazka č. NBP26-003558); každá z nich uvádza modelové čísla, na ktoré sa vzťahuje. Potrebujete certifikát na produkt, ktorý tu nie je uvedený? Kontaktujte nás.",
+    "samples": {
+      "NGBEC26003487302": "Vypínače",
+      "NGBEC26003492502": "Zapustené vypínače",
+      "NGBEC26003488202": "Zásuvky",
+      "NGBEC26003490702": "Zásuvky s USB nabíjaním",
+      "NGBEC26003492002": "USB napájacie zdroje",
+      "NGBEC26003493702": "Telekomunikačné zásuvky",
+      "NGBEC26003492702": "Termostaty",
+      "NGBEC26003498902": "Panely, rámčeky a kryty"
+    }
   }
 }
