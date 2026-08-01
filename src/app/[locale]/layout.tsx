@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -35,6 +35,16 @@ const jetbrainsMono = JetBrains_Mono({
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+// The site is dark-only (single near-black palette in globals.css, no light
+// variant). Declare that intent to the browser/OS so their native auto
+// light/dark features don't try to "helpfully" flip the transparent header
+// and the dark-surface-only outlined logo to a light scheme — which mangles
+// the see-through wordmark. (Third-party inverter extensions can still
+// override this; nothing on the page can stop those.)
+export const viewport: Viewport = {
+  colorScheme: "dark",
+};
 
 export async function generateMetadata({
   params,

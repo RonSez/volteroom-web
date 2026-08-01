@@ -45,6 +45,10 @@
 
 :root,
 .dark {
+  /* The whole site is dark-only; tell the UA so its native auto light/dark
+     never inverts the transparent header + dark-surface-only outlined logo. */
+  color-scheme: dark;
+
   /* Switches are precision hardware: sharp corners, the faintest easing. */
   --radius: 0.3125rem;
 
