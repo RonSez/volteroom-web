@@ -7,7 +7,6 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeavenBackground } from "@/components/layout/HeavenBackground";
-import { CursorGlow } from "@/components/ui/CursorGlow";
 import { Toaster } from "@/components/ui/sonner";
 import "../globals.css";
 
@@ -83,7 +82,6 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider>
           <HeavenBackground />
-          <CursorGlow />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

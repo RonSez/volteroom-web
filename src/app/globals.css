@@ -155,13 +155,6 @@
     font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-feature-settings: "tnum" 1, "zero" 1;
   }
-  /* When the JS custom cursor is active (fine pointer, motion allowed) hide the
-     native one across the document. Keyboard/touch/reduced-motion users never
-     get this class, so their native cursor is preserved. */
-  html.has-custom-cursor,
-  html.has-custom-cursor * {
-    cursor: none !important;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
