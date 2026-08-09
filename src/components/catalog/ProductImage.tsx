@@ -40,27 +40,26 @@ export function ProductImage({
   return (
     <div
       className={cn(
-        // Navy tile (matches the site's card gradient) with a uniform 10% inset
-        // so the photo sits slightly smaller inside an unchanged square box.
-        // Cut-out (transparent) photos blend into the navy; photos with a baked
-        // studio background show that background as a tile. `fill` is absolutely
-        // positioned (padding wouldn't inset it), so the padded box wraps an
-        // inner relative container that the image fills.
-        "relative aspect-square w-full overflow-hidden rounded-xl p-[10%]",
+        // Navy tile (matches the site's card gradient). Cut-out (transparent)
+        // photos blend into the navy; photos with a baked studio background show
+        // that background as a tile.
+        "relative aspect-square w-full overflow-hidden rounded-xl",
         light ? "bg-white" : "bg-gradient-to-b from-[#101a2e] to-[#070d1b]",
         className,
       )}
     >
-      <div className="relative h-full w-full">
-        <Image
-          src={imageUrl}
-          alt={alt}
-          fill
-          sizes={sizes}
-          quality={90}
-          className="object-contain"
-        />
-      </div>
+      {/* The `fill` image covers the whole square; its own 10% padding + */}
+      {/* object-contain inset the picture uniformly on every side. Padding on */}
+      {/* the image (not a nested percentage-height wrapper) avoids a WebKit bug */}
+      {/* where an `h-full` child of an aspect-ratio box overshoots the bottom. */}
+      <Image
+        src={imageUrl}
+        alt={alt}
+        fill
+        sizes={sizes}
+        quality={90}
+        className="object-contain p-[10%]"
+      />
     </div>
   );
 }
