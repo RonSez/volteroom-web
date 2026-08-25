@@ -34,6 +34,15 @@ const translations: { names: Record<string, Tr>; descriptions: Record<string, Tr
   JSON.parse(readFileSync(join(__dirname, "catalog-translations.json"), "utf8"));
 const missingTranslations: string[] = [];
 
+// Mechanism specs the Excel has no column for — hand-maintained, keyed by
+// article number. `mountingDepth` is read off each mechanism's line diagram
+// (the depth behind the mounting plate); the sheet's `dimensions` column
+// disagrees with the diagrams, so it is NOT derived from it.
+const extraSpecs: {
+  mountingDepth: Record<string, string>;
+  cableSection: Record<string, string>;
+} = JSON.parse(readFileSync(join(__dirname, "mechanism-specs.json"), "utf8"));
+
 const SUFFIX_TO_FINISH: Record<string, string> = {
   GLW: "glossy-white",
   MW: "soft-touch-white",
@@ -109,12 +118,14 @@ interface Spec {
   temperatureRange?: string;
   marking?: string;
   dimensions?: string;
+  mountingDepth?: string;
+  cableSection?: string;
   advantages?: string;
   installationType?: string;
   fireSafety?: string;
 }
 
-function specsFromRow(r: Row, kind: string): Spec {
+function specsFromRow(r: Row, kind: string, sku?: string): Spec {
   const ct = clean(r.G);
   const spec: Spec = {
     componentType: ct === "termostat" ? "thermostat" : ct,
@@ -125,6 +136,9 @@ function specsFromRow(r: Row, kind: string): Spec {
     temperatureRange: clean(r.K),
     marking: clean(r.M),
     dimensions: clean(r.L)?.replace(/х/g, "×").replace(/мм/g, "mm"),
+    // Mechanisms only — covers and frames carry neither, per the client.
+    mountingDepth: kind === "mechanism" && sku ? extraSpecs.mountingDepth[sku] : undefined,
+    cableSection: kind === "mechanism" && sku ? extraSpecs.cableSection[sku] : undefined,
     advantages: clean(r.O),
     installationType: clean(r.J),
     fireSafety: clean(r.N),
@@ -184,7 +198,7 @@ for (const r of rows) {
       description: LD(desc.replace(/\s+/g, " ").trim()),
       basePrice: PRICE_BY_CATEGORY[category],
       sku: code,
-      specs: specsFromRow(r, "mechanism"),
+      specs: specsFromRow(r, "mechanism", code),
       featured: FEATURED.has(code) || undefined,
     });
     continue;
