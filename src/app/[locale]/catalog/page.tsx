@@ -56,13 +56,23 @@ export default async function CatalogPage({
       ? (finishRaw as FinishId)
       : undefined;
   const gang = gangRaw && gangs.has(gangRaw) ? Number(gangRaw) : undefined;
+  const ip44 = first(sp.ip) === "44";
 
-  const products = await getProducts({ category, kind, finish, gang });
+  const products = await getProducts({ category, kind, finish, gang, ip44 });
+
+  // Multi-gang products (the frames) get one card per size, so picking the
+  // Frames filter lists single, double, triple… rather than a single entry.
+  const cards: CatalogCard[] = products.flatMap((p) =>
+    p.gangs && p.gangs.length > 1
+      ? p.gangs
+          .filter((g) => !gang || g === gang)
+          .map((g) => ({ product: p, gang: g }))
+      : [{ product: p }],
+  );
 
   return (
     <CatalogContent
-      count={products.length}
-      products={products}
+      cards={cards}
       categories={categories}
       finishes={finishes}
       gangs={allGangs}
@@ -71,22 +81,24 @@ export default async function CatalogPage({
   );
 }
 
+/** One catalogue tile: a product, optionally pinned to one of its gang sizes. */
+type CatalogCard = { product: Product; gang?: number };
+
 function CatalogContent({
-  count,
-  products,
+  cards,
   categories,
   finishes,
   gangs,
   selectedFinish,
 }: {
-  count: number;
-  products: Product[];
+  cards: CatalogCard[];
   categories: Category[];
   finishes: Finish[];
   gangs: number[];
   selectedFinish?: FinishId;
 }) {
   const t = useTranslations("catalog");
+  const count = cards.length;
 
   return (
     <Section className="py-10 sm:py-12">
@@ -115,10 +127,11 @@ function CatalogContent({
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3">
-              {products.map((p) => (
+              {cards.map(({ product, gang }) => (
                 <ProductCard
-                  key={p.slug}
-                  product={p}
+                  key={gang ? `${product.slug}-${gang}` : product.slug}
+                  product={product}
+                  gang={gang}
                   selectedFinish={selectedFinish}
                 />
               ))}

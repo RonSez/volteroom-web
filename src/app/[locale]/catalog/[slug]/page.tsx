@@ -55,10 +55,12 @@ export default async function ProductPage({
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
 
-  // Preselect the finish carried over from the catalog colour filter, if valid.
+  // Preselect the finish / gang carried over from the catalogue card, if valid.
   const sp = await searchParams;
   const finishRaw = Array.isArray(sp.finish) ? sp.finish[0] : sp.finish;
   const initialFinishId = finishes.find((f) => f.id === finishRaw)?.id;
+  const gangRaw = Array.isArray(sp.gang) ? sp.gang[0] : sp.gang;
+  const initialGang = product.gangs?.find((g) => g === Number(gangRaw));
 
   return (
     <>
@@ -74,6 +76,7 @@ export default async function ProductPage({
           product={product}
           finishes={finishes}
           initialFinishId={initialFinishId}
+          initialGang={initialGang}
         />
       </Section>
 

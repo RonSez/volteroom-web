@@ -14,7 +14,7 @@
     "openMenu": "Otvoriť menu",
     "language": "Jazyk",
     "privacy": "Ochrana osobných údajov",
-    "cooperation": "Spolupráca",
+    "cooperation": "Obchodné podmienky",
     "certificates": "Certifikáty"
   },
   "common": {
@@ -59,7 +59,7 @@
       "items": [
         { "title": "Monolitická forma", "desc": "Žiadne priečky medzi krytmi a minimálne medzery medzi rámčekmi a panelmi." },
         { "title": "Šírka rámčeka 9,5 mm", "desc": "Univerzálne 1–5 násobné rámčeky s presným zarovnaním." },
-        { "title": "Spoľahlivé mechanizmy", "desc": "Kontakty zo zliatiny striebra a niklu a skrutkovacie kontakty na všetkých zásuvkách." },
+        { "title": "Spoľahlivé mechanizmy", "desc": "Kontakty zo zliatiny striebra a niklu, na výber so skrutkovými alebo bezskrutkovými (VAG) svorkami." },
         { "title": "Záruka 5 rokov", "desc": "Vybrané materiály a kostra z polyamidu 66 plneného sklom." }
       ]
     },
@@ -104,7 +104,9 @@
       "allGangs": "Všetky",
       "clear": "Zrušiť filtre",
       "open": "Filtre",
-      "gangUnit": "{count, plural, one {# modul} few {# moduly} other {# modulov}}"
+      "gangUnit": "{count, plural, one {# modul} few {# moduly} other {# modulov}}",
+      "protection": "Stupeň krytia",
+      "ip44": "IP44"
     },
     "results": "{count, plural, one {# produkt} few {# produkty} other {# produktov}}",
     "empty": "Žiadne produkty nezodpovedajú zvoleným filtrom."
@@ -120,11 +122,13 @@
       "componentType": "Typ komponentu",
       "color": "Farba",
       "connectionMethod": "Spôsob pripojenia",
+      "cableSection": "Prierez vodiča",
       "nominalCurrent": "Menovitý prúd",
       "protectionDegree": "Stupeň krytia",
       "temperatureRange": "Rozsah teplôt",
       "marking": "Označenie",
       "dimensions": "Rozmery (V×Š×H)",
+      "mountingDepth": "Zabudovacia hĺbka",
       "advantages": "Hlavné výhody",
       "installationType": "Inštalácia",
       "fireSafety": "Požiarna bezpečnosť a odolnosť"

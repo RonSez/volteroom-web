@@ -49,6 +49,7 @@ function FilterBody({
     kind: sp.get("kind") ?? undefined,
     finish: sp.get("finish") ?? undefined,
     gang: sp.get("gang") ?? undefined,
+    ip: sp.get("ip") ?? undefined,
   };
 
   const kinds: { id: string; label: string }[] = [
@@ -148,7 +149,21 @@ function FilterBody({
         </div>
       </div>
 
-      {(current.category || current.kind || current.finish || current.gang) && (
+      {/* Protection degree */}
+      <div>
+        <h3 className="mb-3 text-sm font-bold">{t("protection")}</h3>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={hrefFor(current, { ip: current.ip === "44" ? undefined : "44" })}
+            onClick={onNavigate}
+            className={chip(current.ip === "44")}
+          >
+            {t("ip44")}
+          </Link>
+        </div>
+      </div>
+
+      {(current.category || current.kind || current.finish || current.gang || current.ip) && (
         <Link
           href="/catalog"
           onClick={onNavigate}

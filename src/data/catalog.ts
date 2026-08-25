@@ -81,11 +81,15 @@ export interface ProductSpecs {
   /** Mechanisms only: the moulded body colour (covers/frames use the finish). */
   color?: string;
   connectionMethod?: string;
+  /** Conductor cross-section the terminals accept, e.g. "1.5 – 2.5 mm²". */
+  cableSection?: string;
   nominalCurrent?: string;
   protectionDegree?: string;
   temperatureRange?: string;
   marking?: string;
   dimensions?: string;
+  /** Depth taken up inside the mounting box, e.g. "25.5 mm". */
+  mountingDepth?: string;
   advantages?: string;
   installationType?: string;
   fireSafety?: string;
@@ -110,11 +114,13 @@ export const SPEC_ORDER: (keyof ProductSpecs)[] = [
   "componentType",
   "color",
   "connectionMethod",
+  "cableSection",
   "nominalCurrent",
   "protectionDegree",
   "temperatureRange",
   "marking",
   "dimensions",
+  "mountingDepth",
   "advantages",
   "installationType",
   "fireSafety",

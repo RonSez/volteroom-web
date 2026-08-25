@@ -14,7 +14,7 @@
     "openMenu": "Open menu",
     "language": "Language",
     "privacy": "Privacy Policy",
-    "cooperation": "Cooperation",
+    "cooperation": "Terms & Conditions",
     "certificates": "Certificates"
   },
   "common": {
@@ -59,7 +59,7 @@
       "items": [
         { "title": "Monolithic form", "desc": "No dividers between covers and minimal gaps between frames and panels." },
         { "title": "9.5 mm frame width", "desc": "Universal 1–5 gang frames with precise alignment." },
-        { "title": "Reliable mechanisms", "desc": "Silver-nickel alloy contacts and screw contacts on every socket." },
+        { "title": "Reliable mechanisms", "desc": "Silver-nickel alloy contacts, with a choice of screw or push-in (VAG) terminals." },
         { "title": "5-year warranty", "desc": "Selected materials and a glass-filled polyamide 66 frame." }
       ]
     },
@@ -104,7 +104,9 @@
       "allGangs": "All",
       "clear": "Clear filters",
       "open": "Filters",
-      "gangUnit": "{count, plural, one {# module} other {# modules}}"
+      "gangUnit": "{count, plural, one {# module} other {# modules}}",
+      "protection": "Protection degree",
+      "ip44": "IP44"
     },
     "results": "{count, plural, one {# product} other {# products}}",
     "empty": "No products match the selected filters."
@@ -120,11 +122,13 @@
       "componentType": "Component type",
       "color": "Colour",
       "connectionMethod": "Connection method",
+      "cableSection": "Conductor cross-section",
       "nominalCurrent": "Nominal current",
       "protectionDegree": "Protection degree",
       "temperatureRange": "Temperature range",
       "marking": "Marking",
       "dimensions": "Dimensions (H×W×D)",
+      "mountingDepth": "Mounting depth",
       "advantages": "Key advantages",
       "installationType": "Installation",
       "fireSafety": "Fire safety & durability"

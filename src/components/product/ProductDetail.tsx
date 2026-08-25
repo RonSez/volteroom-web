@@ -36,11 +36,14 @@ export function ProductDetail({
   product,
   finishes,
   initialFinishId,
+  initialGang,
 }: {
   product: Product;
   finishes: Finish[];
   /** Finish to preselect (e.g. carried over from the catalog colour filter). */
   initialFinishId?: FinishId;
+  /** Gang size to preselect (carried over from a per-gang catalogue card). */
+  initialGang?: number;
 }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("product");
@@ -54,7 +57,9 @@ export function ProductDetail({
           finishes[0].id
       : undefined,
   );
-  const [gang, setGang] = useState(product.gangs ? product.gangs[0] : undefined);
+  const [gang, setGang] = useState(
+    product.gangs ? initialGang ?? product.gangs[0] : undefined,
+  );
   const addItem = useBasket((s) => s.addItem);
 
   const finish = finishes.find((f) => f.id === finishId);

@@ -229,6 +229,20 @@ export interface ProductFilter {
   finish?: FinishId;
   gang?: number;
   kind?: ProductKind;
+  /** Only products rated IP44 (see `isIp44`). */
+  ip44?: boolean;
+}
+
+/**
+ * Whether a product reaches IP44. The Excel `protectionDegree` column carries
+ * it for the mechanisms ("ip41 (when used with cover E08ZB104, protection
+ * increases to ip44)"); the IP44 cover itself only says so in its name, so
+ * both are checked.
+ */
+export function isIp44(p: Product): boolean {
+  const ip44 = /ip\s*44/i;
+  if (p.specs?.protectionDegree && ip44.test(p.specs.protectionDegree)) return true;
+  return Object.values(p.name).some((n) => ip44.test(n));
 }
 
 export async function getProducts(filter: ProductFilter = {}): Promise<Product[]> {
@@ -244,6 +258,7 @@ export async function getProducts(filter: ProductFilter = {}): Promise<Product[]
     if (filter.gang) {
       if (!p.gangs || !p.gangs.includes(filter.gang)) return false;
     }
+    if (filter.ip44 && !isIp44(p)) return false;
     return true;
   });
 }
