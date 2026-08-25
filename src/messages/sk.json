@@ -46,7 +46,12 @@
     },
     "collections": {
       "title": "Produktové kategórie",
-      "subtitle": "Jeden typ mechanizmu, nekonečné možnosti dizajnu."
+      "subtitle": "Jeden typ mechanizmu, nekonečné možnosti dizajnu.",
+      "hotel": {
+        "title": "Vypínače pre hotelové izby",
+        "tagline": "Kartové vypínače a ovládanie izieb pre hotelové interiéry.",
+        "soon": "Čoskoro"
+      }
     },
     "finishes": {
       "title": "10 farieb predných panelov a rámčekov",

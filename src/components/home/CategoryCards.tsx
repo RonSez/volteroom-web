@@ -1,4 +1,5 @@
-import { getLocale } from "next-intl/server";
+import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -29,7 +30,8 @@ const REPRESENTATIVE_SLUG: Record<CategoryId, string> = {
 
 export async function CategoryCards() {
   const locale = (await getLocale()) as Locale;
-  const [categories, products] = await Promise.all([
+  const [t, categories, products] = await Promise.all([
+    getTranslations("home.collections"),
     getCategories(),
     getProducts(),
   ]);
@@ -74,6 +76,35 @@ export async function CategoryCards() {
         </TiltCard>
         </Reveal>
       ))}
+
+      {/* Ninth tile: a preview of a range that isn't in the catalogue yet. It */}
+      {/* completes the 3x3 grid, so it mirrors the cards above but is */}
+      {/* deliberately inert — no link, no hover lift, no focus target. */}
+      <Reveal delay={categories.length * 70} variant="blur" className="h-full">
+        <div className="floats relative flex h-full flex-col overflow-hidden rounded-2xl">
+          <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-b from-[#101a2e] to-[#070d1b]">
+            <Image
+              src="/brand/hotel-switch.png"
+              alt={t("hotel.title")}
+              fill
+              sizes="(min-width: 1024px) 25vw, 50vw"
+              quality={90}
+              className="object-contain p-[10%]"
+            />
+          </div>
+          <div className="flex flex-1 flex-col p-5">
+            <h3 className="font-heading text-lg font-semibold tracking-tight text-foreground">
+              {t("hotel.title")}
+            </h3>
+            <p className="mt-1 flex-1 text-sm font-light leading-relaxed text-muted-foreground">
+              {t("hotel.tagline")}
+            </p>
+            <span className="mt-4 inline-flex items-center text-sm font-semibold text-muted-foreground">
+              {t("hotel.soon")}
+            </span>
+          </div>
+        </div>
+      </Reveal>
     </div>
   );
 }

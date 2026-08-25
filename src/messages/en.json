@@ -46,7 +46,12 @@
     },
     "collections": {
       "title": "Product categories",
-      "subtitle": "One mechanism type, endless design possibilities."
+      "subtitle": "One mechanism type, endless design possibilities.",
+      "hotel": {
+        "title": "Switches for hotel rooms",
+        "tagline": "Key-card switches and room controls for hospitality interiors.",
+        "soon": "Coming soon"
+      }
     },
     "finishes": {
       "title": "Five finishes for covers and frames",
