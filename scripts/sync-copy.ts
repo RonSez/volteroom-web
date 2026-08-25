@@ -65,8 +65,10 @@ async function main() {
     .in("key", keys);
   if (readErr) throw new Error(`read current rows: ${readErr.message}`);
 
+  // Timestamped so a later run never clobbers an earlier snapshot.
   mkdirSync(join(root, "scripts", "backups"), { recursive: true });
-  const backup = join(root, "scripts", "backups", "marketing-copy-before.json");
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const backup = join(root, "scripts", "backups", `marketing-copy-${stamp}.json`);
   writeFileSync(backup, JSON.stringify(before, null, 2) + "\n", "utf8");
   console.log(`✓ backed up ${before?.length ?? 0} existing rows → ${backup}`);
 

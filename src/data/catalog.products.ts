@@ -30,6 +30,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -62,6 +63,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -93,6 +95,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "29,2 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -124,6 +127,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -155,6 +159,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -186,6 +191,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "27,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -217,6 +223,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -248,6 +255,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "25,5 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -278,6 +286,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 25,5 mm",
       "mountingDepth": "20,7 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -309,6 +318,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 31,2 mm",
       "mountingDepth": "28,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -341,6 +351,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 31,4 mm",
       "mountingDepth": "31,4 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -460,6 +471,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 27,4 mm",
       "mountingDepth": "27,35 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -490,6 +502,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 31,2 mm",
       "mountingDepth": "31,2 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -521,6 +534,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 33 mm",
       "mountingDepth": "32,1 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -552,6 +566,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 54,2 mm",
       "mountingDepth": "39,3 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -670,6 +685,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -701,6 +717,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -732,6 +749,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 30,8 mm",
       "mountingDepth": "30,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -763,6 +781,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,8 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -794,6 +813,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,6 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -825,6 +845,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,6 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -856,6 +877,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 33,4 mm",
       "mountingDepth": "30,7 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."
@@ -887,6 +909,7 @@ export const products: Product[] = [
       "marking": "CE",
       "dimensions": "70,9 × 70,9 × 28,8 mm",
       "mountingDepth": "28,6 mm",
+      "conductorDiameter": "1 – 2,5 mm",
       "advantages": "The thickness of the steel support is 1 mm; steel support galvanized on all sides after cutting, even on the cut edges; the grounding E pole and contact group are made of High Precision Copper Alloy; the thickness of the metal in the contact group is 0.6 mm.",
       "installationType": "Built into the wall (with a mounting box) using a screwdriver with the ability to connect mechanisms in groups of 1-5 horizontally and vertically.",
       "fireSafety": "The plastic material used to make the frames, covers, and internal parts of all mechanisms successfully passed hot-wire tests at a temperature of +850 °C. All plastic elements have successfully passed the IK06 impact resistance test."

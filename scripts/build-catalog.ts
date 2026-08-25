@@ -40,7 +40,7 @@ const missingTranslations: string[] = [];
 // disagrees with the diagrams, so it is NOT derived from it.
 const extraSpecs: {
   mountingDepth: Record<string, string>;
-  cableSection: Record<string, string>;
+  conductorDiameter: Record<string, string>;
 } = JSON.parse(readFileSync(join(__dirname, "mechanism-specs.json"), "utf8"));
 
 const SUFFIX_TO_FINISH: Record<string, string> = {
@@ -119,7 +119,7 @@ interface Spec {
   marking?: string;
   dimensions?: string;
   mountingDepth?: string;
-  cableSection?: string;
+  conductorDiameter?: string;
   advantages?: string;
   installationType?: string;
   fireSafety?: string;
@@ -138,7 +138,8 @@ function specsFromRow(r: Row, kind: string, sku?: string): Spec {
     dimensions: clean(r.L)?.replace(/х/g, "×").replace(/мм/g, "mm"),
     // Mechanisms only — covers and frames carry neither, per the client.
     mountingDepth: kind === "mechanism" && sku ? extraSpecs.mountingDepth[sku] : undefined,
-    cableSection: kind === "mechanism" && sku ? extraSpecs.cableSection[sku] : undefined,
+    conductorDiameter:
+      kind === "mechanism" && sku ? extraSpecs.conductorDiameter[sku] : undefined,
     advantages: clean(r.O),
     installationType: clean(r.J),
     fireSafety: clean(r.N),

@@ -1,5 +1,5 @@
 {
-  "_comment": "Hand-maintained mechanism specs that the client's Excel does not carry. Merged into the generated catalog by build-catalog.ts, keyed by article number. mountingDepth is the depth BEHIND the mounting plate (what goes into the wall box) read off each mechanism's line diagram in scripts/diagrams/ — NOT the depth in the sheet's dimensions column, which disagrees with the diagrams. Mechanisms only, per the client.",
+  "_comment": "Hand-maintained mechanism specs that the client's Excel does not carry. Merged into the generated catalog by build-catalog.ts, keyed by article number. mountingDepth is the depth BEHIND the mounting plate (what goes into the wall box) read off each mechanism's line diagram in scripts/diagrams/ — NOT the depth in the sheet's dimensions column, which disagrees with the diagrams. conductorDiameter is the wire DIAMETER the terminals accept (confirmed by the client as diameter in mm, not cross-section in mm²), and is set only on mechanisms that have terminals — the data sockets, blank plate and cable outlet have none. Mechanisms only, per the client.",
   "mountingDepth": {
     "E08KA111": "25,5 mm",
     "E08KA112": "25,5 mm",
@@ -31,5 +31,29 @@
     "F08KA311": "28,6 mm",
     "F08ZA103": "30,7 mm"
   },
-  "cableSection": {}
+  "conductorDiameter": {
+    "E08DA102": "1 – 2,5 mm",
+    "E08DA104": "1 – 2,5 mm",
+    "E08KA111": "1 – 2,5 mm",
+    "E08KA112": "1 – 2,5 mm",
+    "E08KA113": "1 – 2,5 mm",
+    "E08KA211": "1 – 2,5 mm",
+    "E08KA212": "1 – 2,5 mm",
+    "E08KA213": "1 – 2,5 mm",
+    "E08KA215": "1 – 2,5 mm",
+    "E08KA311": "1 – 2,5 mm",
+    "E08TA108": "1 – 2,5 mm",
+    "E08TA229": "1 – 2,5 mm",
+    "E08TA236": "1 – 2,5 mm",
+    "E08ZA103": "1 – 2,5 mm",
+    "E08ZA203": "1 – 2,5 mm",
+    "F08KA111": "1 – 2,5 mm",
+    "F08KA112": "1 – 2,5 mm",
+    "F08KA113": "1 – 2,5 mm",
+    "F08KA211": "1 – 2,5 mm",
+    "F08KA212": "1 – 2,5 mm",
+    "F08KA215": "1 – 2,5 mm",
+    "F08KA311": "1 – 2,5 mm",
+    "F08ZA103": "1 – 2,5 mm"
+  }
 }

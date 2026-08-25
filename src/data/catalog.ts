@@ -81,8 +81,8 @@ export interface ProductSpecs {
   /** Mechanisms only: the moulded body colour (covers/frames use the finish). */
   color?: string;
   connectionMethod?: string;
-  /** Conductor cross-section the terminals accept, e.g. "1.5 – 2.5 mm²". */
-  cableSection?: string;
+  /** Conductor DIAMETER the terminals accept, e.g. "1 – 2,5 mm" — not mm². */
+  conductorDiameter?: string;
   nominalCurrent?: string;
   protectionDegree?: string;
   temperatureRange?: string;
@@ -114,7 +114,7 @@ export const SPEC_ORDER: (keyof ProductSpecs)[] = [
   "componentType",
   "color",
   "connectionMethod",
-  "cableSection",
+  "conductorDiameter",
   "nominalCurrent",
   "protectionDegree",
   "temperatureRange",

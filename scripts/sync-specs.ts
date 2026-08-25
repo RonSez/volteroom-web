@@ -51,8 +51,10 @@ async function main() {
     .select("id, slug, sku, kind, specs");
   if (readErr) throw new Error(`read products: ${readErr.message}`);
 
+  // Timestamped so a later run never clobbers an earlier snapshot.
   mkdirSync(join(root, "scripts", "backups"), { recursive: true });
-  const backup = join(root, "scripts", "backups", "product-specs-before.json");
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const backup = join(root, "scripts", "backups", `product-specs-${stamp}.json`);
   writeFileSync(backup, JSON.stringify(rows, null, 2) + "\n", "utf8");
   console.log(`✓ backed up ${rows?.length ?? 0} product rows → ${backup}`);
 

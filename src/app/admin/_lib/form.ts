@@ -6,7 +6,7 @@ export const SPEC_FIELDS: { key: keyof ProductSpecs; label: string; multiline?: 
   { key: "componentType", label: "Component type" },
   { key: "color", label: "Colour (mechanism body)" },
   { key: "connectionMethod", label: "Connection method" },
-  { key: "cableSection", label: "Conductor cross-section" },
+  { key: "conductorDiameter", label: "Conductor diameter" },
   { key: "nominalCurrent", label: "Nominal current" },
   { key: "protectionDegree", label: "Protection degree" },
   { key: "temperatureRange", label: "Temperature range" },

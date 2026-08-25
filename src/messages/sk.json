@@ -122,7 +122,7 @@
       "componentType": "Typ komponentu",
       "color": "Farba",
       "connectionMethod": "Spôsob pripojenia",
-      "cableSection": "Prierez vodiča",
+      "conductorDiameter": "Priemer vodiča",
       "nominalCurrent": "Menovitý prúd",
       "protectionDegree": "Stupeň krytia",
       "temperatureRange": "Rozsah teplôt",
