@@ -122,6 +122,8 @@
     "gang": "Počet modulov",
     "gangUnit": "{count, plural, one {# modul} few {# moduly} other {# modulov}}",
     "article": "Číslo výrobku",
+    "datasheet": "Datasheet",
+    "datasheetHint": "Návod na pripojenie a inštaláciu (PDF, po anglicky)",
     "specsTitle": "Technické parametre",
     "specs": {
       "componentType": "Typ komponentu",

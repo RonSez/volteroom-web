@@ -3,7 +3,14 @@
 import { useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
-import { ShoppingBag, Layers, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ShoppingBag,
+  Layers,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
@@ -17,6 +24,7 @@ import {
   NEUTRAL_FINISH_HEX,
   DEFAULT_FINISH_ID,
 } from "@/data/catalog";
+import { datasheetForSku } from "@/data/datasheets";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "@/components/catalog/ProductImage";
 import { FinishSwatch } from "@/components/catalog/FinishSwatch";
@@ -65,6 +73,9 @@ export function ProductDetail({
   const finish = finishes.find((f) => f.id === finishId);
   const swatchHex = finish?.hex ?? NEUTRAL_FINISH_HEX;
   const sku = resolveSku(product, finishId, gang);
+  // Connection manual for this article, if one has been published (mechanisms
+  // only — covers and frames have no terminals to wire).
+  const datasheet = datasheetForSku(sku);
 
   // Gallery images for the current selection: front photos can be per-finish,
   // frame diagrams are per-gang. Images with neither set apply to all.
@@ -199,15 +210,32 @@ export function ProductDetail({
           </div>
         )}
 
-        {/* Add to basket */}
+        {/* Add to basket + connection manual */}
         <div className="mt-8">
-          <Button
-            onClick={add}
-            className="h-12 w-full gap-2 bg-brand text-base text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
-          >
-            <ShoppingBag className="size-5" />
-            {tc("addToBasket")}
-          </Button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button
+              onClick={add}
+              className="h-12 w-full gap-2 bg-brand text-base text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
+            >
+              <ShoppingBag className="size-5" />
+              {tc("addToBasket")}
+            </Button>
+            {datasheet && (
+              <a
+                href={datasheet.file}
+                target="_blank"
+                rel="noreferrer"
+                title={t("datasheetHint")}
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "h-12 w-full gap-2 text-base sm:w-auto sm:px-6",
+                )}
+              >
+                <FileText className="size-5" />
+                {t("datasheet")}
+              </a>
+            )}
+          </div>
           <p className="mt-3 text-xs text-muted-foreground">{t("priceNote")}</p>
         </div>
 

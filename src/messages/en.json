@@ -122,6 +122,8 @@
     "gang": "Modules",
     "gangUnit": "{count, plural, one {# module} other {# modules}}",
     "article": "Article no.",
+    "datasheet": "Datasheet",
+    "datasheetHint": "Connection and installation manual (PDF, English)",
     "specsTitle": "Technical characteristics",
     "specs": {
       "componentType": "Component type",
