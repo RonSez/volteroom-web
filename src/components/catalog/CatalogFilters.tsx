@@ -108,6 +108,20 @@ function FilterBody({
         </div>
       </div>
 
+      {/* Protection degree */}
+      <div>
+        <h3 className="mb-3 text-sm font-bold">{t("protection")}</h3>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={hrefFor(current, { ip: current.ip === "44" ? undefined : "44" })}
+            onClick={onNavigate}
+            className={chip(current.ip === "44")}
+          >
+            {t("ip44")}
+          </Link>
+        </div>
+      </div>
+
       {/* Finish */}
       <div>
         <h3 className="mb-3 text-sm font-bold">{t("finish")}</h3>
@@ -146,20 +160,6 @@ function FilterBody({
               </Link>
             );
           })}
-        </div>
-      </div>
-
-      {/* Protection degree */}
-      <div>
-        <h3 className="mb-3 text-sm font-bold">{t("protection")}</h3>
-        <div className="flex flex-wrap gap-2">
-          <Link
-            href={hrefFor(current, { ip: current.ip === "44" ? undefined : "44" })}
-            onClick={onNavigate}
-            className={chip(current.ip === "44")}
-          >
-            {t("ip44")}
-          </Link>
         </div>
       </div>
 

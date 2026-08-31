@@ -25,7 +25,7 @@ const REPRESENTATIVE_SLUG: Record<CategoryId, string> = {
   dimmers: "e08db102",
   climate: "e08db104",
   frames: "frame",
-  accessories: "e08bb101",
+  accessories: "e08bb102",
 };
 
 export async function CategoryCards() {

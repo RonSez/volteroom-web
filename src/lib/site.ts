@@ -15,7 +15,7 @@ export const siteConfig = {
   },
   phone: "+421 947 116 106",
   phoneHref: "tel:+421947116106",
-  email: "pomocslov@gmail.com",
+  email: "sales@volteroom.com",
   ico: "57558531",
   dic: "212846242",
   director: "Andrei Medvedev",
