@@ -9,6 +9,7 @@
     "catalog": "Katalog",
     "about": "O nás",
     "contact": "Kontakt",
+    "partnership": "Spolupráce",
     "basket": "Košík",
     "menu": "Menu",
     "openMenu": "Otevřít menu",
@@ -231,6 +232,90 @@
   "cooperation": {
     "title": "Všeobecné obchodní podmínky",
     "intro": "Všeobecné obchodní podmínky upravující nákup a obchodní spolupráci se společností VOLTEROOM, s.r.o."
+  },
+  "partnership": {
+    "title": "Spolupráce",
+    "intro": "Zveme ke spolupráci obchodní partnery, stavební společnosti, designéry a architekty.",
+    "intro2": "Staňte se součástí našeho úspěšného týmu a získejte přístup k širokému sortimentu produktů, podpoře a flexibilním slevám a bonusům.",
+    "cta": "Odeslat žádost",
+    "audienceTitle": "S kým spolupracujeme",
+    "audience": {
+      "trade": {
+        "title": "Obchodní partneři",
+        "body": "Distributoři, velkoobchody a prodejny elektroinstalačního materiálu, kteří rozšiřují svůj sortiment."
+      },
+      "construction": {
+        "title": "Stavební společnosti",
+        "body": "Zhotovitelé a montážní firmy realizující bytové a komerční projekty."
+      },
+      "designers": {
+        "title": "Designéři",
+        "body": "Interiéroví designéři, kteří hledají povrchy ladící s prostorem."
+      },
+      "architects": {
+        "title": "Architekti",
+        "body": "Ateliéry, které elektroinstalační prvky navrhují už od prvního výkresu."
+      }
+    },
+    "benefitsTitle": "Co získáte",
+    "benefits": {
+      "range": {
+        "title": "Široký sortiment",
+        "body": "Vypínače, zásuvky, stmívače, USB a datové zásuvky a rámečky v pěti provedeních — vše od jednoho dodavatele."
+      },
+      "support": {
+        "title": "Podpora",
+        "body": "Technické poradenství, dokumentace a pomoc se specifikacemi a množstvím na každém projektu."
+      },
+      "discounts": {
+        "title": "Flexibilní slevy a bonusy",
+        "body": "Partnerské ceny, které rostou s vaším objemem, plus bonusy za dlouhodobou spolupráci."
+      }
+    },
+    "formTitle": "Žádost o spolupráci",
+    "formSubtitle": "Vyplňte formulář a náš obchodní tým se vám brzy ozve.",
+    "form": {
+      "name": {
+        "label": "Vaše jméno",
+        "placeholder": "Vaše jméno"
+      },
+      "activity": {
+        "label": "Oblast vaší činnosti",
+        "placeholder": "např. velkoobchod s elektroinstalacemi, interiérový design"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "vy@firma.cz"
+      },
+      "company": {
+        "label": "Název společnosti",
+        "placeholder": "Název společnosti"
+      },
+      "phone": {
+        "label": "Telefonní číslo",
+        "placeholder": "+420 900 000 000"
+      },
+      "website": {
+        "label": "Webové stránky",
+        "placeholder": "https://"
+      },
+      "city": {
+        "label": "Z jakého jste města?",
+        "placeholder": "Město"
+      },
+      "comment": {
+        "label": "Komentář",
+        "placeholder": "Chcete nám ještě něco napsat?"
+      },
+      "consent": "Souhlasím se zpracováním osobních údajů v souladu se <privacy>zásadami ochrany osobních údajů</privacy>.",
+      "consentRequired": "Před odesláním prosím potvrďte svůj souhlas.",
+      "submit": "Odeslat žádost",
+      "sending": "Odesílá se…",
+      "successTitle": "Děkujeme — vaše žádost je na cestě.",
+      "successBody": "Náš obchodní tým se vám ozve do dvou pracovních dnů.",
+      "errorInvalid": "Zkontrolujte prosím zvýrazněná pole a zkuste to znovu.",
+      "errorSending": "Žádost se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na"
+    }
   },
   "footer": {
     "tagline": "Spojení kvality a stylu v každém produktu.",

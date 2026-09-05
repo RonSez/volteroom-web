@@ -9,6 +9,7 @@
     "catalog": "Catalogue",
     "about": "About",
     "contact": "Contact",
+    "partnership": "Cooperation",
     "basket": "Basket",
     "menu": "Menu",
     "openMenu": "Open menu",
@@ -231,6 +232,90 @@
   "cooperation": {
     "title": "General Terms & Conditions",
     "intro": "The general terms and conditions governing purchases and business cooperation with VOLTEROOM, s.r.o."
+  },
+  "partnership": {
+    "title": "Cooperation",
+    "intro": "We invite trade partners, construction companies, designers and architects to collaborate.",
+    "intro2": "Become part of our successful team and gain access to a wide range of products, support, and flexible discounts and bonuses.",
+    "cta": "Send a request",
+    "audienceTitle": "Who we work with",
+    "audience": {
+      "trade": {
+        "title": "Trade partners",
+        "body": "Distributors, wholesalers and electrical retailers building out their range."
+      },
+      "construction": {
+        "title": "Construction companies",
+        "body": "Contractors and installers fitting out residential and commercial projects."
+      },
+      "designers": {
+        "title": "Designers",
+        "body": "Interior designers looking for finishes that work with the room, not against it."
+      },
+      "architects": {
+        "title": "Architects",
+        "body": "Studios that specify electrical fittings from the first drawing onwards."
+      }
+    },
+    "benefitsTitle": "What you get",
+    "benefits": {
+      "range": {
+        "title": "A wide range of products",
+        "body": "Switches, sockets, dimmers, USB and data outlets and frames in five finishes — all from one supplier."
+      },
+      "support": {
+        "title": "Support",
+        "body": "Technical advice, documentation and help with specifications and quantities on every project."
+      },
+      "discounts": {
+        "title": "Flexible discounts and bonuses",
+        "body": "Partner pricing that scales with your volume, plus bonuses for long-term cooperation."
+      }
+    },
+    "formTitle": "Cooperation request",
+    "formSubtitle": "Fill in the form and our sales team will get back to you shortly.",
+    "form": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "Your name"
+      },
+      "activity": {
+        "label": "Your field of activity",
+        "placeholder": "e.g. electrical wholesale, interior design"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "you@company.com"
+      },
+      "company": {
+        "label": "Company name",
+        "placeholder": "Company name"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "+421 900 000 000"
+      },
+      "website": {
+        "label": "Website",
+        "placeholder": "https://"
+      },
+      "city": {
+        "label": "Which city are you from?",
+        "placeholder": "City"
+      },
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Anything else we should know?"
+      },
+      "consent": "I consent to the processing of my personal data in accordance with the <privacy>Privacy Policy</privacy>.",
+      "consentRequired": "Please confirm your consent before sending.",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "successTitle": "Thank you — your request is on its way.",
+      "successBody": "Our sales team will get back to you within two working days.",
+      "errorInvalid": "Please check the highlighted fields and try again.",
+      "errorSending": "We could not send your request. Please try again, or write to us at"
+    }
   },
   "footer": {
     "tagline": "Quality and style, united in every product.",
