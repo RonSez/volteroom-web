@@ -47,8 +47,14 @@ export async function sendMail({
   try {
     const res = await fetch(RESEND_ENDPOINT, {
       method: "POST",
+      // Cap the call well under the serverless function's own limit: a hung
+      // request would otherwise take the whole function down with it, and the
+      // visitor would get a dead page instead of the fallback below.
+      signal: AbortSignal.timeout(8000),
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        // Trimmed because a key pasted into a dashboard often carries a
+        // trailing newline, which makes the header constructor throw.
+        Authorization: `Bearer ${apiKey.trim()}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -67,6 +73,7 @@ export async function sendMail({
       console.error(`[email] Resend responded ${res.status}: ${detail}`);
       return { ok: false, reason: "failed", detail };
     }
+    console.log("[email] Resend accepted the message");
     return { ok: true };
   } catch (err) {
     console.error("[email] send failed", err);

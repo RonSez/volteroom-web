@@ -31,6 +31,21 @@ export async function submitPartnership(
   _prev: PartnershipState,
   fd: FormData,
 ): Promise<PartnershipState> {
+  // Nothing in here may throw. An exception escaping a Server Action reaches
+  // the client as a failed POST, and React answers that with its "this page
+  // could not load" boundary — the visitor loses the page and their typed
+  // answers, and we learn nothing. Failing to the error state instead keeps
+  // the form on screen with the mailto fallback, and names the cause in the
+  // deployment logs.
+  try {
+    return await run(fd);
+  } catch (err) {
+    console.error("[partnership] submit failed", err);
+    return { status: "error", code: "failed" };
+  }
+}
+
+async function run(fd: FormData): Promise<PartnershipState> {
   // A filled honeypot means a bot. Report success so it doesn't retry, but
   // send nothing.
   if (read(fd, HONEYPOT)) return { status: "success" };
