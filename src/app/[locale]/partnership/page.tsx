@@ -109,18 +109,20 @@ function PartnershipContent() {
                     "radial-gradient(52% 50% at 50% 42%, rgba(43,164,214,0.22) 0%, rgba(12,14,18,0) 70%)",
                 }}
               />
-              {/* Her suit is near-black, which would dissolve into the page on
-                  its own — the azure drop-shadow gives the silhouette a rim of
-                  light so she reads as lit, not cut out. The bottom mask fades
-                  the waist-height crop into the page instead of ending it on a
-                  hard horizontal line (the mask clips the glow with it). */}
+              {/* Photo: Kawê Rodrigues via Pexels (Pexels License — free for
+                  commercial use, no attribution required), background removed.
+                  The azure drop-shadow gives the silhouette a rim of light so
+                  she reads as lit rather than pasted on, and the bottom mask
+                  fades the hip-height crop into the page instead of ending it
+                  on a hard horizontal line (the mask clips the glow with it).
+                  The fade starts below her hands so it never eats them. */}
               <Image
-                src="/brand/partnership/welcome.webp"
+                src="/brand/partnership/welcome-v2.webp"
                 alt=""
                 width={900}
-                height={1012}
-                sizes="(min-width: 1024px) 26rem, 18rem"
-                className="relative mx-auto h-auto w-full max-w-[26rem] [filter:drop-shadow(0_0_30px_rgba(43,164,214,0.30))_drop-shadow(0_2px_8px_rgba(0,0,0,0.6))] [-webkit-mask-image:linear-gradient(to_bottom,#000_74%,transparent_99%)] [mask-image:linear-gradient(to_bottom,#000_74%,transparent_99%)]"
+                height={1424}
+                sizes="(min-width: 1024px) 22rem, 15rem"
+                className="relative mx-auto h-auto w-full max-w-[22rem] [filter:drop-shadow(0_0_30px_rgba(43,164,214,0.30))_drop-shadow(0_2px_8px_rgba(0,0,0,0.6))] [-webkit-mask-image:linear-gradient(to_bottom,#000_82%,transparent_100%)] [mask-image:linear-gradient(to_bottom,#000_82%,transparent_100%)]"
                 priority
               />
             </div>
