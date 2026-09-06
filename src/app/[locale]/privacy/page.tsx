@@ -1,7 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { privacySections, privacyTitle, type Block } from "./content";
+import { getPrivacyDoc } from "./content";
+import type { Block } from "./types";
 
 export default async function PrivacyPage({
   params,
@@ -10,6 +11,7 @@ export default async function PrivacyPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const { title, sections } = getPrivacyDoc(locale);
 
   return (
     <Section className="py-14 sm:py-20">
@@ -21,12 +23,12 @@ export default async function PrivacyPage({
         </Reveal>
         <Reveal delay={80}>
           <h1 className="text-shimmer text-balance font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-            {privacyTitle}
+            {title}
           </h1>
         </Reveal>
 
         <div className="mt-12 space-y-12">
-          {privacySections.map((section, i) => (
+          {sections.map((section, i) => (
             <Reveal key={i} delay={Math.min(i, 4) * 40}>
               <section>
                 {section.heading && (
