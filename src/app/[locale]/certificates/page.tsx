@@ -83,8 +83,7 @@ function CertificatesContent() {
               <Reveal delay={Math.min(i, 5) * 40}>
                 <a
                   href={cert.file}
-                  target="_blank"
-                  rel="noreferrer"
+                  download
                   className="floats group flex items-center gap-5 rounded-2xl px-6 py-5 transition-colors hover:border-brand/40"
                 >
                   <FileText

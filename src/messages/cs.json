@@ -336,7 +336,7 @@
     "reportNo": "Zpráva č.",
     "pages": "{count, plural, one {# strana} few {# strany} other {# stran}}",
     "pass": "Vyhověl",
-    "openPdf": "Otevřít PDF",
+    "openPdf": "Stáhnout PDF",
     "note": "Zprávy zveřejňujeme přesně v podobě, v jaké je vydala společnost SGS (zakázka č. NBP26-003558); každá z nich uvádí modelová čísla, na která se vztahuje. Potřebujete certifikát na produkt, který zde není uveden? Kontaktujte nás.",
     "samples": {
       "NGBEC26003487302": "Vypínače",

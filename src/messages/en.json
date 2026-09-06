@@ -336,7 +336,7 @@
     "reportNo": "Report no.",
     "pages": "{count, plural, one {# page} other {# pages}}",
     "pass": "Pass",
-    "openPdf": "Open PDF",
+    "openPdf": "Download PDF",
     "note": "Reports are published exactly as issued by SGS (job no. NBP26-003558); each one lists the model numbers it covers. Need a certificate for a product not shown here? Get in touch.",
     "samples": {
       "NGBEC26003487302": "Switches",
