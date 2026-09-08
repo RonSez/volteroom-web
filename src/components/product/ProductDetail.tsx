@@ -215,7 +215,7 @@ export function ProductDetail({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button
               onClick={add}
-              className="h-12 w-full gap-2 bg-brand text-base text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
+              className="h-12 w-full gap-2 border-2 border-brand bg-brand text-base text-brand-foreground transition-all hover:border-brand-to hover:bg-brand-to hover:shadow-[0_0_0_4px_color-mix(in_oklch,var(--brand),transparent_65%)] sm:w-auto sm:px-8"
             >
               <ShoppingBag className="size-5" />
               {tc("addToBasket")}
@@ -228,7 +228,10 @@ export function ProductDetail({
                 title={t("datasheetHint")}
                 className={cn(
                   buttonVariants({ variant: "outline" }),
-                  "h-12 w-full gap-2 text-base sm:w-auto sm:px-6",
+                  "h-12 w-full gap-2 border-2 text-base transition-all",
+                  "hover:border-brand hover:bg-brand/10 hover:text-brand hover:shadow-[0_0_0_4px_color-mix(in_oklch,var(--brand),transparent_75%)]",
+                  "dark:hover:border-brand dark:hover:bg-brand/10",
+                  "sm:w-auto sm:px-6",
                 )}
               >
                 <FileText className="size-5" />
