@@ -2,11 +2,39 @@
  * Static brand / company configuration (placeholder-friendly).
  * Real values can later be served from the admin layer.
  */
+
+/**
+ * Absolute origin of this deployment — the base for canonicals, hreflang,
+ * the sitemap and OG image URLs.
+ *
+ * Resolved at build time rather than hard-coded, because the production
+ * domain is not pointed yet:
+ *   1. `NEXT_PUBLIC_SITE_URL` — set this (no trailing slash) the moment the
+ *      real domain goes live; it is the only change needed.
+ *   2. `VERCEL_PROJECT_PRODUCTION_URL` — Vercel's *stable* production alias.
+ *      Deliberately not `VERCEL_URL`, which is per-deployment and would make
+ *      every preview advertise itself as the canonical.
+ *   3. localhost, for `next dev`.
+ */
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "") ||
+  "http://localhost:3000"
+).replace(/\/$/, "");
+
+/**
+ * True only once we know the real public origin. Preview deployments and
+ * localhost must never be indexed, so `robots.ts` gates on this.
+ */
+export const isPublicOrigin = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
+
 export const siteConfig = {
   name: "Volteroom",
   legalName: "Volteroom s.r.o.",
   domain: "volteroom.com",
-  url: "https://www.volteroom.com",
+  url: siteUrl,
   address: {
     street: "Znievska 3060/8",
     zip: "851 06",

@@ -1,8 +1,27 @@
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { gtcLead, gtcSections } from "./content";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "cooperation" });
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/cooperation",
+    title: t("title"),
+    description: t("intro"),
+  });
+}
 
 export default async function CooperationPage({
   params,

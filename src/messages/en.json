@@ -2,7 +2,32 @@
   "meta": {
     "titleDefault": "Volteroom — Designer Switches & Sockets",
     "titleTemplate": "%s · Volteroom",
-    "description": "Volteroom — quality and style united in every product. New-generation designer switches, sockets and frames in five finishes."
+    "description": "Volteroom — quality and style united in every product. New-generation designer switches, sockets and frames in five finishes.",
+    "ogHeadline": "Quality and style united in every product",
+    "ogTagline": "Designer switches, sockets and frames in five finishes.",
+    "home": {
+      "title": "Volteroom — designer switches, sockets and frames",
+      "description": "New-generation switches, sockets, dimmers and frames in five finishes — glossy white, soft touch white, cashmere, graphite and carbon. European quality for residential and commercial builds."
+    },
+    "catalog": {
+      "title": "Catalogue of switches, sockets and frames",
+      "description": "The full Volteroom catalogue: mechanisms, covers and frames — switches, sockets, USB chargers, dimmers, data and TV outlets. Five finishes, 1–5 gang frames."
+    },
+    "about": {
+      "title": "About Volteroom",
+      "description": "VOLTEROOM is a European brand of high-quality electrical installation products, with long-standing experience in engineering supply for residential and civil construction."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Volteroom s.r.o., Znievska 3060/8, 851 06 Bratislava, Slovakia. Email sales@volteroom.com or call +421 947 116 106."
+    },
+    "basket": {
+      "title": "Basket",
+      "description": "Your selected Volteroom products and quotation enquiry."
+    },
+    "privacy": {
+      "description": "How VOLTEROOM, s.r.o. processes and protects personal data."
+    }
   },
   "nav": {
     "home": "Home",
@@ -63,10 +88,22 @@
       "title": "Features of the new generation",
       "subtitle": "Selected details, reliable mechanisms and a five-year warranty.",
       "items": [
-        { "title": "Monolithic form", "desc": "No dividers between covers and minimal gaps between frames and panels." },
-        { "title": "9.5 mm frame width", "desc": "Universal 1–5 gang frames with precise alignment." },
-        { "title": "Reliable mechanisms", "desc": "Silver-nickel alloy contacts, with a choice of screw or push-in (VAG) terminals." },
-        { "title": "5-year warranty", "desc": "Selected materials and a glass-filled polyamide 66 frame." }
+        {
+          "title": "Monolithic form",
+          "desc": "No dividers between covers and minimal gaps between frames and panels."
+        },
+        {
+          "title": "9.5 mm frame width",
+          "desc": "Universal 1–5 gang frames with precise alignment."
+        },
+        {
+          "title": "Reliable mechanisms",
+          "desc": "Silver-nickel alloy contacts, with a choice of screw or push-in (VAG) terminals."
+        },
+        {
+          "title": "5-year warranty",
+          "desc": "Selected materials and a glass-filled polyamide 66 frame."
+        }
       ]
     },
     "addressCta": {

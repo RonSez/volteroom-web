@@ -2,7 +2,32 @@
   "meta": {
     "titleDefault": "Volteroom — Dizajnové vypínače a zásuvky",
     "titleTemplate": "%s · Volteroom",
-    "description": "Volteroom — spojenie kvality a štýlu v každom produkte. Dizajnové vypínače, zásuvky a rámčeky novej generácie v 10 farbách."
+    "description": "Volteroom — spojenie kvality a štýlu v každom produkte. Dizajnové vypínače, zásuvky a rámčeky novej generácie v piatich povrchoch.",
+    "ogHeadline": "Spojenie kvality a štýlu v každom produkte",
+    "ogTagline": "Dizajnové vypínače, zásuvky a rámčeky v piatich povrchoch.",
+    "home": {
+      "title": "Volteroom — dizajnové vypínače, zásuvky a rámčeky",
+      "description": "Vypínače, zásuvky, stmievače a rámčeky novej generácie v piatich povrchoch — lesklá biela, soft touch biela, kašmír, grafit a karbón. Európska kvalita pre bytovú aj komerčnú výstavbu."
+    },
+    "catalog": {
+      "title": "Katalóg vypínačov, zásuviek a rámčekov",
+      "description": "Kompletný katalóg Volteroom: mechanizmy, kryty a rámčeky — vypínače, zásuvky, USB nabíjačky, stmievače, dátové a TV zásuvky. Päť povrchov, rámčeky 1–5 násobné."
+    },
+    "about": {
+      "title": "O značke Volteroom",
+      "description": "VOLTEROOM je európska značka vysokokvalitných produktov pre elektroinštalácie, s dlhoročnými skúsenosťami s inžinierskymi dodávkami pre občiansku a bytovú výstavbu."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Volteroom s.r.o., Znievska 3060/8, 851 06 Bratislava. Napíšte nám na sales@volteroom.com alebo zavolajte +421 947 116 106."
+    },
+    "basket": {
+      "title": "Košík",
+      "description": "Vaše vybrané produkty Volteroom a dopyt na cenovú ponuku."
+    },
+    "privacy": {
+      "description": "Zásady spracúvania a ochrany osobných údajov spoločnosti VOLTEROOM, s.r.o."
+    }
   },
   "nav": {
     "home": "Domov",
@@ -63,10 +88,22 @@
       "title": "Vlastnosti novej generácie",
       "subtitle": "Vybrané detaily, spoľahlivé mechanizmy a päťročná záruka.",
       "items": [
-        { "title": "Monolitická forma", "desc": "Žiadne priečky medzi krytmi a minimálne medzery medzi rámčekmi a panelmi." },
-        { "title": "Šírka rámčeka 9,5 mm", "desc": "Univerzálne 1–5 násobné rámčeky s presným zarovnaním." },
-        { "title": "Spoľahlivé mechanizmy", "desc": "Kontakty zo zliatiny striebra a niklu, na výber so skrutkovými alebo bezskrutkovými (VAG) svorkami." },
-        { "title": "Záruka 5 rokov", "desc": "Vybrané materiály a kostra z polyamidu 66 plneného sklom." }
+        {
+          "title": "Monolitická forma",
+          "desc": "Žiadne priečky medzi krytmi a minimálne medzery medzi rámčekmi a panelmi."
+        },
+        {
+          "title": "Šírka rámčeka 9,5 mm",
+          "desc": "Univerzálne 1–5 násobné rámčeky s presným zarovnaním."
+        },
+        {
+          "title": "Spoľahlivé mechanizmy",
+          "desc": "Kontakty zo zliatiny striebra a niklu, na výber so skrutkovými alebo bezskrutkovými (VAG) svorkami."
+        },
+        {
+          "title": "Záruka 5 rokov",
+          "desc": "Vybrané materiály a kostra z polyamidu 66 plneného sklom."
+        }
       ]
     },
     "addressCta": {

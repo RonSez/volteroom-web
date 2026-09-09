@@ -13,6 +13,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Section } from "@/components/layout/Section";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/ui/Reveal";
 import { PartnershipForm } from "@/components/partnership/PartnershipForm";
 import { buttonVariants } from "@/components/ui/button";
@@ -25,7 +27,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "partnership" });
-  return { title: t("title"), description: t("intro") };
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/partnership",
+    title: t("title"),
+    description: t("intro"),
+  });
 }
 
 export default async function PartnershipPage({

@@ -1,8 +1,29 @@
 import { setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { getPrivacyDoc } from "./content";
 import type { Block } from "./types";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta.privacy" });
+  return pageMetadata({
+    locale: locale as Locale,
+    // The heading is the document's own localized title — reuse it rather
+    // than maintaining a second copy in the message files.
+    path: "/privacy",
+    title: getPrivacyDoc(locale).title,
+    description: t("description"),
+  });
+}
 
 export default async function PrivacyPage({
   params,

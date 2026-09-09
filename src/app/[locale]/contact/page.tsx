@@ -1,4 +1,8 @@
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { setRequestLocale } from "next-intl/server";
 import { MapPin, Phone, Mail, User, Navigation } from "lucide-react";
 import { Section } from "@/components/layout/Section";
@@ -6,6 +10,21 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig, mapsEmbedUrl, mapsLinkUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta.contact" });
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/contact",
+    title: t("title"),
+    description: t("description"),
+  });
+}
 
 export default async function ContactPage({
   params,

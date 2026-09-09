@@ -3,6 +3,8 @@ import { useTranslations, useFormatter } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BadgeCheck, Download, FileText } from "lucide-react";
 import { Section } from "@/components/layout/Section";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/ui/Reveal";
 import { certificates, certificatesIssued } from "./content";
 
@@ -13,7 +15,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "certificates" });
-  return { title: t("title"), description: t("intro") };
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/certificates",
+    title: t("title"),
+    description: t("intro"),
+  });
 }
 
 export default async function CertificatesPage({

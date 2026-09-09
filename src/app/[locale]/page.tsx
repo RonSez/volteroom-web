@@ -1,4 +1,8 @@
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import { setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -16,6 +20,23 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { getFeaturedProducts } from "@/lib/catalog";
 import type { Product } from "@/data/catalog";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta.home" });
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/",
+    // Absolute: the home title is already brand-led, so the "%s · Volteroom"
+    // template would just repeat the brand.
+    title: { absolute: t("title") },
+    description: t("description"),
+  });
+}
 
 export default async function HomePage({
   params,

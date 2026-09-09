@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { itemListJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/layout/Section";
 import { CatalogFilters } from "@/components/catalog/CatalogFilters";
@@ -14,6 +19,38 @@ import type {
 } from "@/data/catalog";
 
 const KINDS: ProductKind[] = ["mechanism", "cover", "frame"];
+
+/** Query keys that turn `/catalog` into a filtered view. */
+const FILTER_PARAMS = ["category", "kind", "finish", "gang", "ip"] as const;
+
+/**
+ * The catalogue's filters live in the query string (`category`, `kind`,
+ * `finish`, `gang`, `ip`), which means the same set of products is reachable
+ * under a combinatorial number of URLs. Left alone, Google would spend the
+ * crawl budget on facet permutations and split the page's authority across
+ * them, so every filtered view canonicalises to the bare `/catalog` and is
+ * marked noindex,follow — the products themselves stay fully crawlable
+ * through the tiles.
+ */
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  const [{ locale }, sp] = await Promise.all([params, searchParams]);
+  const t = await getTranslations({ locale, namespace: "meta.catalog" });
+  const isFiltered = FILTER_PARAMS.some((key) => sp[key] !== undefined);
+
+  return pageMetadata({
+    locale: locale as Locale,
+    path: "/catalog",
+    title: t("title"),
+    description: t("description"),
+    index: !isFiltered,
+  });
+}
 
 export default async function CatalogPage({
   params,
@@ -71,13 +108,17 @@ export default async function CatalogPage({
   );
 
   return (
-    <CatalogContent
-      cards={cards}
-      categories={categories}
-      finishes={finishes}
-      gangs={allGangs}
-      selectedFinish={finish}
-    />
+    <>
+      {/* Tells Google this is a product index, and which products are on it. */}
+      <JsonLd data={itemListJsonLd(locale as Locale, products)} />
+      <CatalogContent
+        cards={cards}
+        categories={categories}
+        finishes={finishes}
+        gangs={allGangs}
+        selectedFinish={finish}
+      />
+    </>
   );
 }
 

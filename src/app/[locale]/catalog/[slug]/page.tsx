@@ -12,8 +12,16 @@ import {
   getAllProductSlugs,
   getProducts,
   getProductFinishes,
+  getCategory,
 } from "@/lib/catalog";
 import type { Product } from "@/data/catalog";
+import {
+  breadcrumbJsonLd,
+  metaDescription,
+  pageMetadata,
+  productJsonLd,
+} from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export async function generateStaticParams() {
   const slugs = await getAllProductSlugs();
@@ -30,7 +38,30 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) return {};
-  return { title: product.name[locale as Locale] };
+  const typedLocale = locale as Locale;
+
+  // `?finish=` and `?gang=` only preselect the configurator — they show the
+  // same product, so they must not become separate URLs in the index.
+  // `pageMetadata` canonicalises to the bare product path.
+  const base = pageMetadata({
+    locale: typedLocale,
+    path: `/catalog/${product.slug}`,
+    title: product.name[typedLocale],
+    description: metaDescription(product.description[typedLocale]),
+  });
+
+  return {
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      // The real product photo beats the generic brand card when a spec sheet
+      // is shared into a WhatsApp or Teams thread, which is how these get
+      // passed between installers and architects.
+      ...(product.imageUrl
+        ? { images: [{ url: product.imageUrl, alt: product.name[typedLocale] }] }
+        : {}),
+    },
+  };
 }
 
 export default async function ProductPage({
@@ -47,9 +78,11 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const t = await getTranslations("product");
-  const [finishes, categoryProducts] = await Promise.all([
+  const tCatalog = await getTranslations("catalog");
+  const [finishes, categoryProducts, category] = await Promise.all([
     getProductFinishes(product),
     getProducts({ category: product.category }),
+    getCategory(product.category),
   ]);
   const related = categoryProducts
     .filter((p) => p.slug !== product.slug)
@@ -62,8 +95,22 @@ export default async function ProductPage({
   const gangRaw = Array.isArray(sp.gang) ? sp.gang[0] : sp.gang;
   const initialGang = product.gangs?.find((g) => g === Number(gangRaw));
 
+  const typedLocale = locale as Locale;
+
   return (
     <>
+      {/* Product + breadcrumb graph. The Product node carries sku, specs and
+          finishes but deliberately no Offer — see productJsonLd. */}
+      <JsonLd
+        data={[
+          productJsonLd(typedLocale, product, category, finishes),
+          breadcrumbJsonLd(typedLocale, [
+            { name: "Volteroom", path: "/" },
+            { name: tCatalog("title"), path: "/catalog" },
+            { name: product.name[typedLocale], path: `/catalog/${product.slug}` },
+          ]),
+        ]}
+      />
       <Section className="py-8 sm:py-10">
         <Link
           href="/catalog"
