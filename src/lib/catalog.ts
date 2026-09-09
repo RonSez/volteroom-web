@@ -271,6 +271,24 @@ export async function getFeaturedProducts(): Promise<Product[]> {
   return (await loadCatalog()).products.filter((p) => p.featured);
 }
 
+/** One catalogue tile: a product, optionally pinned to one of its gang sizes. */
+export type CatalogCard = { product: Product; gang?: number };
+
+/**
+ * Expand products into catalogue tiles. Multi-gang products (the frames) get
+ * one tile per size, so a listing shows single, double, triple… rather than a
+ * single entry — narrowed to one size when a gang filter is active.
+ */
+export function toCatalogCards(products: Product[], gang?: number): CatalogCard[] {
+  return products.flatMap((p) =>
+    p.gangs && p.gangs.length > 1
+      ? p.gangs
+          .filter((g) => !gang || g === gang)
+          .map((g) => ({ product: p, gang: g }))
+      : [{ product: p }],
+  );
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   return (await loadCatalog()).products.map((p) => p.slug);
 }

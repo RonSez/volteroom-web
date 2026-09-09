@@ -48,7 +48,7 @@ export async function CategoryCards() {
         >
         <TiltCard className="h-full">
         <Link
-          href={`/catalog?category=${cat.id}`}
+          href={`/catalog/${cat.id}`}
           className="floats group relative flex h-full flex-col overflow-hidden rounded-2xl transition-[box-shadow,transform] duration-300 hover:shadow-[0_0_50px_-12px_rgba(43, 164, 214,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <div className="relative overflow-hidden bg-gradient-to-b from-[#101a2e] to-[#070d1b]">

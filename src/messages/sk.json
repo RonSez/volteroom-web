@@ -385,5 +385,81 @@
       "NGBEC26003492702": "Termostaty",
       "NGBEC26003498902": "Panely, rámčeky a kryty"
     }
+  },
+  "categories": {
+    "otherCategories": "Ďalšie kategórie",
+    "allProducts": "Celý katalóg",
+    "switches": {
+      "metaTitle": "Dizajnové vypínače a spínače — jedno- až trojnásobné",
+      "metaDescription": "Jednopólové, striedavé a krížové spínače Volteroom v jedno- až trojnásobnom vyhotovení, so skrutkovým alebo bezskrutkovým upevnením. Kryty v piatich povrchoch.",
+      "intro": "Spínače Volteroom pokrývajú celý rozsah bežnej bytovej aj komerčnej inštalácie — od ovládania jedného svietidla po krížové zapojenie z troch a viacerých miest, vrátane ovládania žalúzií.",
+      "body": [
+        "Rad zahŕňa jednopólové, striedavé a krížové mechanizmy v jedno-, dvoj- a trojnásobnom vyhotovení. Každý typ je dostupný v dvoch spôsoboch upevnenia do krabice: so skrutkami (rad E08) pre pevné ukotvenie a s príchytkami (rad F08) pre rýchlu montáž. Menovitý prúd je 10 A, kontaktná skupina je zo zliatiny medi s vysokou presnosťou spracovania a oceľový nosič má hrúbku 1 mm, pozinkovaný aj na rezných hranách.",
+        "Mechanizmus, kryt a rámček sa objednávajú samostatne. Mechanizmus je farebne neutrálny; vzhľad určuje kryt a rámček, ktoré si vyberáte z piatich povrchov — lesklá biela, soft touch biela, soft touch kašmír, grafit a soft touch karbón. Rámčeky sú 1- až 5-násobné so šírkou 9,5 mm, takže spínače možno zoskupovať vodorovne aj zvisle so zásuvkami a ostatnými prvkami radu."
+      ]
+    },
+    "sockets": {
+      "metaTitle": "Zásuvky francúzskeho štandardu s clonkami",
+      "metaDescription": "Zásuvky Volteroom s kolíkovým uzemnením podľa francúzskeho štandardu a s detskými clonkami. Jednoduché, dvojité, s USB nabíjaním a vo vyhotovení IP44.",
+      "intro": "Zásuvky Volteroom sú vo francúzskom štandarde s kolíkovým uzemnením a detskými clonkami, ktoré bránia vsunutiu predmetu do jedného otvoru. K dispozícii sú jednoduché aj dvojité vyhotovenia.",
+      "body": [
+        "Rad obsahuje jednoduchú a dvojitú zásuvku, kombinovanú zásuvku s USB nabíjačkou 20 W (typ A + typ C) a kryt vo vyhotovení IP44 pre priestory so zvýšenou vlhkosťou. Mechanizmy sú dostupné so skrutkovým upevnením (E08) aj s príchytkami (F08). Svorky prijímajú vodič s priemerom 1 – 2,5 mm a montážna hĺbka je 25,5 mm, takže sa zmestia aj do plytších krabíc.",
+        "Kryt dvojitej zásuvky nepotrebuje samostatný rámček. Ostatné zásuvky sa dopĺňajú rámčekom z rovnakého radu, čo umožňuje zostavovať kombinácie zásuviek a spínačov v jednom rámčeku bez priečok medzi krytmi. Všetky plastové časti prešli skúškou žeravou slučkou pri +850 °C a skúškou odolnosti proti nárazu IK06."
+      ]
+    },
+    "usb-charging": {
+      "metaTitle": "USB zásuvky a nabíjačky USB-A + USB-C 20 W",
+      "metaDescription": "Vstavané USB nabíjačky Volteroom s portami USB-A a USB-C s výkonom 20 W. Nabíjanie telefónov a tabletov priamo zo steny, bez adaptéra.",
+      "intro": "Vstavaná USB nabíjačka nahrádza adaptér v zásuvke — telefón, tablet či slúchadlá nabijete priamo zo steny a zásuvka zostáva voľná pre spotrebiče.",
+      "body": [
+        "Modul kombinuje port USB-A a USB-C s celkovým výkonom 20 W, čo pri USB-C zodpovedá rýchlemu nabíjaniu bežných telefónov. Mechanizmus sa upevňuje skrutkami a má rovnaké vonkajšie rozmery ako ostatné moduly radu (70,9 × 70,9 mm, montážna hĺbka 25,5 mm), takže ho možno zaradiť do spoločného rámčeka so spínačmi a zásuvkami.",
+        "Ak potrebujete nabíjanie aj klasickú zásuvku na jednom mieste, v kategórii Zásuvky nájdete kombinovaný modul, ktorý spája zásuvku francúzskeho štandardu s rovnakou USB nabíjačkou. Kryt sa objednáva samostatne v jednom z piatich povrchov."
+      ]
+    },
+    "data-media": {
+      "metaTitle": "Dátové zásuvky RJ45 CAT 6, HDMI a TV",
+      "metaDescription": "Dátové a multimediálne zásuvky Volteroom: RJ45 CAT 6 / Class E-8 jednoduché aj dvojité, HDMI 2.0a 4K a TV koaxiálne 0 – 2400 MHz.",
+      "intro": "Dátové a multimediálne zásuvky privádzajú sieť, obraz a televízny signál priamo do steny — v rovnakom rámčeku a povrchu ako spínače a zásuvky v ostatných miestnostiach.",
+      "body": [
+        "Kategória obsahuje jednoduchú a dvojitú zásuvku RJ45 kategórie CAT 6 / Class E-8 pre gigabitovú sieť, zásuvku HDMI 2.0a typu A s podporou 4K Full HD pri 60 Hz vrátane 3D a HDR, televíznu koaxiálnu zásuvku s rozsahom 0 – 2400 MHz a kombinovaný modul RJ45 + TV. Všetky mechanizmy majú skrutkové upevnenie.",
+        "Kryty sú spoločné pre viac modulov — jeden slúži pre jednoduchý RJ45 aj pre HDMI, druhý pre dvojitý RJ45 a televíznu zásuvku. Vďaka jednotným rozmerom modulov možno dátovú zásuvku zaradiť do spoločného 1- až 5-násobného rámčeka so zásuvkou a spínačom, takže pracovné miesto alebo TV stena pôsobia ako jeden celok."
+      ]
+    },
+    "dimmers": {
+      "metaTitle": "Stmievače — otočný TRIAC stmievač 200 W LED",
+      "metaDescription": "Otočný stmievač Volteroom s technológiou TRIAC pre LED svietidlá do 200 W. Plynulá regulácia jasu, kryt v piatich povrchoch.",
+      "intro": "Otočný stmievač umožňuje plynule nastaviť jas svietidla od tlmeného podsvietenia po plný výkon — jedným ovládačom v rovnakom dizajne ako ostatné prvky radu.",
+      "body": [
+        "Stmievač využíva technológiu TRIAC a je určený pre LED svietidlá s celkovým príkonom do 200 W. Mechanizmus má skrutkové upevnenie a montážnu hĺbku 25,5 mm. Pred montážou odporúčame overiť, či je konkrétny LED zdroj označený ako stmievateľný — nestmievateľné zdroje môžu blikať alebo hučať bez ohľadu na použitý stmievač.",
+        "Mechanizmus je farebne neutrálny; viditeľnú časť tvorí kryt s otočným gombíkom, ktorý sa objednáva samostatne v jednom z piatich povrchov. Stmievač možno zaradiť do spoločného rámčeka so spínačmi a zásuvkami."
+      ]
+    },
+    "climate": {
+      "metaTitle": "Termostat pre podlahové kúrenie s podlahovým snímačom",
+      "metaDescription": "Elektronický termostat Volteroom s externým podlahovým snímačom, AC 230 V, 16 A. Riadenie podlahového kúrenia v dizajne celého radu.",
+      "intro": "Elektronický termostat riadi podlahové kúrenie podľa teploty nameranej externým snímačom uloženým priamo v podlahe, nie podľa teploty vzduchu pri stene.",
+      "body": [
+        "Termostat pracuje pri napätí AC 230 V so spínaným prúdom do 16 A, čo pokrýva bežné okruhy elektrického podlahového kúrenia v kúpeľni aj v obytných miestnostiach. Externý podlahový snímač je súčasťou riešenia a ukladá sa do chráničky medzi vykurovacie rohože, aby ho bolo možné v prípade potreby vymeniť.",
+        "Mechanizmus má skrutkové upevnenie a rovnaké rozmery ako ostatné moduly radu, takže termostat môže byť v jednej zostave so spínačom osvetlenia. Kryt sa objednáva samostatne v jednom z piatich povrchov."
+      ]
+    },
+    "frames": {
+      "metaTitle": "Rámčeky 1- až 5-násobné v piatich povrchoch",
+      "metaDescription": "Univerzálne rámčeky Volteroom pre 1 až 5 modulov, šírka 9,5 mm, presné zarovnanie a monolitická forma. Päť povrchov vrátane soft touch.",
+      "intro": "Rámček je viditeľný obrys celej zostavy. Rad Volteroom používa jeden univerzálny tvar pre 1 až 5 modulov, takže samostatný spínač aj päťnásobná zostava pôsobia ako jeden diel.",
+      "body": [
+        "Šírka rámčeka je 9,5 mm a medzi krytmi nie sú priečky — jednotlivé moduly na seba nadväzujú s minimálnou medzerou, čo je pri viacnásobných zostavách najviditeľnejší rozdiel oproti bežným radom. Rámčeky možno osadiť vodorovne aj zvisle a kombinovať v nich spínače, zásuvky, dátové moduly, stmievače aj termostat.",
+        "Každý rámček je dostupný v piatich povrchoch: lesklá biela, soft touch biela, soft touch kašmír, grafit a soft touch karbón. Kostra je z polyamidu 66 plneného sklom; materiál prešiel skúškou žeravou slučkou pri +850 °C a skúškou odolnosti proti nárazu IK06."
+      ]
+    },
+    "accessories": {
+      "metaTitle": "Príslušenstvo — záslepky a vývodky kábla",
+      "metaDescription": "Záslepka a vývodka kábla Volteroom pre rezervné pozície a pevne pripojené spotrebiče. Rovnaký rámček a povrch ako zvyšok radu.",
+      "intro": "Príslušenstvo dopĺňa zostavu tam, kde nie je potrebný spínač ani zásuvka — buď sa pozícia nechá zaslepená ako rezerva, alebo sa cez ňu vyvedie kábel.",
+      "body": [
+        "Záslepka uzatvorí voľnú pozíciu v rámčeku a je praktická pri rekonštrukciách, kde sa ráta s neskorším doplnením modulu. Vývodka kábla umožňuje čisté vyvedenie prívodu k pevne pripojenému spotrebiču — napríklad k varnej doske, sušiaku alebo osvetleniu pracovnej dosky — bez viditeľnej krabice na stene.",
+        "Oba prvky majú vlastný vnútorný modul aj kryt, takže sa objednávajú rovnako ako ostatné položky radu a používajú tie isté rámčeky a povrchy. V hotovej zostave tak nie je vidieť, že ide o doplnok."
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
-import { getProducts } from "@/lib/catalog";
+import { getCategories, getProducts } from "@/lib/catalog";
 import { localeUrl, sitemapAlternates } from "@/lib/seo";
 
 /**
@@ -27,7 +27,10 @@ const ROUTES: { path: string; priority: number; changeFrequency: "weekly" | "mon
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const products = await getProducts();
+  const [products, categories] = await Promise.all([
+    getProducts(),
+    getCategories(),
+  ]);
   const lastModified = new Date();
 
   const staticEntries = ROUTES.flatMap(({ path, priority, changeFrequency }) =>
@@ -39,6 +42,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       alternates: sitemapAlternates(path),
     })),
   );
+
+  // Category landing pages rank for the words people actually search, so they
+  // sit just under the catalogue index and above individual article numbers.
+  const categoryEntries = categories.flatMap((category) => {
+    const path = `/catalog/${category.id}`;
+    return locales.map((locale) => ({
+      url: localeUrl(locale, path),
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      alternates: sitemapAlternates(path),
+    }));
+  });
 
   const productEntries = products.flatMap((product) => {
     const path = `/catalog/${product.slug}`;
@@ -54,5 +70,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticEntries, ...productEntries];
+  return [...staticEntries, ...categoryEntries, ...productEntries];
 }

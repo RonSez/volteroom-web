@@ -246,6 +246,37 @@ export function productJsonLd(
   };
 }
 
+/**
+ * A category landing page: a CollectionPage wrapping the ItemList of the
+ * products in it. This is what tells Google the page is a browsable index of
+ * a named product group rather than another product page.
+ */
+export function collectionPageJsonLd(
+  locale: Locale,
+  opts: { name: string; description: string; path: string; products: Product[] },
+): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${localeUrl(locale, opts.path)}#collection`,
+    name: opts.name,
+    description: opts.description,
+    url: localeUrl(locale, opts.path),
+    inLanguage: locale,
+    isPartOf: { "@id": SITE_ID },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: opts.products.length,
+      itemListElement: opts.products.map((product, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: product.name[locale],
+        url: localeUrl(locale, `/catalog/${product.slug}`),
+      })),
+    },
+  };
+}
+
 /** The catalogue listing, so Google sees it as a product index. */
 export function itemListJsonLd(locale: Locale, products: Product[]): JsonLd {
   return {

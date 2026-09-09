@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { permanentRedirect } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { itemListJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -8,12 +9,18 @@ import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/layout/Section";
 import { CatalogFilters } from "@/components/catalog/CatalogFilters";
 import { ProductCard } from "@/components/catalog/ProductCard";
-import { getProducts, getCategories, getFinishes, getAllGangs } from "@/lib/catalog";
+import {
+  getProducts,
+  getCategories,
+  getFinishes,
+  getAllGangs,
+  toCatalogCards,
+  type CatalogCard,
+} from "@/lib/catalog";
 import type {
   CategoryId,
   FinishId,
   ProductKind,
-  Product,
   Category,
   Finish,
 } from "@/data/catalog";
@@ -21,7 +28,7 @@ import type {
 const KINDS: ProductKind[] = ["mechanism", "cover", "frame"];
 
 /** Query keys that turn `/catalog` into a filtered view. */
-const FILTER_PARAMS = ["category", "kind", "finish", "gang", "ip"] as const;
+const FILTER_PARAMS = ["kind", "finish", "gang", "ip"] as const;
 
 /**
  * The catalogue's filters live in the query string (`category`, `kind`,
@@ -80,10 +87,22 @@ export default async function CatalogPage({
   const finishRaw = first(sp.finish);
   const gangRaw = first(sp.gang);
 
-  const category =
-    categoryRaw && categoryIds.has(categoryRaw as CategoryId)
-      ? (categoryRaw as CategoryId)
-      : undefined;
+  // Categories used to live here as a query facet. They are real pages now, so
+  // any surviving `?category=` link (bookmark, old share, external site) is
+  // sent to the landing page permanently rather than serving a duplicate.
+  if (categoryRaw && categoryIds.has(categoryRaw as CategoryId)) {
+    const rest = new URLSearchParams();
+    for (const key of FILTER_PARAMS) {
+      const value = first(sp[key]);
+      if (value) rest.set(key, value);
+    }
+    const qs = rest.toString();
+    permanentRedirect({
+      href: `/catalog/${categoryRaw}${qs ? `?${qs}` : ""}`,
+      locale: locale as Locale,
+    });
+  }
+
   const kind =
     kindRaw && KINDS.includes(kindRaw as ProductKind)
       ? (kindRaw as ProductKind)
@@ -95,17 +114,10 @@ export default async function CatalogPage({
   const gang = gangRaw && gangs.has(gangRaw) ? Number(gangRaw) : undefined;
   const ip44 = first(sp.ip) === "44";
 
-  const products = await getProducts({ category, kind, finish, gang, ip44 });
+  // Unfiltered by category: any category request was redirected above.
+  const products = await getProducts({ kind, finish, gang, ip44 });
 
-  // Multi-gang products (the frames) get one card per size, so picking the
-  // Frames filter lists single, double, triple… rather than a single entry.
-  const cards: CatalogCard[] = products.flatMap((p) =>
-    p.gangs && p.gangs.length > 1
-      ? p.gangs
-          .filter((g) => !gang || g === gang)
-          .map((g) => ({ product: p, gang: g }))
-      : [{ product: p }],
-  );
+  const cards = toCatalogCards(products, gang);
 
   return (
     <>
@@ -121,9 +133,6 @@ export default async function CatalogPage({
     </>
   );
 }
-
-/** One catalogue tile: a product, optionally pinned to one of its gang sizes. */
-type CatalogCard = { product: Product; gang?: number };
 
 function CatalogContent({
   cards,

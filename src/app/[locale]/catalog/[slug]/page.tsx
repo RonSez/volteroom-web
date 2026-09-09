@@ -1,44 +1,77 @@
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ChevronLeft } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import { Section, SectionHeading } from "@/components/layout/Section";
-import { ProductDetail } from "@/components/product/ProductDetail";
-import { ProductCard } from "@/components/catalog/ProductCard";
 import {
-  getProductBySlug,
   getAllProductSlugs,
-  getProducts,
-  getProductFinishes,
-  getCategory,
+  getCategories,
+  getProductBySlug,
 } from "@/lib/catalog";
-import type { Product } from "@/data/catalog";
-import {
-  breadcrumbJsonLd,
-  metaDescription,
-  pageMetadata,
-  productJsonLd,
-} from "@/lib/seo";
-import { JsonLd } from "@/components/seo/JsonLd";
+import type { Category } from "@/data/catalog";
+import { metaDescription, pageMetadata } from "@/lib/seo";
+import { CategoryView } from "./CategoryView";
+import { ProductView } from "./ProductView";
+
+/**
+ * One dynamic segment serving two kinds of catalogue page: a category landing
+ * page (`/catalog/switches`) or a product (`/catalog/e08ka111`).
+ *
+ * They share a segment deliberately, rather than nesting products under their
+ * category (`/catalog/switches/e08ka111`). A product's category is editable in
+ * the admin, and under a nested scheme reassigning one would silently change
+ * that product's URL and break every link to it. Flat keeps product URLs
+ * stable for the life of the article number.
+ *
+ * Category ids and product slugs cannot collide — slugs are article numbers
+ * (`e08ka111`) plus `frame`, and `resolveCategory` checks categories first.
+ */
+async function resolveCategory(slug: string): Promise<Category | undefined> {
+  const categories = await getCategories();
+  return categories.find((c) => c.id === slug);
+}
+
+/** Filter keys that turn a category page into a narrowed view. */
+const FILTER_PARAMS = ["kind", "finish", "gang", "ip"] as const;
 
 export async function generateStaticParams() {
-  const slugs = await getAllProductSlugs();
+  const [slugs, categories] = await Promise.all([
+    getAllProductSlugs(),
+    getCategories(),
+  ]);
+  const paths = [...categories.map((c) => c.id as string), ...slugs];
   return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug })),
+    paths.map((slug) => ({ locale, slug })),
   );
 }
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { locale, slug } = await params;
+  const [{ locale, slug }, sp] = await Promise.all([params, searchParams]);
+  const typedLocale = locale as Locale;
+
+  const category = await resolveCategory(slug);
+  if (category) {
+    const t = await getTranslations({
+      locale,
+      namespace: `categories.${category.id}`,
+    });
+    const isFiltered = FILTER_PARAMS.some((key) => sp[key] !== undefined);
+    return pageMetadata({
+      locale: typedLocale,
+      path: `/catalog/${category.id}`,
+      title: t("metaTitle"),
+      description: t("metaDescription"),
+      // Narrowed views are the same category with fewer tiles — one page.
+      index: !isFiltered,
+    });
+  }
+
   const product = await getProductBySlug(slug);
   if (!product) return {};
-  const typedLocale = locale as Locale;
 
   // `?finish=` and `?gang=` only preselect the configurator — they show the
   // same product, so they must not become separate URLs in the index.
@@ -64,84 +97,32 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({
+export default async function CatalogEntryPage({
   params,
   searchParams,
 }: {
   params: Promise<{ locale: string; slug: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { locale, slug } = await params;
+  const [{ locale, slug }, sp] = await Promise.all([params, searchParams]);
   setRequestLocale(locale);
+  const typedLocale = locale as Locale;
+
+  const category = await resolveCategory(slug);
+  if (category) {
+    return (
+      <CategoryView
+        locale={typedLocale}
+        category={category}
+        searchParams={sp}
+      />
+    );
+  }
 
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const t = await getTranslations("product");
-  const tCatalog = await getTranslations("catalog");
-  const [finishes, categoryProducts, category] = await Promise.all([
-    getProductFinishes(product),
-    getProducts({ category: product.category }),
-    getCategory(product.category),
-  ]);
-  const related = categoryProducts
-    .filter((p) => p.slug !== product.slug)
-    .slice(0, 4);
-
-  // Preselect the finish / gang carried over from the catalogue card, if valid.
-  const sp = await searchParams;
-  const finishRaw = Array.isArray(sp.finish) ? sp.finish[0] : sp.finish;
-  const initialFinishId = finishes.find((f) => f.id === finishRaw)?.id;
-  const gangRaw = Array.isArray(sp.gang) ? sp.gang[0] : sp.gang;
-  const initialGang = product.gangs?.find((g) => g === Number(gangRaw));
-
-  const typedLocale = locale as Locale;
-
   return (
-    <>
-      {/* Product + breadcrumb graph. The Product node carries sku, specs and
-          finishes but deliberately no Offer — see productJsonLd. */}
-      <JsonLd
-        data={[
-          productJsonLd(typedLocale, product, category, finishes),
-          breadcrumbJsonLd(typedLocale, [
-            { name: "Volteroom", path: "/" },
-            { name: tCatalog("title"), path: "/catalog" },
-            { name: product.name[typedLocale], path: `/catalog/${product.slug}` },
-          ]),
-        ]}
-      />
-      <Section className="py-8 sm:py-10">
-        <Link
-          href="/catalog"
-          className="mb-8 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-        >
-          <ChevronLeft className="size-4" />
-          {t("backToCatalog")}
-        </Link>
-        <ProductDetail
-          product={product}
-          finishes={finishes}
-          initialFinishId={initialFinishId}
-          initialGang={initialGang}
-        />
-      </Section>
-
-      {related.length > 0 && <Related products={related} />}
-    </>
-  );
-}
-
-function Related({ products }: { products: Product[] }) {
-  const t = useTranslations("product");
-  return (
-    <Section className="border-t border-border bg-muted/30">
-      <SectionHeading title={t("relatedTitle")} />
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-        {products.map((p) => (
-          <ProductCard key={p.slug} product={p} />
-        ))}
-      </div>
-    </Section>
+    <ProductView locale={typedLocale} product={product} searchParams={sp} />
   );
 }

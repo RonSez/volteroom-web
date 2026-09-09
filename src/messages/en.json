@@ -385,5 +385,81 @@
       "NGBEC26003492702": "Thermostats",
       "NGBEC26003498902": "Panels, frames and covers"
     }
+  },
+  "categories": {
+    "otherCategories": "Other categories",
+    "allProducts": "Full catalogue",
+    "switches": {
+      "metaTitle": "Designer switches — one, two and three gang",
+      "metaDescription": "Volteroom one-way, two-way and intermediate switches in one- to three-gang versions, with screw or clips fixing. Covers in five finishes.",
+      "intro": "Volteroom switches cover the full range of ordinary residential and commercial installation — from switching a single luminaire to intermediate wiring controlled from three or more points, including roll-down shutter control.",
+      "body": [
+        "The range includes one-way, two-way and intermediate mechanisms in one-, two- and three-gang versions. Each type comes with two ways of fixing into the box: screw fixing (the E08 series) for a rigid anchor, and clips fixing (the F08 series) for fast mounting. Rated current is 10 A, the contact group is made of high-precision copper alloy, and the steel support is 1 mm thick, galvanised on all sides including the cut edges.",
+        "Mechanism, cover and frame are ordered separately. The mechanism is colour-neutral; the look comes from the cover and frame, which you choose from five finishes — glossy white, soft touch white, soft touch cashmere, graphite and soft touch carbon. Frames run from one to five gang at 9.5 mm wide, so switches can be grouped horizontally or vertically with sockets and the rest of the range."
+      ]
+    },
+    "sockets": {
+      "metaTitle": "French-standard socket outlets with shutters",
+      "metaDescription": "Volteroom socket outlets to the French standard with pin earthing and child shutters. Single, double, USB-combination and IP44 versions.",
+      "intro": "Volteroom socket outlets follow the French standard with pin earthing and child shutters, which prevent an object being pushed into a single aperture. Single and double versions are both available.",
+      "body": [
+        "The range covers a single and a double outlet, a combined outlet with a 20 W USB charger (type A + type C), and a cover in an IP44 version for rooms with raised humidity. Mechanisms come with screw fixing (E08) and clips fixing (F08). Terminals accept a conductor 1–2.5 mm in diameter and the mounting depth is 25.5 mm, so they fit shallower boxes too.",
+        "The double outlet's cover needs no separate frame. The other outlets take a frame from the same range, which lets you build runs of sockets and switches in one frame with no partitions between covers. All plastic parts have passed the hot-wire test at +850 °C and the IK06 impact resistance test."
+      ]
+    },
+    "usb-charging": {
+      "metaTitle": "USB outlets and USB-A + USB-C 20 W chargers",
+      "metaDescription": "Volteroom built-in USB chargers with USB-A and USB-C ports at 20 W. Charge phones and tablets straight from the wall, without an adapter.",
+      "intro": "A built-in USB charger replaces the adapter in the socket — phone, tablet or headphones charge straight from the wall, and the socket stays free for appliances.",
+      "body": [
+        "The module combines a USB-A and a USB-C port at 20 W total, which on USB-C is fast charging for ordinary phones. The mechanism fixes with screws and has the same outside dimensions as the rest of the range (70.9 × 70.9 mm, 25.5 mm mounting depth), so it can sit in a shared frame with switches and sockets.",
+        "If you need charging and a conventional outlet in one place, the Sockets category has a combined module that pairs a French-standard outlet with the same USB charger. The cover is ordered separately in one of five finishes."
+      ]
+    },
+    "data-media": {
+      "metaTitle": "Data outlets: RJ45 CAT 6, HDMI and TV",
+      "metaDescription": "Volteroom data and media outlets: single and double RJ45 CAT 6 / Class E-8, HDMI 2.0a 4K, and TV coaxial 0–2400 MHz.",
+      "intro": "Data and media outlets bring network, picture and television signal into the wall itself — in the same frame and finish as the switches and sockets in every other room.",
+      "body": [
+        "The category holds a single and a double RJ45 outlet to CAT 6 / Class E-8 for gigabit networking, an HDMI 2.0a type A outlet supporting 4K Full HD at 60 Hz including 3D and HDR, a TV coaxial outlet covering 0–2400 MHz, and a combined RJ45 + TV module. All mechanisms use screw fixing.",
+        "Covers are shared across modules — one serves both the single RJ45 and the HDMI outlet, another the double RJ45 and the TV outlet. Because every module has the same outside dimensions, a data outlet can sit in a shared one- to five-gang frame alongside a socket and a switch, so a desk position or TV wall reads as a single unit."
+      ]
+    },
+    "dimmers": {
+      "metaTitle": "Dimmers — 200 W LED Triac rotary dimmer",
+      "metaDescription": "Volteroom rotary dimmer using Triac technology for LED luminaires up to 200 W. Smooth brightness control, cover in five finishes.",
+      "intro": "A rotary dimmer sets a luminaire smoothly from a dim glow to full output — on one control, in the same design language as the rest of the range.",
+      "body": [
+        "The dimmer uses Triac technology and is rated for LED luminaires up to 200 W total. The mechanism uses screw fixing and a 25.5 mm mounting depth. Before installing, check that the particular LED source is marked dimmable — non-dimmable sources can flicker or hum regardless of which dimmer is used.",
+        "The mechanism is colour-neutral; the visible part is the cover with its rotary knob, ordered separately in one of five finishes. The dimmer can sit in a shared frame with switches and sockets."
+      ]
+    },
+    "climate": {
+      "metaTitle": "Thermostat for underfloor heating with floor sensor",
+      "metaDescription": "Volteroom electronic thermostat with external floor sensor, AC 230 V, 16 A. Underfloor heating control in the design language of the whole range.",
+      "intro": "The electronic thermostat controls underfloor heating from the temperature measured by an external sensor laid in the floor itself, rather than the air temperature at the wall.",
+      "body": [
+        "The thermostat runs at AC 230 V switching up to 16 A, which covers ordinary electric underfloor heating circuits in a bathroom or living space. The external floor sensor is part of the solution and is laid in a conduit between the heating mats so that it can be replaced if it ever fails.",
+        "The mechanism uses screw fixing and shares its dimensions with the rest of the range, so the thermostat can sit in one assembly with a lighting switch. The cover is ordered separately in one of five finishes."
+      ]
+    },
+    "frames": {
+      "metaTitle": "Frames, one to five gang, in five finishes",
+      "metaDescription": "Volteroom universal frames for one to five modules, 9.5 mm wide, precisely aligned in a monolithic form. Five finishes including soft touch.",
+      "intro": "The frame is the visible outline of the whole assembly. The Volteroom range uses one universal shape for one to five modules, so a lone switch and a five-gang run read as a single part.",
+      "body": [
+        "The frame is 9.5 mm wide and there are no partitions between covers — modules meet with a minimal gap, which on multi-gang runs is the most visible difference from an ordinary range. Frames mount horizontally or vertically and can combine switches, sockets, data modules, dimmers and the thermostat in one run.",
+        "Every frame comes in five finishes: glossy white, soft touch white, soft touch cashmere, graphite and soft touch carbon. The body is glass-filled polyamide 66; the material has passed the hot-wire test at +850 °C and the IK06 impact resistance test."
+      ]
+    },
+    "accessories": {
+      "metaTitle": "Accessories — blank plates and cable outlets",
+      "metaDescription": "Volteroom blank plate and cable outlet for spare positions and hard-wired appliances. The same frame and finish as the rest of the range.",
+      "intro": "Accessories fill the positions in an assembly where neither a switch nor a socket is needed — either the position is blanked off as a spare, or a cable is brought out through it.",
+      "body": [
+        "The blank plate closes a free position in the frame and is useful on refurbishments where a module is planned for later. The cable outlet brings a supply out cleanly to a hard-wired appliance — a hob, a towel rail or worktop lighting — with no visible box on the wall.",
+        "Both have their own internal module and cover, so they are ordered exactly like the rest of the range and use the same frames and finishes. Nothing in the finished assembly gives away that they are an accessory."
+      ]
+    }
   }
 }

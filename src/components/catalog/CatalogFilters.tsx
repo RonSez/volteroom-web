@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import type { Category, Finish } from "@/data/catalog";
+import type { Category, CategoryId, Finish } from "@/data/catalog";
 import { FinishSwatch } from "./FinishSwatch";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -20,24 +20,37 @@ import { cn } from "@/lib/utils";
 
 type Params = Record<string, string | undefined>;
 
+/**
+ * Build a filter link.
+ *
+ * Category is part of the PATH (`/catalog/switches`) because those are real,
+ * indexable landing pages with their own copy; the remaining facets stay in
+ * the query string, where they are canonicalised away. So changing the
+ * category navigates to another page, while changing a finish or gang just
+ * re-filters the page you are on.
+ */
 function hrefFor(current: Params, changes: Params): string {
-  const next: Params = { ...current, ...changes };
+  const { category, ...rest }: Params = { ...current, ...changes };
   const sp = new URLSearchParams();
-  for (const [k, v] of Object.entries(next)) if (v) sp.set(k, v);
+  for (const [k, v] of Object.entries(rest)) if (v) sp.set(k, v);
   const qs = sp.toString();
-  return qs ? `/catalog?${qs}` : "/catalog";
+  const base = category ? `/catalog/${category}` : "/catalog";
+  return qs ? `${base}?${qs}` : base;
 }
 
 type FilterData = {
   categories: Category[];
   finishes: Finish[];
   gangs: number[];
+  /** Set on a category landing page, where the category comes from the path. */
+  activeCategory?: CategoryId;
 };
 
 function FilterBody({
   categories,
   finishes,
   gangs,
+  activeCategory,
   onNavigate,
 }: FilterData & { onNavigate?: () => void }) {
   const locale = useLocale() as Locale;
@@ -45,7 +58,8 @@ function FilterBody({
   const sp = useSearchParams();
 
   const current: Params = {
-    category: sp.get("category") ?? undefined,
+    // From the path on a category page, never the query string.
+    category: activeCategory,
     kind: sp.get("kind") ?? undefined,
     finish: sp.get("finish") ?? undefined,
     gang: sp.get("gang") ?? undefined,
@@ -164,6 +178,7 @@ function FilterBody({
       </div>
 
       {(current.category || current.kind || current.finish || current.gang || current.ip) && (
+        /* Clears the path category as well as the query facets. */
         <Link
           href="/catalog"
           onClick={onNavigate}
@@ -177,7 +192,12 @@ function FilterBody({
   );
 }
 
-export function CatalogFilters({ categories, finishes, gangs }: FilterData) {
+export function CatalogFilters({
+  categories,
+  finishes,
+  gangs,
+  activeCategory,
+}: FilterData) {
   const t = useTranslations("catalog.filters");
   const [open, setOpen] = useState(false);
 
@@ -186,7 +206,12 @@ export function CatalogFilters({ categories, finishes, gangs }: FilterData) {
       {/* Desktop sidebar */}
       <aside className="hidden lg:block">
         <h2 className="mb-6 font-heading text-lg font-bold">{t("title")}</h2>
-        <FilterBody categories={categories} finishes={finishes} gangs={gangs} />
+        <FilterBody
+          categories={categories}
+          finishes={finishes}
+          gangs={gangs}
+          activeCategory={activeCategory}
+        />
       </aside>
 
       {/* Mobile trigger + sheet */}
@@ -207,6 +232,7 @@ export function CatalogFilters({ categories, finishes, gangs }: FilterData) {
                 categories={categories}
                 finishes={finishes}
                 gangs={gangs}
+                activeCategory={activeCategory}
                 onNavigate={() => setOpen(false)}
               />
             </div>
