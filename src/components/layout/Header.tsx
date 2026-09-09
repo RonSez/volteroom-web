@@ -57,10 +57,28 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
+    // Hysteresis, not a single threshold. The bar is in flow and shrinks by
+    // 16px when it compacts, which shortens the document by the same 16px — on
+    // a page that is only just scrollable that clamps scrollY back under a bare
+    // threshold, which grows the bar, which makes the page scrollable again.
+    // The result is a visible flap. A deadband far wider than the 16px delta
+    // (compact past 48px, expand only back under 8px) breaks the loop.
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      const y = window.scrollY;
+      setScrolled((prev) => (prev ? y > 8 : y > 48));
+    };
+    // Scroll fires far faster than paint; coalesce to one read per frame.
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(measure);
+    };
+    measure();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   const isActive = (href: string) =>
