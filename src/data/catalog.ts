@@ -244,9 +244,9 @@ export const categories: Category[] = [
   },
   {
     id: "frames",
-    name: L("Rámiky", "Frames", "Rámečky"),
+    name: L("Rámčeky", "Frames", "Rámečky"),
     tagline: L(
-      "Univerzálne rámiky pre 1 – 5 prvkov, tenké iba 9,5 mm.",
+      "Univerzálne rámčeky pre 1 – 5 prvkov, tenké iba 9,5 mm.",
       "Universal 1–5 gang frames, just 9.5 mm slim.",
       "Univerzální rámečky pro 1–5 prvků, tenké jen 9,5 mm.",
     ),

@@ -1430,7 +1430,7 @@ export const products: Product[] = [
     "category": "frames",
     "kind": "frame",
     "name": {
-      "sk": "Rámik",
+      "sk": "Rámček",
       "en": "Frame",
       "cs": "Rámeček"
     },
