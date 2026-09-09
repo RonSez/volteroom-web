@@ -14,7 +14,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus jednopólového spínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "1-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for 1 way switch with screw fixing. With this switch, you can switch a lamp or several lamps connected in parallel on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus jednopólového spínače se šroubovým upevněním. Tímto spínačem můžete z jednoho místa zapínat a vypínat svítidlo nebo několik paralelně zapojených svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -47,7 +47,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus střídavého přepínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "1-násobný mechanizmus striedavého prepínača so skrutkovým upevnením. Týmto prepínačom môžete z dvoch miest zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus striedavého prepínača so skrutkovým upevnením. Týmto prepínačom môžete z dvoch miest zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for 2 way switch with screw fixing. With this switch, you can switch a lamp or several lamps connected in parallel on and off from two locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus střídavého přepínače se šroubovým upevněním. Tímto přepínačem můžete ze dvou míst zapínat a vypínat svítidlo nebo několik paralelně zapojených svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -79,7 +79,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus křížového přepínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "1-násobný mechanizmus krížového prepínača so skrutkovým upevnením. Tento krížový prepínač umožňuje ovládať jedno svietidlo z troch alebo viacerých miest. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus krížového prepínača so skrutkovým upevnením. Tento krížový prepínač umožňuje ovládať jedno svietidlo z troch alebo viacerých miest. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for intermediate switch with screw fixing. This intermediate switch can be used to operate one lamp from three or more locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus křížového přepínače se šroubovým upevněním. Tento křížový přepínač umožňuje ovládat jedno svítidlo ze tří nebo více míst. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -111,7 +111,7 @@ export const products: Product[] = [
       "cs": "2-násobný mechanismus jednopólového spínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "2-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "2-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "2 Gang mechanism for 1 way switch with screw fixing. With this switch, you can switch several lamps on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "2-násobný mechanismus jednopólového spínače se šroubovým upevněním. Tímto spínačem můžete z jednoho místa zapínat a vypínat několik svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -143,7 +143,7 @@ export const products: Product[] = [
       "cs": "2-násobný mechanismus střídavého přepínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "2-násobný mechanizmus striedavého prepínača so skrutkovým upevnením. Týmto prepínačom môžete z dvoch miest zapínať a vypínať viacero svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "2-násobný mechanizmus striedavého prepínača so skrutkovým upevnením. Týmto prepínačom môžete z dvoch miest zapínať a vypínať viacero svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "2 Gang mechanism for 2 way switch with screw fixing. With this switch, you can switch several lamps on and off from two locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "2-násobný mechanismus střídavého přepínače se šroubovým upevněním. Tímto přepínačem můžete ze dvou míst zapínat a vypínat několik svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -175,7 +175,7 @@ export const products: Product[] = [
       "cs": "2-násobný mechanismus křížového přepínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "2-násobný mechanizmus krížového prepínača so skrutkovým upevnením. Tento krížový prepínač umožňuje ovládať dve svietidlá z troch alebo viacerých miest. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "2-násobný mechanizmus krížového prepínača so skrutkovým upevnením. Tento krížový prepínač umožňuje ovládať dve svietidlá z troch alebo viacerých miest. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "2 Gang mechanism for intermediate switch with screw fixing. This intermediate switch can be used to operate two lamp from three or more locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "2-násobný mechanismus křížového přepínače se šroubovým upevněním. Tento křížový přepínač umožňuje ovládat dvě svítidla ze tří nebo více míst. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -207,7 +207,7 @@ export const products: Product[] = [
       "cs": "3-násobný mechanismus jednopólového spínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "3-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať tri alebo viac paralelne zapojených svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "3-násobný mechanizmus jednopólového spínača so skrutkovým upevnením. Týmto spínačom môžete z jedného miesta zapínať a vypínať tri alebo viac paralelne zapojených svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "3 Gang mechanism for 1 way switch with screw fixing. With this switch, you can switch three or more lamps connected in parallel on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "3-násobný mechanismus jednopólového spínače se šroubovým upevněním. Tímto spínačem můžete z jednoho místa zapínat a vypínat tři nebo více paralelně zapojených svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -239,7 +239,7 @@ export const products: Product[] = [
       "cs": "Mechanismus žaluziového spínače se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus spínača žalúzií so skrutkovým upevnením. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus spínača žalúzií so skrutkovým upevnením. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for roll-down shutter switch with screw fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus žaluziového spínače se šroubovým upevněním. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -271,7 +271,7 @@ export const products: Product[] = [
       "cs": "Mechanismus zásuvky HDMI 2.0a, typ A, 180° 4K Full HD @ 60 Hz 3D, HDR, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus zásuvky HDMI 2.0a, typ A, 180° 4K Full HD @ 60 Hz 3D, HDR, so skrutkovým upevnením. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus zásuvky HDMI 2.0a, typ A, 180° 4K Full HD @ 60 Hz 3D, HDR, so skrutkovým upevnením. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for HDMI 2.0a socket, Type A, 180° 4K Full HD @ 60 Hz 3D, HDR with screw fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus zásuvky HDMI 2.0a, typ A, 180° 4K Full HD @ 60 Hz 3D, HDR, se šroubovým upevněním. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -302,7 +302,7 @@ export const products: Product[] = [
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard), se šroubovým upevněním a clonkami"
     },
     "description": {
-      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard), so skrutkovým upevnením a clonkami. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard), so skrutkovým upevnením a clonkami. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for a socket outlet with pin earthing french standart, screw fixing and shutters. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard), se šroubovým upevněním a clonkami. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -335,7 +335,7 @@ export const products: Product[] = [
       "cs": "Mechanismus USB nabíječky, 20 W typ A a typ C, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus USB nabíjačky, 20 W typ A a typ C, so skrutkovým upevnením. Tento mechanizmus nabíja jedno alebo dve mobilné zariadenia, ako sú mobilné telefóny, tablety, fotoaparáty, MP3 prehrávače a navigačné zariadenia. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus USB nabíjačky, 20 W typ A a typ C, so skrutkovým upevnením. Tento mechanizmus nabíja jedno alebo dve mobilné zariadenia, ako sú mobilné telefóny, tablety, fotoaparáty, MP3 prehrávače a navigačné zariadenia. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for USB charger, 20W type A and type C with screw fixing.. This mechanism charges one or two mobile devices such as mobile phones, tablets, cameras, MP3 players and navigation devices. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus USB nabíječky, 20 W typ A a typ C, se šroubovým upevněním. Tento mechanismus nabíjí jedno nebo dvě mobilní zařízení, jako jsou mobilní telefony, tablety, fotoaparáty, MP3 přehrávače a navigační zařízení. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -368,7 +368,7 @@ export const products: Product[] = [
       "cs": "Mechanismus jednoduché zásuvky RJ45 CAT 6 / třída E-8, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus jednoduchej zásuvky RJ45 CAT 6 / trieda E-8, so skrutkovým upevnením. Tento mechanizmus slúži na pripojenie jedného zariadenia do siete pre telefón, Ethernet, IP a PoE+. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus jednoduchej zásuvky RJ45 CAT 6 / trieda E-8, so skrutkovým upevnením. Tento mechanizmus slúži na pripojenie jedného zariadenia do siete pre telefón, Ethernet, IP a PoE+. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for single RJ45 socket CAT 6 / Class E-8 with screw fixing. This mechanism is used to connect a single device to a network for telephone, Ethernet, IP and PoE+. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus jednoduché zásuvky RJ45 CAT 6 / třída E-8, se šroubovým upevněním. Tento mechanismus slouží k připojení jednoho zařízení do sítě pro telefon, Ethernet, IP a PoE+. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -397,7 +397,7 @@ export const products: Product[] = [
       "cs": "Mechanismus dvojité zásuvky RJ45 CAT 6 / třída E-8, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus dvojitej zásuvky RJ45 CAT 6 / trieda E-8, so skrutkovým upevnením. Tento mechanizmus slúži na pripojenie dvoch zariadení do siete pre telefón, Ethernet, IP a PoE+. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus dvojitej zásuvky RJ45 CAT 6 / trieda E-8, so skrutkovým upevnením. Tento mechanizmus slúži na pripojenie dvoch zariadení do siete pre telefón, Ethernet, IP a PoE+. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for double RJ45 socket CAT 6 / Class E-8 with screw fixing. This mechanism is used to connect two device to a network for telephone, Ethernet, IP and PoE+. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus dvojité zásuvky RJ45 CAT 6 / třída E-8, se šroubovým upevněním. Tento mechanismus slouží k připojení dvou zařízení do sítě pro telefon, Ethernet, IP a PoE+. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -426,7 +426,7 @@ export const products: Product[] = [
       "cs": "Mechanismus zásuvky RJ45 CAT.6 / TV (konektor male), třída E-8 / 0–2400 MHz, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus zásuvky RJ45 CAT.6 / TV (konektor male), trieda E-8 / 0–2400 MHz, so skrutkovým upevnením. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus zásuvky RJ45 CAT.6 / TV (konektor male), trieda E-8 / 0–2400 MHz, so skrutkovým upevnením. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for RJ45 CAT.6 / TV Male socket, Class E-8 / 0-2400 MHz with screw fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus zásuvky RJ45 CAT.6 / TV (konektor male), třída E-8 / 0–2400 MHz, se šroubovým upevněním. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -455,7 +455,7 @@ export const products: Product[] = [
       "cs": "Mechanismus dvojzásuvky s kolíkovým uzemněním (francouzský standard), se šroubovým upevněním a clonkami"
     },
     "description": {
-      "sk": "Mechanizmus dvojzásuvky s kolíkovým uzemnením (francúzsky štandard), so skrutkovým upevnením a clonkami. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus dvojzásuvky s kolíkovým uzemnením (francúzsky štandard), so skrutkovým upevnením a clonkami. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for a double socket outlet with pin earthings french standart, screw fixing and shutters. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus dvojzásuvky s kolíkovým uzemněním (francouzský standard), se šroubovým upevněním a clonkami. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -487,7 +487,7 @@ export const products: Product[] = [
       "cs": "Mechanismus triakového otočného stmívače, 200 W LED, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus triakového otočného stmievača, 200 W LED, so skrutkovým upevnením. Tento stmievač je určený na reguláciu jasu osvetlenia v obytných a komerčných priestoroch. Stmievač využíva fázové riadenie so zostupnou hranou sieťového napätia. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus triakového otočného stmievača, 200 W LED, so skrutkovým upevnením. Tento stmievač je určený na reguláciu jasu osvetlenia v obytných a komerčných priestoroch. Stmievač využíva fázové riadenie so zostupnou hranou sieťového napätia. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for Triac rotary dimmer, 200W LED with screw fixing. This dimmer is designed for controlling lighting brightness in residential and commercial spaces. This dimmer features a phase-shift control circuit based on the trailing edge of the line voltage. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus triakového otočného stmívače, 200 W LED, se šroubovým upevněním. Tento stmívač je určen k regulaci jasu osvětlení v obytných a komerčních prostorech. Stmívač využívá fázové řízení se sestupnou hranou síťového napětí. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -519,7 +519,7 @@ export const products: Product[] = [
       "cs": "Mechanismus elektronického termostatu s externím podlahovým čidlem, AC 230 V, 16 A, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus elektronického termostatu s externým podlahovým snímačom, AC 230 V, 16 A, so skrutkovým upevnením. Tento termostat je určený na udržiavanie používateľom nastavenej teploty v miestnostiach s podlahovým vykurovaním pomocou externého teplotného snímača. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus elektronického termostatu s externým podlahovým snímačom, AC 230 V, 16 A, so skrutkovým upevnením. Tento termostat je určený na udržiavanie používateľom nastavenej teploty v miestnostiach s podlahovým vykurovaním pomocou externého teplotného snímača. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for electronic thermostat with external floor sensor, AC230V, 16A with screw fixing. This thermostat is designed to maintain a user-set temperature in rooms equipped with underfloor heating systems using an external temperature sensor. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus elektronického termostatu s externím podlahovým čidlem, AC 230 V, 16 A, se šroubovým upevněním. Tento termostat je určen k udržování uživatelem nastavené teploty v místnostech s podlahovým vytápěním pomocí externího teplotního čidla. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -550,7 +550,7 @@ export const products: Product[] = [
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard) a USB nabíječky, 20 W typ A a typ C, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard) a USB nabíjačky, 20 W typ A a typ C, so skrutkovým upevnením. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard) a USB nabíjačky, 20 W typ A a typ C, so skrutkovým upevnením. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for a socket outlet with pin earthing french standart and USB charger, 20W type A and type C with screw fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard) a USB nabíječky, 20 W typ A a typ C, se šroubovým upevněním. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -582,7 +582,7 @@ export const products: Product[] = [
       "cs": "Vnitřní modul záslepky"
     },
     "description": {
-      "sk": "Vnútorný modul záslepky. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Vnútorný modul záslepky. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Internal module for blank plate. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Vnitřní modul záslepky. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -611,7 +611,7 @@ export const products: Product[] = [
       "cs": "Vnitřní modul kabelového vývodu"
     },
     "description": {
-      "sk": "Vnútorný modul vývodu kábla. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Vnútorný modul vývodu kábla. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Internal module for cable output. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Vnitřní modul kabelového vývodu. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -640,7 +640,7 @@ export const products: Product[] = [
       "cs": "Mechanismus jednoduché TV zásuvky (konektor male), 0–2400 MHz, se šroubovým upevněním"
     },
     "description": {
-      "sk": "Mechanizmus jednoduchej TV zásuvky (konektor male), 0–2400 MHz, so skrutkovým upevnením. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus jednoduchej TV zásuvky (konektor male), 0–2400 MHz, so skrutkovým upevnením. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for single TV Male socket, 0-2400 MHz with screw fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus jednoduché TV zásuvky (konektor male), 0–2400 MHz, se šroubovým upevněním. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -669,7 +669,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus jednopólového spínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "1-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for 1 way switch with clips fixing. With this switch, you can switch a lamp or several lamps connected in parallel on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus jednopólového spínače s upevněním příchytkami. Tímto spínačem můžete z jednoho místa zapínat a vypínat svítidlo nebo několik paralelně zapojených svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -701,7 +701,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus střídavého přepínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "1-násobný mechanizmus striedavého prepínača s upevnením príchytkami. Týmto prepínačom môžete z dvoch miest zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus striedavého prepínača s upevnením príchytkami. Týmto prepínačom môžete z dvoch miest zapínať a vypínať svietidlo alebo viacero paralelne zapojených svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for 2 way switch with clips fixing. With this switch, you can switch a lamp or several lamps connected in parallel on and off from two locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus střídavého přepínače s upevněním příchytkami. Tímto přepínačem můžete ze dvou míst zapínat a vypínat svítidlo nebo několik paralelně zapojených svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -733,7 +733,7 @@ export const products: Product[] = [
       "cs": "1-násobný mechanismus křížového přepínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "1-násobný mechanizmus krížového prepínača s upevnením príchytkami. Tento krížový prepínač umožňuje ovládať jedno svietidlo z troch alebo viacerých miest. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "1-násobný mechanizmus krížového prepínača s upevnením príchytkami. Tento krížový prepínač umožňuje ovládať jedno svietidlo z troch alebo viacerých miest. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "1 Gang mechanism for intermediate switch with clips fixing. This intermediate switch can be used to operate one lamp from three or more locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "1-násobný mechanismus křížového přepínače s upevněním příchytkami. Tento křížový přepínač umožňuje ovládat jedno svítidlo ze tří nebo více míst. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -765,7 +765,7 @@ export const products: Product[] = [
       "cs": "2-násobný mechanismus jednopólového spínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "2-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "2-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "2 Gang mechanism for 1 way switch with clips fixing. With this switch, you can switch several lamps on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "2-násobný mechanismus jednopólového spínače s upevněním příchytkami. Tímto spínačem můžete z jednoho místa zapínat a vypínat několik svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -797,7 +797,7 @@ export const products: Product[] = [
       "cs": "2-násobný mechanismus střídavého přepínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "2-násobný mechanizmus striedavého prepínača s upevnením príchytkami. Týmto prepínačom môžete z dvoch miest zapínať a vypínať viacero svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "2-násobný mechanizmus striedavého prepínača s upevnením príchytkami. Týmto prepínačom môžete z dvoch miest zapínať a vypínať viacero svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "2 Gang mechanism for 2 way switch with clips fixing. With this switch, you can switch several lamps on and off from two locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "2-násobný mechanismus střídavého přepínače s upevněním příchytkami. Tímto přepínačem můžete ze dvou míst zapínat a vypínat několik svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -829,7 +829,7 @@ export const products: Product[] = [
       "cs": "3-násobný mechanismus jednopólového spínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "3-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "3-násobný mechanizmus jednopólového spínača s upevnením príchytkami. Týmto spínačom môžete z jedného miesta zapínať a vypínať viacero svietidiel. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "3 Gang mechanism for 1 way switch with clips fixing. With this switch, you can switch several lamps on and off from one locations. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "3-násobný mechanismus jednopólového spínače s upevněním příchytkami. Tímto spínačem můžete z jednoho místa zapínat a vypínat několik svítidel. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -861,7 +861,7 @@ export const products: Product[] = [
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard), s upevněním příchytkami"
     },
     "description": {
-      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard), s upevnením príchytkami a clonkami. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus zásuvky s kolíkovým uzemnením (francúzsky štandard), s upevnením príchytkami a clonkami. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for a socket outlet with pin earthing french standart, with clips fixing. and shutters. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus zásuvky s kolíkovým uzemněním (francouzský standard), s upevněním příchytkami a clonkami. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -893,7 +893,7 @@ export const products: Product[] = [
       "cs": "Mechanismus žaluziového spínače s upevněním příchytkami"
     },
     "description": {
-      "sk": "Mechanizmus spínača žalúzií s upevnením príchytkami. Kryt a rámik vo zvolenej farbe je potrebné objednať samostatne.",
+      "sk": "Mechanizmus spínača žalúzií s upevnením príchytkami. Kryt a rámček vo zvolenej farbe je potrebné objednať samostatne.",
       "en": "Mechanism for roll-down shutter switch with clips fixing. The cover and frame in the colour of your choice must be ordered separately.",
       "cs": "Mechanismus žaluziového spínače s upevněním příchytkami. Kryt a rámeček ve zvolené barvě je nutné objednat samostatně."
     },
@@ -925,7 +925,7 @@ export const products: Product[] = [
       "cs": "Klávesa pro 1-násobný mechanismus jednopólového / střídavého spínače"
     },
     "description": {
-      "sk": "Klávesa pre 1-násobný mechanizmus jednopólového / striedavého spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Klávesa pre 1-násobný mechanizmus jednopólového / striedavého spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Button for 1 Gang mechanism for 1 way/2 way switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Klávesa pro 1-násobný mechanismus jednopólového / střídavého spínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -955,7 +955,7 @@ export const products: Product[] = [
       "cs": "Klávesa pro 1-násobný mechanismus křížového přepínače"
     },
     "description": {
-      "sk": "Klávesa pre 1-násobný mechanizmus krížového prepínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Klávesa pre 1-násobný mechanizmus krížového prepínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Button for 1 Gang mechanism intermediate switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Klávesa pro 1-násobný mechanismus křížového přepínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -985,7 +985,7 @@ export const products: Product[] = [
       "cs": "Klávesa pro 2-násobný mechanismus jednopólového / střídavého spínače"
     },
     "description": {
-      "sk": "Klávesa pre 2-násobný mechanizmus jednopólového / striedavého spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Klávesa pre 2-násobný mechanizmus jednopólového / striedavého spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Button for 2 gang mechanism for 1 way/2 way switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Klávesa pro 2-násobný mechanismus jednopólového / střídavého spínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1015,7 +1015,7 @@ export const products: Product[] = [
       "cs": "Klávesa pro 2-násobný mechanismus křížového přepínače"
     },
     "description": {
-      "sk": "Klávesa pre 2-násobný mechanizmus krížového prepínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Klávesa pre 2-násobný mechanizmus krížového prepínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Button for 2 gang mechanism intermediate switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Klávesa pro 2-násobný mechanismus křížového přepínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1045,7 +1045,7 @@ export const products: Product[] = [
       "cs": "Klávesa pro 3-násobný mechanismus jednopólového spínače"
     },
     "description": {
-      "sk": "Klávesa pre 3-násobný mechanizmus jednopólového spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Klávesa pre 3-násobný mechanizmus jednopólového spínača. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Button for 3 gang mechanism for 1 way switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Klávesa pro 3-násobný mechanismus jednopólového spínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1075,7 +1075,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard)"
     },
     "description": {
-      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for a socket outlet with pin earthing french standart. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard). Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1105,7 +1105,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu USB nabíječky, 20 W typ A a typ C"
     },
     "description": {
-      "sk": "Kryt mechanizmu USB nabíjačky, 20 W typ A a typ C. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu USB nabíjačky, 20 W typ A a typ C. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for USB charger, 20W type A and type C. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu USB nabíječky, 20 W typ A a typ C. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1135,7 +1135,7 @@ export const products: Product[] = [
       "cs": "Kryt jednoduchého mechanismu zásuvky RJ45 CAT 6 a mechanismu zásuvky HDMI 2.0a"
     },
     "description": {
-      "sk": "Kryt jednoduchého mechanizmu zásuvky RJ45 CAT 6 a mechanizmu zásuvky HDMI 2.0a. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt jednoduchého mechanizmu zásuvky RJ45 CAT 6 a mechanizmu zásuvky HDMI 2.0a. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for single mechanism for RJ45 CAT 6 socket  and for mechanism HDMI 2.0a socket. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt jednoduchého mechanismu zásuvky RJ45 CAT 6 a mechanismu zásuvky HDMI 2.0a. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1165,7 +1165,7 @@ export const products: Product[] = [
       "cs": "Kryt dvojitého mechanismu zásuvky RJ45 CAT 6 a TV zásuvky (konektor male)"
     },
     "description": {
-      "sk": "Kryt dvojitého mechanizmu zásuvky RJ45 CAT 6 a TV zásuvky (konektor male). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt dvojitého mechanizmu zásuvky RJ45 CAT 6 a TV zásuvky (konektor male). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for double mechanism for RJ45 socket CAT 6 and TV Male socket. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt dvojitého mechanismu zásuvky RJ45 CAT 6 a TV zásuvky (konektor male). Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1195,7 +1195,7 @@ export const products: Product[] = [
       "cs": "Kryt vnitřního modulu záslepky"
     },
     "description": {
-      "sk": "Kryt vnútorného modulu záslepky. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt vnútorného modulu záslepky. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for internal module for blank plate.. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt vnitřního modulu záslepky. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1225,7 +1225,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu triakového otočného stmívače, 200 W LED"
     },
     "description": {
-      "sk": "Kryt mechanizmu triakového otočného stmievača, 200 W LED. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu triakového otočného stmievača, 200 W LED. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for Triac rotary dimmer, 200W LED. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu triakového otočného stmívače, 200 W LED. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1255,7 +1255,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu elektronického termostatu"
     },
     "description": {
-      "sk": "Kryt mechanizmu elektronického termostatu. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu elektronického termostatu. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for electronic thermostat. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu elektronického termostatu. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1285,7 +1285,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu žaluziového spínače"
     },
     "description": {
-      "sk": "Kryt mechanizmu spínača žalúzií. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu spínača žalúzií. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for roll-down shutter switch. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu žaluziového spínače. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1310,12 +1310,12 @@ export const products: Product[] = [
     "category": "sockets",
     "kind": "cover",
     "name": {
-      "sk": "Kryt mechanizmu dvojzásuvky s kolíkovým uzemnením (francúzsky štandard) (rámik nie je potrebný)",
+      "sk": "Kryt mechanizmu dvojzásuvky s kolíkovým uzemnením (francúzsky štandard) (rámček nie je potrebný)",
       "en": "Cover for mechanism for a double socket outlet with pin earthings french standart (no frame needed)",
       "cs": "Kryt mechanismu dvojzásuvky s kolíkovým uzemněním (francouzský standard) (rámeček není potřeba)"
     },
     "description": {
-      "sk": "Kryt mechanizmu dvojzásuvky s kolíkovým uzemnením (francúzsky štandard) (rámik nie je potrebný). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu dvojzásuvky s kolíkovým uzemnením (francúzsky štandard) (rámček nie je potrebný). Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for a double socket outlet with pin earthings french standart (no frame needed). Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu dvojzásuvky s kolíkovým uzemněním (francouzský standard) (rámeček není potřeba). Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1345,7 +1345,7 @@ export const products: Product[] = [
       "cs": "Kryt vnitřního modulu kabelového vývodu"
     },
     "description": {
-      "sk": "Kryt vnútorného modulu vývodu kábla. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt vnútorného modulu vývodu kábla. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for internal module for cable output. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt vnitřního modulu kabelového vývodu. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1375,7 +1375,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard) a USB nabíječky, 20 W typ A a typ C"
     },
     "description": {
-      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard) a USB nabíjačky, 20 W typ A a typ C. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard) a USB nabíjačky, 20 W typ A a typ C. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for a socket outlet with pin earthing french standart and USB charger, 20W type A and type C. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard) a USB nabíječky, 20 W typ A a typ C. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1405,7 +1405,7 @@ export const products: Product[] = [
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard), IP44"
     },
     "description": {
-      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard), IP44. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámikom.",
+      "sk": "Kryt mechanizmu zásuvky s kolíkovým uzemnením (francúzsky štandard), IP44. Dodáva sa vo zvolenom vyhotovení – objednávajte spolu s príslušným mechanizmom a rámčekom.",
       "en": "Cover for mechanism for a socket outlet with pin earthing french standart ip44. Supplied in the finish of your choice — order together with the matching mechanism and frame.",
       "cs": "Kryt mechanismu zásuvky s kolíkovým uzemněním (francouzský standard), IP44. Dodává se ve zvoleném provedení – objednávejte společně s odpovídajícím mechanismem a rámečkem."
     },
@@ -1435,7 +1435,7 @@ export const products: Product[] = [
       "cs": "Rámeček"
     },
     "description": {
-      "sk": "Univerzálny rámik pre 1 – 5 mechanizmov, tenký iba 9,5 mm. Nacvakáva sa pred klávesy a kryty, vo zvolenom vyhotovení.",
+      "sk": "Univerzálny rámček pre 1 – 5 mechanizmov, tenký iba 9,5 mm. Nacvakáva sa pred klávesy a kryty, vo zvolenom vyhotovení.",
       "en": "Universal frame for 1–5 mechanisms, just 9.5 mm slim. Click-fixed before the buttons and covers, in the finish of your choice.",
       "cs": "Univerzální rámeček pro 1–5 mechanismů, tenký jen 9,5 mm. Nacvakává se před klávesy a kryty, ve zvoleném provedení."
     },
