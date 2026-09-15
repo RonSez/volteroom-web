@@ -263,7 +263,10 @@
       "messagePlaceholder": "How can we help you?",
       "send": "Send message",
       "sent": "Thank you! We'll be in touch soon.",
-      "note": "This is a placeholder form — sending will be wired up later."
+      "sending": "Sending…",
+      "errorInvalid": "Please check the highlighted fields and try again.",
+      "errorSending": "We could not send your message. Please try again, or write to us at",
+      "note": "By sending this message you agree to the processing of your personal data in accordance with the <privacy>Privacy Policy</privacy>."
     }
   },
   "cooperation": {

@@ -263,7 +263,10 @@
       "messagePlaceholder": "Jak vám můžeme pomoci?",
       "send": "Odeslat zprávu",
       "sent": "Děkujeme! Brzy se vám ozveme.",
-      "note": "Toto je placeholder formulář — odesílání bude doplněno později."
+      "sending": "Odesílá se…",
+      "errorInvalid": "Zkontrolujte prosím zvýrazněná pole a zkuste to znovu.",
+      "errorSending": "Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na",
+      "note": "Odesláním zprávy souhlasíte se zpracováním osobních údajů v souladu se <privacy>zásadami ochrany osobních údajů</privacy>."
     }
   },
   "cooperation": {
