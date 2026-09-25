@@ -4,8 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { CategoryId } from "@/data/catalog";
+import { GLOW_WIRE_CATEGORY } from "@/data/glow-wire";
 import { getCategories, getProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/ProductImage";
+import { GlowWireTease } from "@/components/home/GlowWireTease";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/Motion";
 
@@ -59,6 +61,9 @@ export async function CategoryCards() {
               hex={REPRESENTATIVE_HEX}
               className="rounded-none transition-transform duration-500 group-hover:scale-[1.04]"
             />
+            {/* One tile flags the 850 C glow-wire test: an always-on ember
+                badge, plus the poster itself on hover. */}
+            {cat.id === GLOW_WIRE_CATEGORY && <GlowWireTease />}
           </div>
           <div className="flex flex-1 flex-col p-5">
             <h3 className="font-heading text-lg font-semibold tracking-tight text-foreground">

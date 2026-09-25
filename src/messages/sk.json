@@ -194,6 +194,16 @@
     "frameNotIncluded": "Rámček nie je súčasťou súpravy produktu a je potrebné ho zakúpiť samostatne.",
     "relatedTitle": "Mohlo by sa vám páčiť"
   },
+  "glowWire": {
+    "eyebrow": "Bezpečnostná skúška",
+    "title": "Skúška žeravou slučkou pri 850 °C",
+    "body": "Plasty rámčekov, krytov aj vnútorných častí mechanizmov Volteroom sa skúšajú drôtom rozžeraveným na +850 °C, ktorý sa pritláča priamo k výlisku (skúška žeravou slučkou podľa IEC 60695-2-11). Materiál sa nesmie vznietiť ani udržať plameň — presne to stojí za riadkom o požiarnej bezpečnosti v technických parametroch nižšie.",
+    "note": "Všetky plastové diely zároveň prešli skúškou odolnosti proti nárazu IK06.",
+    "badge": "850 °C",
+    "label": "Skúška žeravou slučkou",
+    "alt": "Skúška žeravou slučkou Volteroom: drôt rozžeravený na 850 °C sa dotýka mechanizmu zásuvky.",
+    "enlarge": "Zobraziť v plnej veľkosti"
+  },
   "basket": {
     "title": "Košík",
     "empty": "Váš košík je prázdny.",

@@ -516,9 +516,29 @@
   to { transform: rotateY(360deg); }
 }
 
+/* Ember breath for the 850 °C glow-wire badge on the home-page category
+   tile. Warm rather than azure on purpose: it is the one thing on that grid
+   that is meant to pull the eye off-brand for a moment. Only the rim and its
+   halo move, so there is nothing to re-layout. */
+@utility animate-ember {
+  animation: vr-ember 3.4s ease-in-out infinite;
+}
+
+@keyframes vr-ember {
+  0%, 100% {
+    border-color: rgba(251, 191, 36, 0.35);
+    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0);
+  }
+  50% {
+    border-color: rgba(251, 191, 36, 0.9);
+    box-shadow: 0 0 16px -1px rgba(251, 146, 60, 0.6);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
-  .animate-rise {
+  .animate-rise,
+  .animate-ember {
     animation: none !important;
   }
 }

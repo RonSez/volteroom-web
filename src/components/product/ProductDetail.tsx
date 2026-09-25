@@ -25,9 +25,11 @@ import {
   DEFAULT_FINISH_ID,
 } from "@/data/catalog";
 import { datasheetForSku } from "@/data/datasheets";
+import { hasGlowWireTest } from "@/data/glow-wire";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "@/components/catalog/ProductImage";
 import { FinishSwatch } from "@/components/catalog/FinishSwatch";
+import { GlowWireTest } from "@/components/product/GlowWireTest";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useBasket } from "@/lib/store/basket";
 import { cn } from "@/lib/utils";
@@ -241,6 +243,11 @@ export function ProductDetail({
           </div>
           <p className="mt-3 text-xs text-muted-foreground">{t("priceNote")}</p>
         </div>
+
+        {/* 850 C glow-wire safety poster, for the articles it covers. Sits
+            directly under the buy button so anyone who scrolls past the CTA
+            meets it, and well above the `fireSafety` row it illustrates. */}
+        {hasGlowWireTest(sku) && <GlowWireTest />}
 
         {/* Three-part system callout */}
         <ThreePartCallout kind={product.kind} category={product.category} t={t} />

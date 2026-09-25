@@ -194,6 +194,16 @@
     "frameNotIncluded": "Rámeček není součástí soupravy produktu a je nutné jej zakoupit samostatně.",
     "relatedTitle": "Mohlo by se vám líbit"
   },
+  "glowWire": {
+    "eyebrow": "Bezpečnostní zkouška",
+    "title": "Zkouška žhavou smyčkou při 850 °C",
+    "body": "Plasty rámečků, krytů i vnitřních částí mechanismů Volteroom se zkoušejí drátem rozžhaveným na +850 °C, který se přitlačuje přímo k výlisku (zkouška žhavou smyčkou podle IEC 60695-2-11). Materiál se nesmí vznítit ani udržet plamen — přesně to stojí za řádkem o požární bezpečnosti v technických parametrech níže.",
+    "note": "Všechny plastové díly zároveň prošly zkouškou odolnosti proti nárazu IK06.",
+    "badge": "850 °C",
+    "label": "Zkouška žhavou smyčkou",
+    "alt": "Zkouška žhavou smyčkou Volteroom: drát rozžhavený na 850 °C se dotýká mechanismu zásuvky.",
+    "enlarge": "Zobrazit v plné velikosti"
+  },
   "basket": {
     "title": "Košík",
     "empty": "Váš košík je prázdný.",

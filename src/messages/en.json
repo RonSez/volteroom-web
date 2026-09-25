@@ -194,6 +194,16 @@
     "frameNotIncluded": "The frame is not included in the product kit and must be purchased separately.",
     "relatedTitle": "You might also like"
   },
+  "glowWire": {
+    "eyebrow": "Safety test",
+    "title": "Glow-wire test at 850 °C",
+    "body": "The plastics used for Volteroom frames, covers and the internal parts of every mechanism are tested with a wire heated to +850 °C and pressed into the moulded part (glow-wire test to IEC 60695-2-11). The material must not ignite and must not sustain a flame — that is the test behind the fire-safety line in the specification below.",
+    "note": "All plastic parts have also passed the IK06 impact-resistance test.",
+    "badge": "850 °C",
+    "label": "Glow-wire test",
+    "alt": "Volteroom glow-wire test: a wire glowing at 850 °C touching a socket mechanism.",
+    "enlarge": "View full size"
+  },
   "basket": {
     "title": "Basket",
     "empty": "Your basket is empty.",

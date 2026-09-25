@@ -7,6 +7,7 @@ import { CatalogFilters } from "@/components/catalog/CatalogFilters";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { GlowWireTest } from "@/components/product/GlowWireTest";
 import {
   getAllGangs,
   getCategories,
@@ -15,6 +16,7 @@ import {
   toCatalogCards,
 } from "@/lib/catalog";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/seo";
+import { GLOW_WIRE_CATEGORY } from "@/data/glow-wire";
 import type {
   Category,
   CategoryId,
@@ -132,6 +134,15 @@ export async function CategoryView({
             <p className="mt-4 text-lg text-muted-foreground">{t("intro")}</p>
           </Reveal>
         </header>
+
+        {/* Sockets: the poster the home-page tile teases. It sits above the
+            grid because a phone visitor arrives here having seen the ember
+            badge and no way to open it — there is no hover to reveal it with. */}
+        {category.id === GLOW_WIRE_CATEGORY && (
+          <Reveal delay={120} className="mt-8 max-w-xl">
+            <GlowWireTest variant="compact" />
+          </Reveal>
+        )}
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[16rem_1fr]">
           <CatalogFilters
