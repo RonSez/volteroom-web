@@ -5,6 +5,7 @@ import { BadgeCheck, Download, FileText } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import type { Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
 import { Reveal } from "@/components/ui/Reveal";
 import { certificates, certificatesIssued } from "./content";
 
@@ -30,7 +31,18 @@ export default async function CertificatesPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <CertificatesContent />;
+  const t = await getTranslations({ locale, namespace: "certificates" });
+  return (
+    <>
+      <PageSchema
+        locale={locale as Locale}
+        path="/certificates"
+        name={t("title")}
+        description={t("intro")}
+      />
+      <CertificatesContent />
+    </>
+  );
 }
 
 function CertificatesContent() {

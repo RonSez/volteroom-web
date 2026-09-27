@@ -7,7 +7,7 @@
     "ogTagline": "Designové vypínače, zásuvky a rámečky v pěti povrchech.",
     "home": {
       "title": "Volteroom — designové vypínače, zásuvky a rámečky",
-      "description": "Vypínače, zásuvky, stmívače a rámečky nové generace v pěti povrchech — lesklá bílá, soft touch bílá, kašmír, grafit a karbon. Evropská kvalita pro bytovou i komerční výstavbu."
+      "description": "Vypínače, zásuvky, stmívače a rámečky nové generace v pěti povrchech — lesklá bílá, soft touch bílá, kašmír, grafit a karbon. Pětiletá záruka."
     },
     "catalog": {
       "title": "Katalog vypínačů, zásuvek a rámečků",
@@ -42,6 +42,11 @@
     "privacy": "Ochrana osobních údajů",
     "cooperation": "Obchodní podmínky",
     "certificates": "Certifikáty"
+  },
+  "notFound": {
+    "title": "Stránka nenalezena",
+    "body": "Hledaná stránka byla přesunuta nebo nikdy neexistovala. Nejlépe se pokračuje v katalogu.",
+    "catalog": "Přejít do katalogu"
   },
   "common": {
     "addToBasket": "Přidat do košíku",
@@ -227,6 +232,8 @@
     "title": "O značce Volteroom",
     "intro": "VOLTEROOM je evropská značka vysoce kvalitních produktů pro elektroinstalace. Naši specialisté mají dlouholeté zkušenosti s inženýrskými dodávkami pro občanskou a bytovou výstavbu.",
     "missionTitle": "Naše poslání",
+    "missionImageAlt": "Otočný stmívač a dvojnásobný vypínač Volteroom v grafitovém provedení, osazené vedle sebe na tmavé stěně osvětleného interiéru.",
+    "productImageAlt": "Čtyři produkty Volteroom na černém pozadí — otočný stmívač, dvojnásobný vypínač, zásuvka v kašmírovém provedení a jednoduchý vypínač v karbonu.",
     "mission": "Pomáháme vytvářet moderní technická řešení pro prostory, které formují image, zdůrazňují status, zvyšují tržní hodnotu nemovitosti a vytvářejí atmosféru a vřelé emocionální vnímání.",
     "productTitle": "Náš produkt",
     "product": "Široký výběr mechanismů, módní barvy, komplexní avšak praktická textura s povrchem soft-touch napříč všemi sériemi, vysoce kvalitní materiály a geometrické tvary nám umožňují přivést k životu jakýkoli designový nápad.",

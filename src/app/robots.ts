@@ -22,10 +22,14 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         "/admin", // login + CMS, never indexable
         "/api/", // revalidation hook
-        "/*/basket", // per-visitor utility page, no search value
       ],
+      // `/*/basket` is deliberately NOT disallowed. It has no search value, but
+      // the way to keep a URL out of the index is `noindex` (which the page
+      // sets), and a crawler that is disallowed from fetching the page never
+      // reads that tag — leaving Google free to index the bare URL from any
+      // link to it. Blocking and noindexing the same URL is the one
+      // combination that cannot work; the page's own tag is the real control.
     },
     sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
   };
 }

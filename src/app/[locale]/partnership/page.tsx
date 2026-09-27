@@ -15,6 +15,7 @@ import {
 import { Section } from "@/components/layout/Section";
 import type { Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
 import { Reveal } from "@/components/ui/Reveal";
 import { PartnershipForm } from "@/components/partnership/PartnershipForm";
 import { buttonVariants } from "@/components/ui/button";
@@ -42,7 +43,18 @@ export default async function PartnershipPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <PartnershipContent />;
+  const t = await getTranslations({ locale, namespace: "partnership" });
+  return (
+    <>
+      <PageSchema
+        locale={locale as Locale}
+        path="/partnership"
+        name={t("title")}
+        description={t("intro")}
+      />
+      <PartnershipContent />
+    </>
+  );
 }
 
 /** The four audiences named in the invitation, in the order the client wrote them. */

@@ -7,7 +7,7 @@
     "ogTagline": "Designer switches, sockets and frames in five finishes.",
     "home": {
       "title": "Volteroom — designer switches, sockets and frames",
-      "description": "New-generation switches, sockets, dimmers and frames in five finishes — glossy white, soft touch white, cashmere, graphite and carbon. European quality for residential and commercial builds."
+      "description": "New-generation switches, sockets, dimmers and frames in five finishes — glossy white, soft touch white, cashmere, graphite and carbon. Five-year warranty."
     },
     "catalog": {
       "title": "Catalogue of switches, sockets and frames",
@@ -42,6 +42,11 @@
     "privacy": "Privacy Policy",
     "cooperation": "Terms & Conditions",
     "certificates": "Certificates"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for has moved or never existed. The catalogue is the best place to pick the thread back up.",
+    "catalog": "Browse the catalogue"
   },
   "common": {
     "addToBasket": "Add to basket",
@@ -227,6 +232,8 @@
     "title": "About Volteroom",
     "intro": "VOLTEROOM is a European brand of high-quality electrical installation products. Our specialists have many years of experience in engineering supplies for civil and residential construction.",
     "missionTitle": "Our mission",
+    "missionImageAlt": "A Volteroom rotary dimmer and a two-gang switch in graphite, mounted side by side on a dark textured wall in a lit interior.",
+    "productImageAlt": "Four Volteroom products on black — a rotary dimmer, a two-gang switch, a socket outlet in cashmere and a single switch in carbon.",
     "mission": "We help create modern technical solutions for spaces that shape image, emphasise status, increase the market value of real estate, and create an atmosphere and warm emotional perception.",
     "productTitle": "Our product",
     "product": "A wide selection of mechanisms, fashionable colours, a complex yet practical texture with a soft-touch finish across all series, high-quality materials and geometric shapes allow us to bring any design idea to life.",

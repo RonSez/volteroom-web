@@ -7,7 +7,7 @@
     "ogTagline": "Dizajnové vypínače, zásuvky a rámčeky v piatich povrchoch.",
     "home": {
       "title": "Volteroom — dizajnové vypínače, zásuvky a rámčeky",
-      "description": "Vypínače, zásuvky, stmievače a rámčeky novej generácie v piatich povrchoch — lesklá biela, soft touch biela, kašmír, grafit a karbón. Európska kvalita pre bytovú aj komerčnú výstavbu."
+      "description": "Vypínače, zásuvky, stmievače a rámčeky novej generácie v piatich povrchoch — lesklá biela, soft touch biela, kašmír, grafit a karbón. Päťročná záruka."
     },
     "catalog": {
       "title": "Katalóg vypínačov, zásuviek a rámčekov",
@@ -42,6 +42,11 @@
     "privacy": "Ochrana osobných údajov",
     "cooperation": "Obchodné podmienky",
     "certificates": "Certifikáty"
+  },
+  "notFound": {
+    "title": "Stránka sa nenašla",
+    "body": "Hľadaná stránka bola presunutá alebo nikdy neexistovala. Najlepšie sa pokračuje v katalógu.",
+    "catalog": "Prejsť do katalógu"
   },
   "common": {
     "addToBasket": "Pridať do košíka",
@@ -227,6 +232,8 @@
     "title": "O značke Volteroom",
     "intro": "VOLTEROOM je európska značka vysokokvalitných produktov pre elektroinštalácie. Naši špecialisti majú dlhoročné skúsenosti s inžinierskymi dodávkami pre občiansku a bytovú výstavbu.",
     "missionTitle": "Naše poslanie",
+    "missionImageAlt": "Otočný stmievač a dvojnásobný vypínač Volteroom v grafitovom prevedení, osadené vedľa seba na tmavej stene osvetleného interiéru.",
+    "productImageAlt": "Štyri produkty Volteroom na čiernom pozadí — otočný stmievač, dvojnásobný vypínač, zásuvka v kašmírovom prevedení a jednoduchý vypínač v karbóne.",
     "mission": "Pomáhame vytvárať moderné technické riešenia pre priestory, ktoré formujú imidž, zdôrazňujú status, zvyšujú trhovú hodnotu nehnuteľnosti a vytvárajú atmosféru a vrúcne emocionálne vnímanie.",
     "productTitle": "Náš produkt",
     "product": "Široký výber mechanizmov, módne farby, komplexná no praktická textúra s povrchom soft-touch naprieč všetkými sériami, vysokokvalitné materiály a geometrické tvary nám umožňujú priviesť k životu akýkoľvek dizajnový nápad.",

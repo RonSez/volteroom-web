@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
 import { setRequestLocale } from "next-intl/server";
 import { Target, LayoutGrid, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/layout/Section";
@@ -32,7 +33,19 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <AboutContent />;
+  const t = await getTranslations({ locale, namespace: "about" });
+  return (
+    <>
+      <PageSchema
+        locale={locale as Locale}
+        path="/about"
+        type="AboutPage"
+        name={t("title")}
+        description={t("intro")}
+      />
+      <AboutContent />
+    </>
+  );
 }
 
 function AboutContent() {
@@ -68,6 +81,7 @@ function AboutContent() {
         icon={Target}
         title={t("missionTitle")}
         image="/brand/about/mission.png"
+        imageAlt={t("missionImageAlt")}
         imageSide="right"
         className="bg-muted/40"
       >
@@ -82,6 +96,7 @@ function AboutContent() {
         icon={LayoutGrid}
         title={t("productTitle")}
         image="/brand/about/product-lineup.png"
+        imageAlt={t("productImageAlt")}
         imageSide="left"
       >
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">
@@ -177,6 +192,7 @@ function Pillar({
   icon,
   title,
   image,
+  imageAlt,
   imageSide,
   className,
   children,
@@ -185,6 +201,8 @@ function Pillar({
   icon: Icon;
   title: string;
   image: string;
+  /** Describes the photo — these carry product detail the copy doesn't. */
+  imageAlt: string;
   imageSide: "left" | "right";
   className?: string;
   children: React.ReactNode;
@@ -199,7 +217,7 @@ function Pillar({
           <div className="overflow-hidden rounded-2xl shadow-xl ring-1 ring-border">
             <Image
               src={image}
-              alt=""
+              alt={imageAlt}
               width={1440}
               height={810}
               className="h-auto w-full"

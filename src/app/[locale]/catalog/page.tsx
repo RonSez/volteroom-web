@@ -3,7 +3,8 @@ import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { permanentRedirect } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { itemListJsonLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/layout/Section";
@@ -119,10 +120,28 @@ export default async function CatalogPage({
 
   const cards = toCatalogCards(products, gang);
 
+  const tMeta = await getTranslations({ locale, namespace: "catalog" });
+
   return (
     <>
-      {/* Tells Google this is a product index, and which products are on it. */}
-      <JsonLd data={itemListJsonLd(locale as Locale, products)} />
+      {/* A named CollectionPage wrapping the product ItemList — the same shape
+          the category landing pages emit, so the index and its children are
+          described consistently. A bare ItemList said *what* was on the page
+          but never what the page was. */}
+      <JsonLd
+        data={[
+          collectionPageJsonLd(locale as Locale, {
+            name: tMeta("title"),
+            description: tMeta("subtitle"),
+            path: "/catalog",
+            products,
+          }),
+          breadcrumbJsonLd(locale as Locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: tMeta("title"), path: "/catalog" },
+          ]),
+        ]}
+      />
       <CatalogContent
         cards={cards}
         categories={categories}

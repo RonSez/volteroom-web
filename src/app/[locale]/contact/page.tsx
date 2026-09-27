@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
 import { setRequestLocale } from "next-intl/server";
 import { MapPin, Phone, Mail, User, Navigation } from "lucide-react";
 import { Section } from "@/components/layout/Section";
@@ -33,7 +34,19 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ContactContent />;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  return (
+    <>
+      <PageSchema
+        locale={locale as Locale}
+        path="/contact"
+        type="ContactPage"
+        name={t("title")}
+        description={t("subtitle")}
+      />
+      <ContactContent />
+    </>
+  );
 }
 
 function ContactContent() {

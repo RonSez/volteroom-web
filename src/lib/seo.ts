@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, routing, type Locale } from "@/i18n/routing";
-import { siteConfig, siteUrl } from "./site";
+import { siteConfig, siteUrl, socialProfiles } from "./site";
 import type { Category, Finish, Product } from "@/data/catalog";
 
 /**
@@ -145,6 +145,12 @@ export function organizationJsonLd(): JsonLd {
     logo: `${siteUrl}/icon.png`,
     email: siteConfig.email,
     telephone: siteConfig.phone,
+    // The profiles Google reconciles this Organization against. Without
+    // `sameAs` the brand is an unanchored string on one domain; with it, the
+    // site, the Instagram account and the Facebook Page resolve to a single
+    // entity — which is what makes a Knowledge Panel and an assistant's
+    // "who are Volteroom" answer possible in the first place.
+    sameAs: socialProfiles.map((p) => p.url),
     // IČO / DIČ — the identifiers a Slovak searcher or aggregator matches on.
     identifier: [
       { "@type": "PropertyValue", name: "IČO", value: siteConfig.ico },
@@ -177,6 +183,42 @@ export function webSiteJsonLd(locale: Locale): JsonLd {
     name: siteConfig.name,
     inLanguage: locale,
     publisher: { "@id": ORG_ID },
+  };
+}
+
+/**
+ * A standalone content page — about, contact, certificates, partnership.
+ *
+ * These carry the pages Google needs in order to answer entity questions
+ * ("who are Volteroom", "where are they", "are they certified"), but without
+ * a node of their own they were only ever reachable as untyped HTML. Typing
+ * them and hanging them off `SITE_ID` puts them in the same graph as the
+ * Organization, so the contact details on /contact are understood as *the
+ * brand's* contact details rather than an unattributed address on a page.
+ *
+ * `@type` narrows to `AboutPage` / `ContactPage` where schema.org has a
+ * specific type for the job, because those two are the ones search engines
+ * and assistants actually special-case.
+ */
+export function webPageJsonLd(
+  locale: Locale,
+  opts: {
+    type?: "WebPage" | "AboutPage" | "ContactPage";
+    name: string;
+    description: string;
+    path: string;
+  },
+): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": opts.type ?? "WebPage",
+    "@id": `${localeUrl(locale, opts.path)}#webpage`,
+    name: opts.name,
+    description: opts.description,
+    url: localeUrl(locale, opts.path),
+    inLanguage: locale,
+    isPartOf: { "@id": SITE_ID },
+    about: { "@id": ORG_ID },
   };
 }
 
@@ -277,17 +319,7 @@ export function collectionPageJsonLd(
   };
 }
 
-/** The catalogue listing, so Google sees it as a product index. */
-export function itemListJsonLd(locale: Locale, products: Product[]): JsonLd {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    numberOfItems: products.length,
-    itemListElement: products.map((product, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: product.name[locale],
-      url: localeUrl(locale, `/catalog/${product.slug}`),
-    })),
-  };
-}
+/* `itemListJsonLd` used to live here for /catalog. It emitted a bare ItemList,
+   which named the products on the page but never the page itself; /catalog now
+   uses `collectionPageJsonLd` like the category landing pages do, and that
+   already wraps the same ItemList as its mainEntity. */
