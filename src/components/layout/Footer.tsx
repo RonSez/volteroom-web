@@ -2,7 +2,8 @@ import { useTranslations } from "next-intl";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
-import { siteConfig, mapsLinkUrl } from "@/lib/site";
+import { FacebookIcon, InstagramIcon } from "@/components/brand/SocialIcons";
+import { siteConfig, mapsLinkUrl, socialProfiles } from "@/lib/site";
 
 export function Footer() {
   const t = useTranslations();
@@ -27,6 +28,29 @@ export function Footer() {
           <p className="max-w-xs text-sm text-foreground/70">
             {t("footer.tagline")}
           </p>
+          {/* Profiles sit under the wordmark rather than in the Contact column:
+              they're brand presence, not a way to reach sales, and the column
+              beside them is already a phone/email/address list. `aria-label`
+              carries the platform name because the glyph is decorative — and
+              the names are proper nouns, so they need no translation. */}
+          <ul className="flex items-center gap-3 pt-1">
+            {socialProfiles.map(({ name, url }) => {
+              const Icon = name === "Instagram" ? InstagramIcon : FacebookIcon;
+              return (
+                <li key={name}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={name}
+                    className="inline-flex size-9 items-center justify-center rounded-full border border-foreground/15 text-foreground/70 transition-colors hover:border-brand/50 hover:text-brand"
+                  >
+                    <Icon className="size-4" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
         <div>

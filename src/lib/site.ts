@@ -49,6 +49,27 @@ export const siteConfig = {
   director: "Andrei Medvedev",
 } as const;
 
+/**
+ * The brand's official profiles, in the order they're shown.
+ *
+ * Stored clean — no `utm_*`, no `stkn`. The links the client shared came off a
+ * QR share sheet and carried both: `utm_source=qr` would mislabel every click
+ * from the website as a QR scan in Instagram's own analytics, and `stkn` is a
+ * per-share token that belongs to whoever generated it, not to the page. The
+ * bare profile URL is also the one Google wants in `sameAs` — that property is
+ * how it ties these accounts to the Organization, and a tracking-tagged URL
+ * doesn't match the profile's own canonical.
+ */
+export const socialProfiles = [
+  { name: "Instagram", url: "https://www.instagram.com/volteroom" },
+  {
+    name: "Facebook",
+    // No vanity username on this Page yet, so `profile.php?id=` IS its
+    // canonical form. Swap in the pretty URL once the client claims one.
+    url: "https://www.facebook.com/profile.php?id=61594568018366",
+  },
+] as const;
+
 export const mapsQuery = encodeURIComponent(
   `${siteConfig.address.street}, ${siteConfig.address.zip} ${siteConfig.address.city}, ${siteConfig.address.country}`,
 );
