@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Flame } from "lucide-react";
-import { GLOW_WIRE_POSTER } from "@/data/glow-wire";
+import { GLOW_WIRE_POSTER_SQUARE } from "@/data/glow-wire";
 
 /**
  * The glow-wire teaser layered over one category tile on the home page.
@@ -13,7 +13,9 @@ import { GLOW_WIRE_POSTER } from "@/data/glow-wire";
  *    keyboard focus of the surrounding card link.
  *
  * Drop-in for any `relative` box inside an element carrying `group` — here the
- * square image well of a category card.
+ * square image well of a category card. Because that well is square this is the
+ * one surface that takes the square cut of the poster; everywhere else keeps
+ * the tall one.
  */
 export async function GlowWireTease() {
   const t = await getTranslations("glowWire");
@@ -24,7 +26,7 @@ export async function GlowWireTease() {
         {/* Decorative here: the badge below carries the same claim as text, and
             the poster is described in full on the product pages. */}
         <Image
-          src={GLOW_WIRE_POSTER.src}
+          src={GLOW_WIRE_POSTER_SQUARE.src}
           alt=""
           fill
           sizes="(min-width: 1024px) 33vw, 50vw"

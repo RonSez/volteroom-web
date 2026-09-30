@@ -22,6 +22,22 @@ export const GLOW_WIRE_POSTER = {
   height: 640,
 } as const;
 
+/**
+ * The same poster re-laid-out square, for surfaces whose box is square.
+ *
+ * Only the home-page category tile is: its image well is `aspect-square`, so
+ * the 9:16 poster above only ever filled the middle ~56% of it and left two
+ * wide dark bars. This is a separate artwork from the client, not a crop — the
+ * headline, temperature and call-out are re-composed for the square — so the
+ * two files are not interchangeable and every other surface keeps the tall one.
+ * It is also a proper hi-res export (1254 px), unlike the 360 px tall version.
+ */
+export const GLOW_WIRE_POSTER_SQUARE = {
+  src: "/brand/glow-wire-test-850c-square.png",
+  width: 1254,
+  height: 1254,
+} as const;
+
 /** Article numbers whose product page carries the poster. */
 const GLOW_WIRE_SKUS = ["E08ZA103", "E08ZA203", "E08DA104", "F08ZA103"];
 
