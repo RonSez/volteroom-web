@@ -2,8 +2,15 @@ import { useTranslations } from "next-intl";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
-import { FacebookIcon, InstagramIcon } from "@/components/brand/SocialIcons";
+import { FacebookIcon, InstagramIcon, TikTokIcon } from "@/components/brand/SocialIcons";
 import { siteConfig, mapsLinkUrl, socialProfiles } from "@/lib/site";
+
+/** One glyph per entry in `socialProfiles`, keyed by its name. */
+const socialIcons = {
+  Instagram: InstagramIcon,
+  Facebook: FacebookIcon,
+  TikTok: TikTokIcon,
+} as const;
 
 export function Footer() {
   const t = useTranslations();
@@ -35,7 +42,7 @@ export function Footer() {
               the names are proper nouns, so they need no translation. */}
           <ul className="flex items-center gap-3 pt-1">
             {socialProfiles.map(({ name, url }) => {
-              const Icon = name === "Instagram" ? InstagramIcon : FacebookIcon;
+              const Icon = socialIcons[name];
               return (
                 <li key={name}>
                   <a

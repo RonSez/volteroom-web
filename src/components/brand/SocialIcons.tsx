@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 /**
- * Instagram and Facebook marks.
+ * Instagram, Facebook and TikTok marks.
  *
  * lucide-react dropped its brand icons (the package ships 5 879 glyphs and not
  * one of them is a logo), so these are drawn here rather than pulled in. They
@@ -40,6 +40,16 @@ export function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+export function TikTokIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      {/* One continuous stroke, as the note itself is: the disc at bottom
+          left, broken where the stem leaves it, up to the flag at top. */}
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
     </svg>
   );
 }

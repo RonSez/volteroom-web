@@ -68,6 +68,9 @@ export const socialProfiles = [
     // canonical form. Swap in the pretty URL once the client claims one.
     url: "https://www.facebook.com/profile.php?id=61594568018366",
   },
+  // `?_r=1` dropped for the same reason as the tags above: it's a share-sheet
+  // referrer marker, not part of the profile's canonical URL.
+  { name: "TikTok", url: "https://www.tiktok.com/@volteroom" },
 ] as const;
 
 export const mapsQuery = encodeURIComponent(
