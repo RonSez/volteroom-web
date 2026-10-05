@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Building2, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 import { FacebookIcon, InstagramIcon, TikTokIcon } from "@/components/brand/SocialIcons";
-import { siteConfig, mapsLinkUrl, socialProfiles } from "@/lib/site";
+import { siteConfig, socialProfiles } from "@/lib/site";
 
 /** One glyph per entry in `socialProfiles`, keyed by its name. */
 const socialIcons = {
@@ -81,11 +81,12 @@ export function Footer() {
             {t("footer.contactTitle")}
           </h3>
           <ul className="mt-4 space-y-3 text-sm">
-            <li>
-              <a href={mapsLinkUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-foreground/80 hover:text-foreground">
-                <MapPin className="mt-0.5 size-4 shrink-0" />
-                <span>{siteConfig.address.street}, {siteConfig.address.zip} {siteConfig.address.city}</span>
-              </a>
+            {/* Plain text, not a maps link: this is the registered office,
+                and a directions link would send customers to a seat that
+                doesn't receive them. */}
+            <li className="flex items-start gap-2 text-foreground/80">
+              <Building2 className="mt-0.5 size-4 shrink-0" />
+              <span>{siteConfig.address.street}, {siteConfig.address.zip} {siteConfig.address.city}</span>
             </li>
             <li>
               <a href={siteConfig.phoneHref} className="flex items-center gap-2 text-foreground/80 hover:text-foreground">

@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Minus, Plus, Trash2, ShoppingBag, MapPin } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { type Product, type Finish, NEUTRAL_FINISH_HEX, resolveSku } from "@/data/catalog";
@@ -109,7 +109,7 @@ export function BasketView({
           </p>
 
           <Link href="/contact" className={cn(buttonVariants(), "mt-4 h-11 w-full gap-2 bg-brand text-brand-foreground hover:bg-brand/90")}>
-            <MapPin className="size-4" />
+            <Mail className="size-4" />
             {t("enquireCta")}
           </Link>
           <Link href="/catalog" className={cn(buttonVariants({ variant: "ghost" }), "mt-2 w-full")}>

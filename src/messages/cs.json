@@ -57,7 +57,6 @@
     "explore": "Prozkoumat",
     "learnMore": "Zjistit více",
     "viewCatalog": "Zobrazit katalog",
-    "getDirections": "Zobrazit trasu",
     "callUs": "Zavolejte nám",
     "emailUs": "Napište nám",
     "close": "Zavřít",
@@ -69,7 +68,7 @@
       "title": "Spojení kvality a stylu v každém produktu",
       "subtitle": "Minimalistický design dovedený k dokonalosti — vypínače, zásuvky a rámečky pro klasické i moderní prostory.",
       "ctaPrimary": "Prozkoumat katalog",
-      "ctaSecondary": "Navštivte nás"
+      "ctaSecondary": "Kontaktujte nás"
     },
     "gallery": {
       "title": "Prezentace produktu",
@@ -111,10 +110,10 @@
         }
       ]
     },
-    "addressCta": {
-      "title": "Navštivte náš showroom",
-      "subtitle": "Přijďte si prohlédnout kolekci naživo a poradíme vám s výběrem.",
-      "cta": "Zobrazit adresu"
+    "contactCta": {
+      "title": "Nevíte si vybrat?",
+      "subtitle": "Napište nám, co plánujete, a poradíme vám se správným výběrem vypínačů, zásuvek a povrchů.",
+      "cta": "Kontaktujte nás"
     },
     "switchShowcase": {
       "eyebrow": "Navrženo kolem tlačítka",
@@ -224,8 +223,8 @@
     "items": "{count, plural, one {# položka} few {# položky} other {# položek}}",
     "subtotal": "Mezisoučet",
     "total": "Celkem",
-    "note": "Online platba zatím není dostupná. Pro objednávku nás kontaktujte nebo navštivte náš showroom.",
-    "enquireCta": "Kontaktovat / navštívit showroom",
+    "note": "Online platba zatím není dostupná. Pro objednávku nás kontaktujte telefonicky nebo e-mailem.",
+    "enquireCta": "Kontaktovat pro objednávku",
     "continueShopping": "Pokračovat v nákupu"
   },
   "about": {
@@ -258,8 +257,9 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Navštivte nás nebo nám napište — rádi poradíme.",
-    "addressTitle": "Adresa",
+    "subtitle": "Zavolejte nám nebo nám napište — rádi poradíme.",
+    "addressTitle": "Sídlo společnosti",
+    "addressNote": "Jde o sídlo společnosti, nikoli o showroom ani odběrné místo — kontaktujte nás prosím telefonicky nebo e-mailem.",
     "detailsTitle": "Kontaktní údaje",
     "companyTitle": "Fakturační údaje",
     "phone": "Telefon",
@@ -269,7 +269,6 @@
     "dic": "DIČ",
     "vat": "DPH",
     "nonVat": "Neplátce DPH",
-    "getDirections": "Zobrazit trasu",
     "formTitle": "Napište nám",
     "form": {
       "name": "Jméno",

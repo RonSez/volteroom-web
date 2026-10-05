@@ -5,12 +5,10 @@ import type { Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { setRequestLocale } from "next-intl/server";
-import { MapPin, Phone, Mail, User, Navigation } from "lucide-react";
+import { Building2, Phone, Mail, User } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig, mapsEmbedUrl, mapsLinkUrl } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -62,7 +60,11 @@ function ContactContent() {
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         {/* Left: address (primary), details, map */}
         <div className="space-y-6">
-          {/* Address as primary CTA */}
+          {/* The registered office, as company information. It is a seat in
+              the business register, not a place that receives customers, so
+              this card carries no map, no directions and no visit language —
+              the note says so outright, because an address printed this
+              prominently otherwise reads as an invitation. */}
           <div className="overflow-hidden rounded-2xl bg-primary text-primary-foreground">
             <div className="relative p-6 sm:p-8">
               <div
@@ -78,8 +80,10 @@ function ContactContent() {
                   {t("addressTitle")}
                 </p>
                 <p className="mt-4 flex items-start gap-3 text-xl font-medium leading-snug">
-                  <MapPin className="mt-1 size-6 shrink-0 text-[color:var(--brand-to)]" />
+                  <Building2 className="mt-1 size-6 shrink-0 text-[color:var(--brand-to)]" />
                   <span>
+                    {siteConfig.legalName}
+                    <br />
                     {siteConfig.address.street}
                     <br />
                     {siteConfig.address.zip} {siteConfig.address.city}
@@ -87,28 +91,10 @@ function ContactContent() {
                     {siteConfig.address.country}
                   </span>
                 </p>
-                <a
-                  href={mapsLinkUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={cn(
-                    buttonVariants({ size: "lg" }),
-                    "mt-6 h-11 gap-2 bg-brand px-6 text-sm text-brand-foreground hover:bg-brand/90",
-                  )}
-                >
-                  <Navigation className="size-4" />
-                  {t("getDirections")}
-                </a>
+                <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
+                  {t("addressNote")}
+                </p>
               </div>
-            </div>
-            <div className="aspect-[16/10] w-full border-t border-white/10">
-              <iframe
-                title="Volteroom"
-                src={mapsEmbedUrl}
-                className="h-full w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
             </div>
           </div>
 

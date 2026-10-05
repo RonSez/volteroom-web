@@ -35,6 +35,14 @@ export const siteConfig = {
   legalName: "Volteroom s.r.o.",
   domain: "volteroom.com",
   url: siteUrl,
+  /**
+   * The company's registered office — its seat in the business register, not
+   * a showroom, a shop or a collection point. Nobody receives customers here,
+   * so it is shown as company information only: no "visit us", no map embed
+   * and no directions link anywhere on the site. It belongs in the footer,
+   * the contact page's company block and the Organization schema (where
+   * `address` means exactly this), and nowhere that reads as an invitation.
+   */
   address: {
     street: "Znievska 3060/8",
     zip: "851 06",
@@ -72,13 +80,6 @@ export const socialProfiles = [
   // referrer marker, not part of the profile's canonical URL.
   { name: "TikTok", url: "https://www.tiktok.com/@volteroom" },
 ] as const;
-
-export const mapsQuery = encodeURIComponent(
-  `${siteConfig.address.street}, ${siteConfig.address.zip} ${siteConfig.address.city}, ${siteConfig.address.country}`,
-);
-
-export const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&output=embed`;
-export const mapsLinkUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
 /** Presentation slides rendered from the brand deck. */
 export const presentationSlides = Array.from({ length: 11 }, (_, i) => {

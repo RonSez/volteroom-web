@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
@@ -132,7 +132,7 @@ export function Hero() {
               )}
             >
               <span className="relative z-[2] inline-flex items-center gap-2">
-                <MapPin className="size-4 text-brand" />
+                <Mail className="size-4 text-brand" />
                 {t("home.hero.ctaSecondary")}
               </span>
             </Link>

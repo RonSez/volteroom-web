@@ -15,7 +15,7 @@ import { CategoryCards } from "@/components/home/CategoryCards";
 import { FinishesShowcase } from "@/components/home/FinishesShowcase";
 import { FeatureGrid } from "@/components/home/FeatureGrid";
 import { SwitchShowcase } from "@/components/home/SwitchShowcase";
-import { AddressCta } from "@/components/home/AddressCta";
+import { ContactCta } from "@/components/home/ContactCta";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { getFeaturedProducts } from "@/lib/catalog";
@@ -132,7 +132,7 @@ function HomeContent({ featured }: { featured: Product[] }) {
       <SwitchShowcase />
 
       <div className="pb-8">
-        <AddressCta />
+        <ContactCta />
       </div>
     </>
   );

@@ -1,14 +1,22 @@
 import { useTranslations } from "next-intl";
-import { MapPin, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { siteConfig, mapsLinkUrl } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function AddressCta() {
-  const t = useTranslations("home.addressCta");
-  const tc = useTranslations("common");
+/**
+ * Closing CTA on the home page.
+ *
+ * It used to invite people to a showroom and print the company address under
+ * a map pin. There is no showroom — that address is the registered office —
+ * so the block now offers the two ways a customer can actually reach us, and
+ * the address itself stays in the footer and the contact page as company
+ * information.
+ */
+export function ContactCta() {
+  const t = useTranslations("home.contactCta");
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -33,12 +41,15 @@ export function AddressCta() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 flex items-start gap-2 text-lg font-medium">
-                <MapPin className="mt-1 size-5 shrink-0 text-[color:var(--brand-to)]" />
+                <Phone className="mt-1 size-5 shrink-0 text-[color:var(--brand-to)]" />
                 <span>
-                  {siteConfig.address.street}
+                  <a href={siteConfig.phoneHref} className="hover:text-brand">
+                    {siteConfig.phone}
+                  </a>
                   <br />
-                  {siteConfig.address.zip} {siteConfig.address.city},{" "}
-                  {siteConfig.address.country}
+                  <a href={`mailto:${siteConfig.email}`} className="hover:text-brand">
+                    {siteConfig.email}
+                  </a>
                 </span>
               </p>
             </Reveal>
@@ -56,20 +67,6 @@ export function AddressCta() {
                 <ArrowRight className="size-4" />
               </span>
             </Link>
-            <a
-              href={mapsLinkUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "btn-liquid btn-liquid-white h-11 rounded-full px-6 text-sm font-semibold transition-all duration-500 hover:bg-transparent hover:text-foreground",
-              )}
-            >
-              <span className="relative z-[2] inline-flex items-center gap-2">
-                <MapPin className="size-4 text-brand" />
-                {tc("getDirections")}
-              </span>
-            </a>
           </div>
         </div>
       </div>

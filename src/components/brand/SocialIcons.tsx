@@ -7,7 +7,7 @@ import type { SVGProps } from "react";
  * one of them is a logo), so these are drawn here rather than pulled in. They
  * deliberately follow lucide's own geometry — 24×24 box, `currentColor`
  * stroke, no fill, 2px round caps — so they sit on the same optical weight as
- * the MapPin / Phone / Mail icons they appear beside in the footer, instead of
+ * the Building2 / Phone / Mail icons they appear beside in the footer, instead of
  * reading as heavier filled logos dropped into a stroked set.
  */
 

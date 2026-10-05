@@ -57,7 +57,6 @@
     "explore": "Explore",
     "learnMore": "Learn more",
     "viewCatalog": "View catalogue",
-    "getDirections": "Get directions",
     "callUs": "Call us",
     "emailUs": "Email us",
     "close": "Close",
@@ -69,7 +68,7 @@
       "title": "Quality and style, united in every product",
       "subtitle": "Minimalist design taken to perfection — switches, sockets and frames for both classic and modern spaces.",
       "ctaPrimary": "Explore the catalogue",
-      "ctaSecondary": "Visit us"
+      "ctaSecondary": "Contact us"
     },
     "gallery": {
       "title": "Product presentation",
@@ -111,10 +110,10 @@
         }
       ]
     },
-    "addressCta": {
-      "title": "Visit our showroom",
-      "subtitle": "Come and see the collection in person — we'll help you choose.",
-      "cta": "See the address"
+    "contactCta": {
+      "title": "Not sure which to choose?",
+      "subtitle": "Tell us what you're planning and we'll help you put together the right switches, sockets and finishes.",
+      "cta": "Contact us"
     },
     "switchShowcase": {
       "eyebrow": "Designed around the button",
@@ -224,8 +223,8 @@
     "items": "{count, plural, one {# item} other {# items}}",
     "subtotal": "Subtotal",
     "total": "Total",
-    "note": "Online payment is not available yet. To order, contact us or visit our showroom.",
-    "enquireCta": "Enquire / visit showroom",
+    "note": "Online payment is not available yet. To place an order, contact us by phone or e-mail.",
+    "enquireCta": "Contact us to order",
     "continueShopping": "Continue shopping"
   },
   "about": {
@@ -258,8 +257,9 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Visit us or send a message — we're happy to help.",
-    "addressTitle": "Address",
+    "subtitle": "Call us or send a message — we're happy to help.",
+    "addressTitle": "Registered office",
+    "addressNote": "This is our registered office, not a showroom or a collection point — please reach us by phone or e-mail.",
     "detailsTitle": "Contact details",
     "companyTitle": "Company details",
     "phone": "Phone",
@@ -269,7 +269,6 @@
     "dic": "Tax ID",
     "vat": "VAT",
     "nonVat": "Non-VAT payer",
-    "getDirections": "Get directions",
     "formTitle": "Send us a message",
     "form": {
       "name": "Name",
