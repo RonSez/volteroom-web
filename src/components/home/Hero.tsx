@@ -38,11 +38,13 @@ export function Hero() {
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       {/* The film — autoplaying, looping background. Muted + inline so it plays
           on mobile without going fullscreen; decorative, so hidden from a11y.
+          The clip's last 0.75 s is dissolved into its opening in the file
+          itself, so the loop point has no visible cut.
 
           `poster` is the film's own frame 0, so it paints immediately and the
           video starts on the identical image with no visible jump. It also
           gives the first viewport a real LCP element instead of leaving the
-          browser to wait on 2.7 MB of MP4. `preload="metadata"` keeps that
+          browser to wait on 2.2 MB of MP4. `preload="metadata"` keeps that
           download off the critical path — the clip still autoplays, it just
           stops competing with the headline and the fonts for bandwidth on the
           mobile connections most of this traffic arrives on. */}
@@ -52,12 +54,12 @@ export function Hero() {
         muted
         playsInline
         preload="metadata"
-        poster="/brand/hero-poster.webp"
+        poster="/brand/hero-switches-poster.webp"
         tabIndex={-1}
         aria-hidden
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       >
-        <source src="/brand/hero-scroll.mp4" type="video/mp4" />
+        <source src="/brand/hero-switches.mp4" type="video/mp4" />
       </video>
 
       {/* Legibility scrim — a soft top/bottom gradient over the film, never a
