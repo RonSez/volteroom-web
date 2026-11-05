@@ -44,8 +44,8 @@ export const siteConfig = {
    * `address` means exactly this), and nowhere that reads as an invitation.
    */
   address: {
-    street: "Znievska 3060/8",
-    zip: "851 06",
+    street: "Kopčianska 63",
+    zip: "851 01",
     city: "Bratislava",
     country: "Slovakia",
   },
