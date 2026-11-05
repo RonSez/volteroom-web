@@ -60,11 +60,8 @@ function ContactContent() {
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         {/* Left: address (primary), details, map */}
         <div className="space-y-6">
-          {/* The registered office, as company information. It is a seat in
-              the business register, not a place that receives customers, so
-              this card carries no map, no directions and no visit language —
-              the note says so outright, because an address printed this
-              prominently otherwise reads as an invitation. */}
+          {/* The working address, deliberately bare: no qualifier, no map and
+              no directions. The client will set up Google Maps for it later. */}
           <div className="overflow-hidden rounded-2xl bg-primary text-primary-foreground">
             <div className="relative p-6 sm:p-8">
               <div
@@ -82,17 +79,12 @@ function ContactContent() {
                 <p className="mt-4 flex items-start gap-3 text-xl font-medium leading-snug">
                   <Building2 className="mt-1 size-6 shrink-0 text-[color:var(--brand-to)]" />
                   <span>
-                    {siteConfig.legalName}
+                    {siteConfig.contactAddress.street}
                     <br />
-                    {siteConfig.address.street}
+                    {siteConfig.contactAddress.zip} {siteConfig.contactAddress.city}
                     <br />
-                    {siteConfig.address.zip} {siteConfig.address.city}
-                    <br />
-                    {siteConfig.address.country}
+                    {siteConfig.contactAddress.country}
                   </span>
-                </p>
-                <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-                  {t("addressNote")}
                 </p>
               </div>
             </div>

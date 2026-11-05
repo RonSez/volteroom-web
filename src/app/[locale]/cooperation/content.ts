@@ -8,7 +8,7 @@ export type GtcSection = {
 };
 
 export const gtcLead =
-  "VOLTEROOM, s.r.o., with its registered office at Kopčianska 63, 851 01 Bratislava, Company ID: 57 558 531, registered in the Commercial Register kept by the Municipal Court Bratislava III, Section: Sro, File No. 20800/B (hereinafter referred to as “VOLTEROOM”).";
+  "VOLTEROOM, s.r.o., with its registered office at Znievska 3060/8, 851 06 Bratislava-Petržalka, Company ID: 57 558 531, registered in the Commercial Register kept by the Municipal Court Bratislava III, Section: Sro, File No. 20800/B (hereinafter referred to as “VOLTEROOM”).";
 
 export const gtcSections: GtcSection[] = [
   {
@@ -37,7 +37,7 @@ export const gtcSections: GtcSection[] = [
     heading: "2. Contact",
     body: [
       "Business name: VOLTEROOM, s.r.o.",
-      "Registered office (correspondence address): Kopčianska 63, 851 01 Bratislava, Slovak Republic",
+      "Registered office (correspondence address): Znievska 3060/8, 851 06 Bratislava-Petržalka, Slovak Republic",
       "IČO: 57 557 531",
       "DIČ: SK2122846242",
       "Registration: Commercial Register of the Municipal Court Bratislava III, Section: Sro, Insert No.: 20800/B",

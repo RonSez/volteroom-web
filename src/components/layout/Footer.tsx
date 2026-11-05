@@ -81,12 +81,11 @@ export function Footer() {
             {t("footer.contactTitle")}
           </h3>
           <ul className="mt-4 space-y-3 text-sm">
-            {/* Plain text, not a maps link: this is the registered office,
-                and a directions link would send customers to a seat that
-                doesn't receive them. */}
+            {/* Plain text, not a maps link: the client will set up Google Maps
+                for this address later. */}
             <li className="flex items-start gap-2 text-foreground/80">
               <Building2 className="mt-0.5 size-4 shrink-0" />
-              <span>{siteConfig.address.street}, {siteConfig.address.zip} {siteConfig.address.city}</span>
+              <span>{siteConfig.contactAddress.street}, {siteConfig.contactAddress.zip} {siteConfig.contactAddress.city}</span>
             </li>
             <li>
               <a href={siteConfig.phoneHref} className="flex items-center gap-2 text-foreground/80 hover:text-foreground">

@@ -22,7 +22,7 @@ export const privacySk: PrivacyDoc = {
         },
         {
           type: "p",
-          text: "Ak vám po prečítaní tohto dokumentu nebude niečo jasné alebo si nebudete niečím istí, radi vám vysvetlíme akýkoľvek pojem alebo časť tohto dokumentu. V týchto prípadoch nás môžete kontaktovať písomne na e-mailovej adrese info@volteroom.com alebo na adrese VOLTEROOM, s.r.o., Kopčianska 63, 851 01 Bratislava.",
+          text: "Ak vám po prečítaní tohto dokumentu nebude niečo jasné alebo si nebudete niečím istí, radi vám vysvetlíme akýkoľvek pojem alebo časť tohto dokumentu. V týchto prípadoch nás môžete kontaktovať písomne na e-mailovej adrese info@volteroom.com alebo na adrese VOLTEROOM, s.r.o., Znievska 3060/8, 851 06 Bratislava-Petržalka.",
         },
       ],
     },
@@ -35,7 +35,7 @@ export const privacySk: PrivacyDoc = {
         },
         {
           type: "p",
-          text: "Prevádzkovateľom osobných údajov je VOLTEROOM, s.r.o., Kopčianska 63, 851 01 Bratislava, zapísaná v Obchodnom registri Okresného súdu Bratislava I, oddiel Sro, vl. č. 199037/B, IČO: 57 558 351 (ďalej len „VOLTEROOM“).",
+          text: "Prevádzkovateľom osobných údajov je VOLTEROOM, s.r.o., Znievska 3060/8, 851 06 Bratislava-Petržalka, zapísaná v Obchodnom registri Okresného súdu Bratislava I, oddiel Sro, vl. č. 199037/B, IČO: 57 558 351 (ďalej len „VOLTEROOM“).",
         },
         {
           type: "p",
@@ -45,7 +45,7 @@ export const privacySk: PrivacyDoc = {
           type: "lines",
           items: [
             "Kontakt: VOLTEROOM, s.r.o.",
-            "Adresa: Kopčianska 63, 851 01 Bratislava",
+            "Adresa: Znievska 3060/8, 851 06 Bratislava-Petržalka",
             "E-mail: info@volteroom.com",
           ],
         },
@@ -242,7 +242,7 @@ export const privacySk: PrivacyDoc = {
           type: "lines",
           items: [
             "Kontakt: VOLTEROOM, s. r. o.",
-            "Adresa: Kopčianska 63, 851 01 Bratislava",
+            "Adresa: Znievska 3060/8, 851 06 Bratislava-Petržalka",
             "E-mail: info@volteroom.com",
           ],
         },
@@ -380,7 +380,7 @@ export const privacySk: PrivacyDoc = {
       blocks: [
         {
           type: "p",
-          text: "Svoje jednotlivé práva si môžete uplatniť v spoločnosti VOLTEROOM e-mailom na info@volteroom.com alebo písomne na korešpondenčnej adrese Kopčianska 63, 851 01 Bratislava.",
+          text: "Svoje jednotlivé práva si môžete uplatniť v spoločnosti VOLTEROOM e-mailom na info@volteroom.com alebo písomne na korešpondenčnej adrese Znievska 3060/8, 851 06 Bratislava-Petržalka.",
         },
         {
           type: "p",
@@ -436,7 +436,7 @@ export const privacySk: PrivacyDoc = {
       blocks: [
         {
           type: "p",
-          text: "Ak máte akékoľvek otázky alebo pripomienky k tejto informačnej povinnosti, neváhajte nás kedykoľvek kontaktovať e-mailom na info@volteroom.com alebo písomne na korešpondenčnej adrese Kopčianska 63, 851 01 Bratislava.",
+          text: "Ak máte akékoľvek otázky alebo pripomienky k tejto informačnej povinnosti, neváhajte nás kedykoľvek kontaktovať e-mailom na info@volteroom.com alebo písomne na korešpondenčnej adrese Znievska 3060/8, 851 06 Bratislava-Petržalka.",
         },
       ],
     },

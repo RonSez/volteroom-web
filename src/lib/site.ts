@@ -39,11 +39,23 @@ export const siteConfig = {
    * The company's registered office — its seat in the business register, not
    * a showroom, a shop or a collection point. Nobody receives customers here,
    * so it is shown as company information only: no "visit us", no map embed
-   * and no directions link anywhere on the site. It belongs in the footer,
-   * the contact page's company block and the Organization schema (where
+   * and no directions link anywhere on the site. It belongs in the
+   * Organization schema (where
    * `address` means exactly this), and nowhere that reads as an invitation.
+   * The legal documents, manuals and certificates carry it too.
    */
   address: {
+    street: "Znievska 3060/8",
+    zip: "851 06",
+    city: "Bratislava",
+    country: "Slovakia",
+  },
+  /**
+   * The working address, which can change without the register changing. The
+   * client wants it shown only as contact details (the contact page and the
+   * footer's contact block), as a plain address with no qualifier.
+   */
+  contactAddress: {
     street: "Kopčianska 63",
     zip: "851 01",
     city: "Bratislava",
