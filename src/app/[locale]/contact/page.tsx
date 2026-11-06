@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -132,6 +133,16 @@ function ContactContent() {
             <ContactForm />
           </div>
         </div>
+      </div>
+
+      <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-border sm:aspect-[16/9]">
+        <Image
+          src="/brand/contact/warehouse.jpg"
+          alt={t("photoAlt")}
+          fill
+          sizes="(min-width: 1280px) 76rem, 100vw"
+          className="object-cover object-[center_35%]"
+        />
       </div>
     </Section>
   );
