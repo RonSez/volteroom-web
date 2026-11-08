@@ -62,32 +62,45 @@ function ContactContent() {
         {/* Left: address (primary), details, map */}
         <div className="space-y-6">
           {/* The working address, deliberately bare: no qualifier, no map and
-              no directions. The client will set up Google Maps for it later. */}
-          <div className="overflow-hidden rounded-2xl bg-primary text-primary-foreground">
-            <div className="relative p-6 sm:p-8">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-80"
-                style={{
-                  background:
-                    "radial-gradient(70% 120% at 100% 0%, rgba(0,160,214,0.4) 0%, rgba(15,23,42,0) 60%)",
-                }}
-              />
-              <div className="relative">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-to)]">
-                  {t("addressTitle")}
-                </p>
-                <p className="mt-4 flex items-start gap-3 text-xl font-medium leading-snug">
-                  <Building2 className="mt-1 size-6 shrink-0 text-[color:var(--brand-to)]" />
-                  <span>
-                    {siteConfig.contactAddress.street}
-                    <br />
-                    {siteConfig.contactAddress.zip} {siteConfig.contactAddress.city}
-                    <br />
-                    {siteConfig.contactAddress.country}
-                  </span>
-                </p>
+              no directions. The client will set up Google Maps for it later.
+              It shares a row with the warehouse photo, mirroring the two
+              detail cards below. */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="overflow-hidden rounded-xl bg-primary text-primary-foreground">
+              <div className="relative h-full p-5">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-80"
+                  style={{
+                    background:
+                      "radial-gradient(70% 120% at 100% 0%, rgba(0,160,214,0.4) 0%, rgba(15,23,42,0) 60%)",
+                  }}
+                />
+                <div className="relative">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-to)]">
+                    {t("addressTitle")}
+                  </p>
+                  <p className="mt-4 flex items-start gap-3 text-xl font-medium leading-snug">
+                    <Building2 className="mt-1 size-6 shrink-0 text-[color:var(--brand-to)]" />
+                    <span>
+                      {siteConfig.contactAddress.street}
+                      <br />
+                      {siteConfig.contactAddress.zip} {siteConfig.contactAddress.city}
+                      <br />
+                      {siteConfig.contactAddress.country}
+                    </span>
+                  </p>
+                </div>
               </div>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-border sm:aspect-auto">
+              <Image
+                src="/brand/contact/warehouse.jpg"
+                alt={t("photoAlt")}
+                fill
+                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 50vw, 100vw"
+                className="object-cover object-[center_35%]"
+              />
             </div>
           </div>
 
@@ -133,16 +146,6 @@ function ContactContent() {
             <ContactForm />
           </div>
         </div>
-      </div>
-
-      <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-border sm:aspect-[16/9]">
-        <Image
-          src="/brand/contact/warehouse.jpg"
-          alt={t("photoAlt")}
-          fill
-          sizes="(min-width: 1280px) 76rem, 100vw"
-          className="object-cover object-[center_35%]"
-        />
       </div>
     </Section>
   );
