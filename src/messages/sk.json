@@ -267,8 +267,6 @@
     "director": "Konateľ",
     "ico": "IČO",
     "dic": "DIČ",
-    "vat": "DPH",
-    "nonVat": "Neplatca DPH",
     "formTitle": "Napíšte nám",
     "form": {
       "name": "Meno",
@@ -378,8 +376,7 @@
     "exploreTitle": "Preskúmať",
     "companyTitle": "Spoločnosť",
     "contactTitle": "Kontakt",
-    "rights": "Všetky práva vyhradené.",
-    "nonVat": "Neplatca DPH"
+    "rights": "Všetky práva vyhradené."
   },
   "certificates": {
     "title": "Certifikáty",

@@ -108,7 +108,6 @@ export function Footer() {
             <li>{siteConfig.legalName}</li>
             <li>{t("contact.ico")}: {siteConfig.ico}</li>
             <li>{t("contact.dic")}: {siteConfig.dic}</li>
-            <li>{t("footer.nonVat")}</li>
           </ul>
         </div>
       </div>

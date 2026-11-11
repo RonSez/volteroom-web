@@ -267,8 +267,6 @@
     "director": "Jednatel",
     "ico": "IČO",
     "dic": "DIČ",
-    "vat": "DPH",
-    "nonVat": "Neplátce DPH",
     "formTitle": "Napište nám",
     "form": {
       "name": "Jméno",
@@ -378,8 +376,7 @@
     "exploreTitle": "Prozkoumat",
     "companyTitle": "Společnost",
     "contactTitle": "Kontakt",
-    "rights": "Všechna práva vyhrazena.",
-    "nonVat": "Neplátce DPH"
+    "rights": "Všechna práva vyhrazena."
   },
   "certificates": {
     "title": "Certifikáty",

@@ -122,7 +122,7 @@ export function ProductForm({
 
       <div className="grid gap-6 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label htmlFor="base_price">Base price (EUR)</Label>
+          <Label htmlFor="base_price">Price incl. VAT (EUR)</Label>
           <Input
             id="base_price"
             name="base_price"

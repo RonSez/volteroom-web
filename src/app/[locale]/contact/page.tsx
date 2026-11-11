@@ -133,7 +133,6 @@ function ContactContent() {
                 <li>{siteConfig.legalName}</li>
                 <li>{t("ico")}: {siteConfig.ico}</li>
                 <li>{t("dic")}: {siteConfig.dic}</li>
-                <li>{t("vat")}: {t("nonVat")}</li>
               </ul>
             </div>
           </div>

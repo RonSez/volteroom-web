@@ -267,8 +267,6 @@
     "director": "Managing director",
     "ico": "Company ID",
     "dic": "Tax ID",
-    "vat": "VAT",
-    "nonVat": "Non-VAT payer",
     "formTitle": "Send us a message",
     "form": {
       "name": "Name",
@@ -378,8 +376,7 @@
     "exploreTitle": "Explore",
     "companyTitle": "Company",
     "contactTitle": "Contact",
-    "rights": "All rights reserved.",
-    "nonVat": "Non-VAT payer"
+    "rights": "All rights reserved."
   },
   "certificates": {
     "title": "Certificates",
