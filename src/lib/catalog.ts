@@ -57,6 +57,7 @@ interface ProductRow {
   base_price: number | string;
   sku: string | null;
   variant_skus: Record<string, string> | null;
+  variant_prices: Record<string, number> | null;
   specs: ProductSpecs | null;
   gangs: number[] | null;
   featured: boolean;
@@ -167,6 +168,7 @@ const loadCatalog = unstable_cache(
         basePrice: Number(p.base_price),
         sku: p.sku ?? undefined,
         variantSkus: p.variant_skus ?? undefined,
+        variantPrices: p.variant_prices ?? undefined,
         specs: p.specs ?? undefined,
         gangs: p.gangs ?? undefined,
         finishes: explicit

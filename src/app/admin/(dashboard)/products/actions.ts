@@ -9,6 +9,7 @@ import {
   gangsFromForm,
   specsFromForm,
   jsonRecordFromForm,
+  variantPricesFromForm,
 } from "../../_lib/form";
 
 const IMAGE_BUCKET = "product-images";
@@ -38,6 +39,7 @@ export async function saveProduct(
     base_price: Number.isFinite(basePrice) ? basePrice : 0,
     sku: sku || null,
     variant_skus: jsonRecordFromForm(fd.get("variant_skus")),
+    variant_prices: variantPricesFromForm(fd),
     specs: specsFromForm(fd),
     gangs: gangsFromForm(fd.get("gangs")),
     featured: fd.get("featured") === "on",

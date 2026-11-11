@@ -132,8 +132,10 @@ export interface Product {
   kind: ProductKind;
   name: Localized;
   description: Localized;
-  /** Base price in EUR (placeholder, editable in admin). */
+  /** VAT-inclusive price in EUR; the fallback for any variant without its own. */
   basePrice: number;
+  /** VAT-inclusive per-variant prices, keyed like `variantSkus`. */
+  variantPrices?: Record<string, number>;
   /** Article number for mechanisms (covers/frames use `variantSkus`). */
   sku?: string;
   /**
@@ -278,6 +280,50 @@ export function resolveSku(
     return p.variantSkus[`${g}-${finishId}`];
   }
   return finishId ? p.variantSkus[finishId] : undefined;
+}
+
+type PricedProduct = Pick<
+  Product,
+  "kind" | "basePrice" | "variantPrices" | "variantSkus" | "gangs"
+>;
+
+/** The variant key (as used by `variantSkus`/`variantPrices`) for a selection. */
+function variantKey(p: PricedProduct, finishId?: FinishId, gang?: number) {
+  if (p.kind === "mechanism" || !finishId) return undefined;
+  return p.kind === "frame" ? `${gang ?? p.gangs?.[0]}-${finishId}` : finishId;
+}
+
+/** VAT-inclusive price for the selected finish (and gang, for frames). */
+export function resolvePrice(
+  p: PricedProduct,
+  finishId?: FinishId,
+  gang?: number,
+): number {
+  const key = variantKey(p, finishId, gang);
+  const price = key ? p.variantPrices?.[key] : undefined;
+  return price ?? p.basePrice;
+}
+
+/**
+ * The lowest price across the product's variants, optionally narrowed to one
+ * finish and/or gang — the "from" price on catalogue cards.
+ */
+export function lowestPrice(
+  p: PricedProduct,
+  filter: { finishId?: FinishId; gang?: number } = {},
+): number {
+  const keys = Object.keys(p.variantSkus ?? {}).filter((key) => {
+    if (p.kind === "frame") {
+      const [g, ...rest] = key.split("-");
+      return (
+        (!filter.gang || Number(g) === filter.gang) &&
+        (!filter.finishId || rest.join("-") === filter.finishId)
+      );
+    }
+    return !filter.finishId || key === filter.finishId;
+  });
+  if (!keys.length) return p.basePrice;
+  return Math.min(...keys.map((k) => p.variantPrices?.[k] ?? p.basePrice));
 }
 
 export { products } from "./catalog.products";

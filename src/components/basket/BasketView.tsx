@@ -5,7 +5,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { Minus, Plus, Trash2, ShoppingBag, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { type Product, type Finish, NEUTRAL_FINISH_HEX, resolveSku } from "@/data/catalog";
+import {
+  type Product,
+  type Finish,
+  NEUTRAL_FINISH_HEX,
+  resolveSku,
+  resolvePrice,
+} from "@/data/catalog";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { useBasket, useHydrated, type BasketItem } from "@/lib/store/basket";
 import { ProductVisual } from "@/components/catalog/ProductVisual";
@@ -60,7 +66,7 @@ export function BasketView({
 
   const subtotal = items.reduce((sum, item) => {
     const p = productMap.get(item.slug);
-    return sum + (p ? p.basePrice * item.qty : 0);
+    return sum + (p ? resolvePrice(p, item.finishId, item.gang) * item.qty : 0);
   }, 0);
   const totalCount = items.reduce((n, i) => n + i.qty, 0);
 
@@ -141,6 +147,7 @@ function BasketLine({
   if (!product) return null;
 
   const sku = resolveSku(product, item.finishId, item.gang);
+  const lineTotal = resolvePrice(product, item.finishId, item.gang) * item.qty;
 
   return (
     <div className="flex gap-4 rounded-xl border border-border bg-card p-3 sm:p-4">
@@ -202,10 +209,10 @@ function BasketLine({
           </div>
           <div className="text-right">
             <p className="font-semibold tabular-nums">
-              {formatPrice(product.basePrice * item.qty, locale)}
+              {formatPrice(lineTotal, locale)}
             </p>
             <p className="text-xs text-muted-foreground tabular-nums">
-              {formatPriceExclVat(product.basePrice * item.qty, locale)} {tc("exclVat")}
+              {formatPriceExclVat(lineTotal, locale)} {tc("exclVat")}
             </p>
           </div>
         </div>

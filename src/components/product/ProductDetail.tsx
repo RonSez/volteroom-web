@@ -21,6 +21,7 @@ import {
   type ProductImageInfo,
   SPEC_ORDER,
   resolveSku,
+  resolvePrice,
   NEUTRAL_FINISH_HEX,
   DEFAULT_FINISH_ID,
 } from "@/data/catalog";
@@ -112,10 +113,8 @@ export function ProductDetail({
     return value ? [[key, t(`specs.${key}`), formatSpec(key, value)] as const] : [];
   });
 
-  const priceLabel =
-    product.kind === "frame"
-      ? tc("priceFrom", { price: formatPrice(product.basePrice, locale) })
-      : formatPrice(product.basePrice, locale);
+  // Finish and gang are always selected here, so this is the exact price.
+  const price = resolvePrice(product, finishId, gang);
 
   return (
     <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
@@ -147,9 +146,9 @@ export function ProductDetail({
           )}
         </div>
 
-        <p className="mt-3 text-2xl font-semibold tabular-nums">{priceLabel}</p>
+        <p className="mt-3 text-2xl font-semibold tabular-nums">{formatPrice(price, locale)}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {formatPriceExclVat(product.basePrice, locale)} {tc("exclVat")}
+          {formatPriceExclVat(price, locale)} {tc("exclVat")}
         </p>
         <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
           {product.description[locale]}

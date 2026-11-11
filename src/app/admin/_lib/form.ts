@@ -48,6 +48,19 @@ export function specsFromForm(fd: FormData): ProductSpecs {
   return out;
 }
 
+/** Collect the `variant_price.<key>` inputs; blank rows fall back to the base price. */
+export function variantPricesFromForm(fd: FormData): Record<string, number> | null {
+  const out: Record<string, number> = {};
+  for (const [name, value] of fd.entries()) {
+    if (!name.startsWith("variant_price.")) continue;
+    const raw = String(value).trim().replace(",", ".");
+    if (!raw) continue;
+    const price = Number(raw);
+    if (Number.isFinite(price) && price >= 0) out[name.slice("variant_price.".length)] = price;
+  }
+  return Object.keys(out).length ? out : null;
+}
+
 /** Parse a JSON object of string→string (variant SKUs); {} on empty/invalid. */
 export function jsonRecordFromForm(value: FormDataEntryValue | null): Record<string, string> {
   const raw = String(value ?? "").trim();

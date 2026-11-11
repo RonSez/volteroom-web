@@ -8,6 +8,7 @@ import {
   NEUTRAL_FINISH_HEX,
   DEFAULT_FINISH_ID,
   resolveSku,
+  lowestPrice,
 } from "@/data/catalog";
 import { getProductFinishes } from "@/lib/catalog";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
@@ -38,6 +39,10 @@ export async function ProductCard({
     finishes[0];
   const cardGang = gang ?? (product.gangs ? Math.min(...product.gangs) : 1);
   const sku = resolveSku(product, active?.id, cardGang);
+  const fromPrice = lowestPrice(product, {
+    finishId: selectedFinish && active?.id === selectedFinish ? selectedFinish : undefined,
+    gang,
+  });
 
   // With a finish selected, show that finish's front photo (its tinted
   // placeholder if none exists); otherwise the default catalogue thumbnail.
@@ -88,10 +93,10 @@ export async function ProductCard({
             {gang ? ` · ${tp("gangUnit", { count: gang })}` : ""}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            {t("priceFrom", { price: formatPrice(product.basePrice, locale) })}
+            {t("priceFrom", { price: formatPrice(fromPrice, locale) })}
           </p>
           <p className="text-xs text-muted-foreground">
-            {formatPriceExclVat(product.basePrice, locale)} {t("exclVat")}
+            {formatPriceExclVat(fromPrice, locale)} {t("exclVat")}
           </p>
         </div>
         {finishes.length > 0 ? (

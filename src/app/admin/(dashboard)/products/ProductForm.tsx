@@ -27,6 +27,7 @@ export interface ProductRow {
   base_price: number | string;
   sku: string | null;
   variant_skus: Record<string, string> | null;
+  variant_prices: Record<string, number> | null;
   specs: ProductSpecs | null;
   gangs: number[] | null;
   featured: boolean;
@@ -175,6 +176,16 @@ export function ProductForm({
         </p>
       </div>
 
+      {/* Per-variant prices — one row per variant article number */}
+      {product?.variant_skus && Object.keys(product.variant_skus).length > 0 && (
+        <VariantPrices
+          variantSkus={product.variant_skus}
+          variantPrices={product.variant_prices ?? {}}
+          finishes={finishes}
+          isFrame={product.kind === "frame"}
+        />
+      )}
+
       {/* Specifications */}
       <fieldset className="space-y-4 rounded-xl border border-border p-4">
         <legend className="px-1 text-sm font-semibold">Technical characteristics</legend>
@@ -220,5 +231,50 @@ export function ProductForm({
 
       <SubmitButton>{isEdit ? "Save changes" : "Create product"}</SubmitButton>
     </form>
+  );
+}
+
+function VariantPrices({
+  variantSkus,
+  variantPrices,
+  finishes,
+  isFrame,
+}: {
+  variantSkus: Record<string, string>;
+  variantPrices: Record<string, number>;
+  finishes: Finish[];
+  isFrame: boolean;
+}) {
+  const finishName = (id: string) =>
+    finishes.find((f) => f.id === id)?.name.en ?? id;
+  const label = (key: string) => {
+    if (!isFrame) return finishName(key);
+    const [gang, ...rest] = key.split("-");
+    return `${gang}-gang · ${finishName(rest.join("-"))}`;
+  };
+
+  return (
+    <fieldset className="space-y-3 rounded-xl border border-border p-4">
+      <legend className="px-1 text-sm font-semibold">Variant prices incl. VAT (EUR)</legend>
+      <p className="text-xs text-muted-foreground">
+        Leave a row blank to use the main price above.
+      </p>
+      <div className="divide-y divide-border">
+        {Object.entries(variantSkus).map(([key, sku]) => (
+          <div key={key} className="grid grid-cols-[1fr_auto_8rem] items-center gap-3 py-2">
+            <Label htmlFor={`variant_price.${key}`}>{label(key)}</Label>
+            <span className="font-mono text-xs text-muted-foreground">{sku}</span>
+            <Input
+              id={`variant_price.${key}`}
+              name={`variant_price.${key}`}
+              type="number"
+              step="0.01"
+              min="0"
+              defaultValue={variantPrices[key] ?? ""}
+            />
+          </div>
+        ))}
+      </div>
+    </fieldset>
   );
 }
