@@ -61,8 +61,14 @@ export default async function ProductsPage() {
             {rows.map((p) => (
               <TableRow key={p.id}>
                 <TableCell>
-                  <div className="font-medium">{p.name?.en}</div>
-                  <div className="font-mono text-xs text-muted-foreground">{p.slug}</div>
+                  {/* The whole name opens the product — on a phone the Edit
+                      button sits off-screen behind a hidden scrollbar. */}
+                  <Link href={`/admin/products/${p.id}`} className="group block">
+                    <div className="font-medium underline-offset-4 group-hover:underline">
+                      {p.name?.en}
+                    </div>
+                    <div className="font-mono text-xs text-muted-foreground">{p.slug}</div>
+                  </Link>
                 </TableCell>
                 <TableCell className="text-muted-foreground">
                   {catName.get(p.category_id) ?? p.category_id}
