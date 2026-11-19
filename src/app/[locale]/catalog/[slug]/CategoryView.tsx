@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { GlowWireTest } from "@/components/product/GlowWireTest";
+import { GanTechnology } from "@/components/product/GanTechnology";
 import {
   getAllGangs,
   getCategories,
@@ -17,6 +18,7 @@ import {
 } from "@/lib/catalog";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/seo";
 import { GLOW_WIRE_CATEGORY } from "@/data/glow-wire";
+import { GAN_CATEGORY } from "@/data/gan";
 import type {
   Category,
   CategoryId,
@@ -141,6 +143,14 @@ export async function CategoryView({
         {category.id === GLOW_WIRE_CATEGORY && (
           <Reveal delay={120} className="mt-8 max-w-xl">
             <GlowWireTest variant="compact" />
+          </Reveal>
+        )}
+
+        {/* USB Charging: the GaN claim the home-page tile badges, explained
+            before the buyer picks a product. */}
+        {category.id === GAN_CATEGORY && (
+          <Reveal delay={120} className="mt-8 max-w-xl">
+            <GanTechnology className="mt-0" />
           </Reveal>
         )}
 
