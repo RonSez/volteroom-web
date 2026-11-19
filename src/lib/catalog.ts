@@ -247,10 +247,25 @@ export function isIp44(p: Product): boolean {
   return Object.values(p.name).some((n) => ip44.test(n));
 }
 
+/**
+ * Products listed in a second category besides their own `category` (which
+ * stays their home: breadcrumbs, SEO). The 3-in-1 socket + USB-A + USB-C
+ * mechanism and its cover belong under Sockets *and* USB Charging.
+ */
+const ALSO_LISTED_IN: Record<string, CategoryId[]> = {
+  e08ta236: ["usb-charging"],
+  e08tb236: ["usb-charging"],
+};
+
+/** Whether a product shows up in a category's listing. */
+export function inCategory(p: Product, category: CategoryId): boolean {
+  return p.category === category || (ALSO_LISTED_IN[p.slug]?.includes(category) ?? false);
+}
+
 export async function getProducts(filter: ProductFilter = {}): Promise<Product[]> {
   const { products, finishes } = await loadCatalog();
   return products.filter((p) => {
-    if (filter.category && p.category !== filter.category) return false;
+    if (filter.category && !inCategory(p, filter.category)) return false;
     if (filter.kind && p.kind !== filter.kind) return false;
     if (p.kind === "mechanism" && filter.finish) return false;
     if (filter.finish) {

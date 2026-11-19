@@ -27,10 +27,12 @@ import {
 } from "@/data/catalog";
 import { datasheetForSku } from "@/data/datasheets";
 import { hasGlowWireTest } from "@/data/glow-wire";
+import { hasGan } from "@/data/gan";
 import { formatPrice, formatPriceExclVat } from "@/lib/format";
 import { ProductImage } from "@/components/catalog/ProductImage";
 import { FinishSwatch } from "@/components/catalog/FinishSwatch";
 import { GlowWireTest } from "@/components/product/GlowWireTest";
+import { GanTechnology } from "@/components/product/GanTechnology";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useBasket } from "@/lib/store/basket";
 import { cn } from "@/lib/utils";
@@ -153,6 +155,8 @@ export function ProductDetail({
         <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
           {product.description[locale]}
         </p>
+
+        {hasGan(sku) && <GanTechnology />}
 
         {/* Covers/buttons ship without a frame — except the double socket cover
             E08ZB203, which is designed to mount without one. */}

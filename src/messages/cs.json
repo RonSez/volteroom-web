@@ -208,6 +208,11 @@
     "alt": "Zkouška žhavou smyčkou Volteroom: drát rozžhavený na 850 °C se dotýká mechanismu zásuvky.",
     "enlarge": "Zobrazit v plné velikosti"
   },
+  "gan": {
+    "badge": "Technologie GaN",
+    "title": "Technologie GaN",
+    "body": "GaN znamená „nitrid galia“. Tento materiál zajišťuje vyšší výkon nabíjecích portů USB a Type-C. Pomáhá udržovat nízkou teplotu během nabíjení, účinně zabraňuje přehřívání a lépe chrání váš smartphone."
+  },
   "basket": {
     "title": "Košík",
     "empty": "Váš košík je prázdný.",

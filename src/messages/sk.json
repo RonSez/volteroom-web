@@ -208,6 +208,11 @@
     "alt": "Skúška žeravou slučkou Volteroom: drôt rozžeravený na 850 °C sa dotýka mechanizmu zásuvky.",
     "enlarge": "Zobraziť v plnej veľkosti"
   },
+  "gan": {
+    "badge": "Technológia GaN",
+    "title": "Technológia GaN",
+    "body": "GaN znamená „nitrid gália“. Tento materiál zabezpečuje vyšší výkon nabíjacích portov USB a Type-C. Pomáha udržiavať nízku teplotu počas nabíjania, účinne zabraňuje prehrievaniu a lepšie chráni váš smartfón."
+  },
   "basket": {
     "title": "Košík",
     "empty": "Váš košík je prázdny.",

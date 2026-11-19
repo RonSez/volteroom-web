@@ -208,6 +208,11 @@
     "alt": "Volteroom glow-wire test: a wire glowing at 850 °C touching a socket mechanism.",
     "enlarge": "View full size"
   },
+  "gan": {
+    "badge": "GaN technology",
+    "title": "GaN technology",
+    "body": "GaN stands for \"gallium nitride\". This material delivers higher performance in USB and Type-C charging ports. It helps keep temperatures low during charging, effectively preventing overheating and providing better protection for your smartphone."
+  },
   "basket": {
     "title": "Basket",
     "empty": "Your basket is empty.",
